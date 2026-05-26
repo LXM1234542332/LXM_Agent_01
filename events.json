@@ -1,0 +1,60 @@
+[
+  {
+    "event_id": 1,
+    "timestamp": "2026-05-19T10:15:00Z",
+    "type": "deployment",
+    "service": "user-service",
+    "severity": "info",
+    "message": "Deployed new version v2.3.1",
+    "details": {
+      "previous_version": "v2.3.0",
+      "new_version": "v2.3.1",
+      "duration_seconds": 45,
+      "status": "success",
+      "replicas_updated": 3
+    }
+  },
+  {
+    "event_id": 2,
+    "timestamp": "2026-05-19T10:25:00Z",
+    "type": "alert",
+    "service": "user-service",
+    "severity": "warning",
+    "message": "Database connection pool usage > 90%",
+    "details": {
+      "metric": "db_connections",
+      "threshold": 90,
+      "current_value": 95,
+      "alert_rule": "db_pool_high_usage"
+    }
+  },
+  {
+    "event_id": 3,
+    "timestamp": "2026-05-19T10:30:00Z",
+    "type": "alert",
+    "service": "user-service",
+    "severity": "critical",
+    "message": "High error rate detected: 15%",
+    "details": {
+      "metric": "error_rate_percent",
+      "threshold": 5,
+      "current_value": 15,
+      "alert_rule": "high_error_rate"
+    }
+  },
+  {
+    "event_id": 4,
+    "timestamp": "2026-05-19T10:40:00Z",
+    "type": "deployment",
+    "service": "user-service",
+    "severity": "warning",
+    "message": "Rolled back to previous version v2.3.0",
+    "details": {
+      "reason": "High error rate after deployment",
+      "previous_version": "v2.3.1",
+      "rollback_version": "v2.3.0",
+      "duration_seconds": 30,
+      "status": "success"
+    }
+  }
+]

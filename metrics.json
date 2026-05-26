@@ -1,0 +1,1982 @@
+[
+  {
+    "metric_id": 1,
+    "timestamp": "2026-05-19T10:00:00Z",
+    "metric": "db_connections",
+    "value": 50,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 2,
+    "timestamp": "2026-05-19T10:00:00Z",
+    "metric": "request_latency_ms",
+    "value": 102,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 3,
+    "timestamp": "2026-05-19T10:00:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.09,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 4,
+    "timestamp": "2026-05-19T10:01:00Z",
+    "metric": "db_connections",
+    "value": 41,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 5,
+    "timestamp": "2026-05-19T10:01:00Z",
+    "metric": "request_latency_ms",
+    "value": 118,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 6,
+    "timestamp": "2026-05-19T10:01:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.11,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 7,
+    "timestamp": "2026-05-19T10:02:00Z",
+    "metric": "db_connections",
+    "value": 34,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 8,
+    "timestamp": "2026-05-19T10:02:00Z",
+    "metric": "request_latency_ms",
+    "value": 116,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 9,
+    "timestamp": "2026-05-19T10:02:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.11,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 10,
+    "timestamp": "2026-05-19T10:03:00Z",
+    "metric": "db_connections",
+    "value": 47,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 11,
+    "timestamp": "2026-05-19T10:03:00Z",
+    "metric": "request_latency_ms",
+    "value": 91,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 12,
+    "timestamp": "2026-05-19T10:03:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.06,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 13,
+    "timestamp": "2026-05-19T10:04:00Z",
+    "metric": "db_connections",
+    "value": 46,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 14,
+    "timestamp": "2026-05-19T10:04:00Z",
+    "metric": "request_latency_ms",
+    "value": 102,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 15,
+    "timestamp": "2026-05-19T10:04:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.07,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 16,
+    "timestamp": "2026-05-19T10:05:00Z",
+    "metric": "db_connections",
+    "value": 42,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 17,
+    "timestamp": "2026-05-19T10:05:00Z",
+    "metric": "request_latency_ms",
+    "value": 118,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 18,
+    "timestamp": "2026-05-19T10:05:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.11,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 19,
+    "timestamp": "2026-05-19T10:06:00Z",
+    "metric": "db_connections",
+    "value": 34,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 20,
+    "timestamp": "2026-05-19T10:06:00Z",
+    "metric": "request_latency_ms",
+    "value": 87,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 21,
+    "timestamp": "2026-05-19T10:06:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.07,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 22,
+    "timestamp": "2026-05-19T10:07:00Z",
+    "metric": "db_connections",
+    "value": 39,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 23,
+    "timestamp": "2026-05-19T10:07:00Z",
+    "metric": "request_latency_ms",
+    "value": 81,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 24,
+    "timestamp": "2026-05-19T10:07:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.05,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 25,
+    "timestamp": "2026-05-19T10:08:00Z",
+    "metric": "db_connections",
+    "value": 49,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 26,
+    "timestamp": "2026-05-19T10:08:00Z",
+    "metric": "request_latency_ms",
+    "value": 113,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 27,
+    "timestamp": "2026-05-19T10:08:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.07,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 28,
+    "timestamp": "2026-05-19T10:09:00Z",
+    "metric": "db_connections",
+    "value": 46,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 29,
+    "timestamp": "2026-05-19T10:09:00Z",
+    "metric": "request_latency_ms",
+    "value": 82,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 30,
+    "timestamp": "2026-05-19T10:09:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.15,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 31,
+    "timestamp": "2026-05-19T10:10:00Z",
+    "metric": "db_connections",
+    "value": 38,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 32,
+    "timestamp": "2026-05-19T10:10:00Z",
+    "metric": "request_latency_ms",
+    "value": 111,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 33,
+    "timestamp": "2026-05-19T10:10:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.12,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 34,
+    "timestamp": "2026-05-19T10:11:00Z",
+    "metric": "db_connections",
+    "value": 44,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 35,
+    "timestamp": "2026-05-19T10:11:00Z",
+    "metric": "request_latency_ms",
+    "value": 98,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 36,
+    "timestamp": "2026-05-19T10:11:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.14,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 37,
+    "timestamp": "2026-05-19T10:12:00Z",
+    "metric": "db_connections",
+    "value": 37,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 38,
+    "timestamp": "2026-05-19T10:12:00Z",
+    "metric": "request_latency_ms",
+    "value": 100,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 39,
+    "timestamp": "2026-05-19T10:12:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.05,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 40,
+    "timestamp": "2026-05-19T10:13:00Z",
+    "metric": "db_connections",
+    "value": 31,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 41,
+    "timestamp": "2026-05-19T10:13:00Z",
+    "metric": "request_latency_ms",
+    "value": 104,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 42,
+    "timestamp": "2026-05-19T10:13:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.08,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 43,
+    "timestamp": "2026-05-19T10:14:00Z",
+    "metric": "db_connections",
+    "value": 47,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 44,
+    "timestamp": "2026-05-19T10:14:00Z",
+    "metric": "request_latency_ms",
+    "value": 80,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 45,
+    "timestamp": "2026-05-19T10:14:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.1,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 46,
+    "timestamp": "2026-05-19T10:15:00Z",
+    "metric": "db_connections",
+    "value": 54,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 47,
+    "timestamp": "2026-05-19T10:15:00Z",
+    "metric": "request_latency_ms",
+    "value": 132,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 48,
+    "timestamp": "2026-05-19T10:15:00Z",
+    "metric": "error_rate_percent",
+    "value": 0.34,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 49,
+    "timestamp": "2026-05-19T10:16:00Z",
+    "metric": "db_connections",
+    "value": 53,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 50,
+    "timestamp": "2026-05-19T10:16:00Z",
+    "metric": "request_latency_ms",
+    "value": 407,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 51,
+    "timestamp": "2026-05-19T10:16:00Z",
+    "metric": "error_rate_percent",
+    "value": 1.74,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 52,
+    "timestamp": "2026-05-19T10:17:00Z",
+    "metric": "db_connections",
+    "value": 55,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 53,
+    "timestamp": "2026-05-19T10:17:00Z",
+    "metric": "request_latency_ms",
+    "value": 950,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 54,
+    "timestamp": "2026-05-19T10:17:00Z",
+    "metric": "error_rate_percent",
+    "value": 3.03,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 55,
+    "timestamp": "2026-05-19T10:18:00Z",
+    "metric": "db_connections",
+    "value": 58,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 56,
+    "timestamp": "2026-05-19T10:18:00Z",
+    "metric": "request_latency_ms",
+    "value": 1245,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 57,
+    "timestamp": "2026-05-19T10:18:00Z",
+    "metric": "error_rate_percent",
+    "value": 4.74,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 58,
+    "timestamp": "2026-05-19T10:19:00Z",
+    "metric": "db_connections",
+    "value": 62,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 59,
+    "timestamp": "2026-05-19T10:19:00Z",
+    "metric": "request_latency_ms",
+    "value": 1703,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 60,
+    "timestamp": "2026-05-19T10:19:00Z",
+    "metric": "error_rate_percent",
+    "value": 5.93,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 61,
+    "timestamp": "2026-05-19T10:20:00Z",
+    "metric": "db_connections",
+    "value": 69,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 62,
+    "timestamp": "2026-05-19T10:20:00Z",
+    "metric": "request_latency_ms",
+    "value": 2084,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 63,
+    "timestamp": "2026-05-19T10:20:00Z",
+    "metric": "error_rate_percent",
+    "value": 7.9,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 64,
+    "timestamp": "2026-05-19T10:21:00Z",
+    "metric": "db_connections",
+    "value": 72,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 65,
+    "timestamp": "2026-05-19T10:21:00Z",
+    "metric": "request_latency_ms",
+    "value": 2571,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 66,
+    "timestamp": "2026-05-19T10:21:00Z",
+    "metric": "error_rate_percent",
+    "value": 8.81,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 67,
+    "timestamp": "2026-05-19T10:22:00Z",
+    "metric": "db_connections",
+    "value": 75,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 68,
+    "timestamp": "2026-05-19T10:22:00Z",
+    "metric": "request_latency_ms",
+    "value": 2941,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 69,
+    "timestamp": "2026-05-19T10:22:00Z",
+    "metric": "error_rate_percent",
+    "value": 10.86,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 70,
+    "timestamp": "2026-05-19T10:23:00Z",
+    "metric": "db_connections",
+    "value": 77,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 71,
+    "timestamp": "2026-05-19T10:23:00Z",
+    "metric": "request_latency_ms",
+    "value": 3274,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 72,
+    "timestamp": "2026-05-19T10:23:00Z",
+    "metric": "error_rate_percent",
+    "value": 11.95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 73,
+    "timestamp": "2026-05-19T10:24:00Z",
+    "metric": "db_connections",
+    "value": 81,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 74,
+    "timestamp": "2026-05-19T10:24:00Z",
+    "metric": "request_latency_ms",
+    "value": 3692,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 75,
+    "timestamp": "2026-05-19T10:24:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.33,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 76,
+    "timestamp": "2026-05-19T10:25:00Z",
+    "metric": "db_connections",
+    "value": 95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 77,
+    "timestamp": "2026-05-19T10:25:00Z",
+    "metric": "request_latency_ms",
+    "value": 5446,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 78,
+    "timestamp": "2026-05-19T10:25:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.12,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 79,
+    "timestamp": "2026-05-19T10:26:00Z",
+    "metric": "db_connections",
+    "value": 98,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 80,
+    "timestamp": "2026-05-19T10:26:00Z",
+    "metric": "request_latency_ms",
+    "value": 4643,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 81,
+    "timestamp": "2026-05-19T10:26:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.2,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 82,
+    "timestamp": "2026-05-19T10:27:00Z",
+    "metric": "db_connections",
+    "value": 95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 83,
+    "timestamp": "2026-05-19T10:27:00Z",
+    "metric": "request_latency_ms",
+    "value": 5330,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 84,
+    "timestamp": "2026-05-19T10:27:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.51,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 85,
+    "timestamp": "2026-05-19T10:28:00Z",
+    "metric": "db_connections",
+    "value": 95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 86,
+    "timestamp": "2026-05-19T10:28:00Z",
+    "metric": "request_latency_ms",
+    "value": 4618,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 87,
+    "timestamp": "2026-05-19T10:28:00Z",
+    "metric": "error_rate_percent",
+    "value": 14.09,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 88,
+    "timestamp": "2026-05-19T10:29:00Z",
+    "metric": "db_connections",
+    "value": 99,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 89,
+    "timestamp": "2026-05-19T10:29:00Z",
+    "metric": "request_latency_ms",
+    "value": 4615,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 90,
+    "timestamp": "2026-05-19T10:29:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.79,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 91,
+    "timestamp": "2026-05-19T10:30:00Z",
+    "metric": "db_connections",
+    "value": 99,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 92,
+    "timestamp": "2026-05-19T10:30:00Z",
+    "metric": "request_latency_ms",
+    "value": 4531,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 93,
+    "timestamp": "2026-05-19T10:30:00Z",
+    "metric": "error_rate_percent",
+    "value": 14.6,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 94,
+    "timestamp": "2026-05-19T10:31:00Z",
+    "metric": "db_connections",
+    "value": 98,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 95,
+    "timestamp": "2026-05-19T10:31:00Z",
+    "metric": "request_latency_ms",
+    "value": 5479,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 96,
+    "timestamp": "2026-05-19T10:31:00Z",
+    "metric": "error_rate_percent",
+    "value": 16.46,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 97,
+    "timestamp": "2026-05-19T10:32:00Z",
+    "metric": "db_connections",
+    "value": 95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 98,
+    "timestamp": "2026-05-19T10:32:00Z",
+    "metric": "request_latency_ms",
+    "value": 5397,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 99,
+    "timestamp": "2026-05-19T10:32:00Z",
+    "metric": "error_rate_percent",
+    "value": 15.14,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 100,
+    "timestamp": "2026-05-19T10:33:00Z",
+    "metric": "db_connections",
+    "value": 100,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 101,
+    "timestamp": "2026-05-19T10:33:00Z",
+    "metric": "request_latency_ms",
+    "value": 4857,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 102,
+    "timestamp": "2026-05-19T10:33:00Z",
+    "metric": "error_rate_percent",
+    "value": 15.68,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 103,
+    "timestamp": "2026-05-19T10:34:00Z",
+    "metric": "db_connections",
+    "value": 100,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 104,
+    "timestamp": "2026-05-19T10:34:00Z",
+    "metric": "request_latency_ms",
+    "value": 4771,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 105,
+    "timestamp": "2026-05-19T10:34:00Z",
+    "metric": "error_rate_percent",
+    "value": 15.01,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 106,
+    "timestamp": "2026-05-19T10:35:00Z",
+    "metric": "db_connections",
+    "value": 98,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 107,
+    "timestamp": "2026-05-19T10:35:00Z",
+    "metric": "request_latency_ms",
+    "value": 4541,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 108,
+    "timestamp": "2026-05-19T10:35:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.12,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 109,
+    "timestamp": "2026-05-19T10:36:00Z",
+    "metric": "db_connections",
+    "value": 100,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 110,
+    "timestamp": "2026-05-19T10:36:00Z",
+    "metric": "request_latency_ms",
+    "value": 5440,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 111,
+    "timestamp": "2026-05-19T10:36:00Z",
+    "metric": "error_rate_percent",
+    "value": 14.11,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 112,
+    "timestamp": "2026-05-19T10:37:00Z",
+    "metric": "db_connections",
+    "value": 95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 113,
+    "timestamp": "2026-05-19T10:37:00Z",
+    "metric": "request_latency_ms",
+    "value": 5103,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 114,
+    "timestamp": "2026-05-19T10:37:00Z",
+    "metric": "error_rate_percent",
+    "value": 16.16,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 115,
+    "timestamp": "2026-05-19T10:38:00Z",
+    "metric": "db_connections",
+    "value": 97,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 116,
+    "timestamp": "2026-05-19T10:38:00Z",
+    "metric": "request_latency_ms",
+    "value": 4596,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 117,
+    "timestamp": "2026-05-19T10:38:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.58,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 118,
+    "timestamp": "2026-05-19T10:39:00Z",
+    "metric": "db_connections",
+    "value": 97,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 119,
+    "timestamp": "2026-05-19T10:39:00Z",
+    "metric": "request_latency_ms",
+    "value": 5061,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 120,
+    "timestamp": "2026-05-19T10:39:00Z",
+    "metric": "error_rate_percent",
+    "value": 14.76,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 121,
+    "timestamp": "2026-05-19T10:40:00Z",
+    "metric": "db_connections",
+    "value": 101,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 122,
+    "timestamp": "2026-05-19T10:40:00Z",
+    "metric": "request_latency_ms",
+    "value": 4998,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 123,
+    "timestamp": "2026-05-19T10:40:00Z",
+    "metric": "error_rate_percent",
+    "value": 14.61,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 124,
+    "timestamp": "2026-05-19T10:41:00Z",
+    "metric": "db_connections",
+    "value": 94,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 125,
+    "timestamp": "2026-05-19T10:41:00Z",
+    "metric": "request_latency_ms",
+    "value": 4772,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 126,
+    "timestamp": "2026-05-19T10:41:00Z",
+    "metric": "error_rate_percent",
+    "value": 14.61,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 127,
+    "timestamp": "2026-05-19T10:42:00Z",
+    "metric": "db_connections",
+    "value": 93,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 128,
+    "timestamp": "2026-05-19T10:42:00Z",
+    "metric": "request_latency_ms",
+    "value": 4528,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 129,
+    "timestamp": "2026-05-19T10:42:00Z",
+    "metric": "error_rate_percent",
+    "value": 13.58,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 130,
+    "timestamp": "2026-05-19T10:43:00Z",
+    "metric": "db_connections",
+    "value": 85,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 131,
+    "timestamp": "2026-05-19T10:43:00Z",
+    "metric": "request_latency_ms",
+    "value": 4185,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 132,
+    "timestamp": "2026-05-19T10:43:00Z",
+    "metric": "error_rate_percent",
+    "value": 12.36,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 133,
+    "timestamp": "2026-05-19T10:44:00Z",
+    "metric": "db_connections",
+    "value": 89,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 134,
+    "timestamp": "2026-05-19T10:44:00Z",
+    "metric": "request_latency_ms",
+    "value": 3924,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 135,
+    "timestamp": "2026-05-19T10:44:00Z",
+    "metric": "error_rate_percent",
+    "value": 11.71,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 136,
+    "timestamp": "2026-05-19T10:45:00Z",
+    "metric": "db_connections",
+    "value": 81,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 137,
+    "timestamp": "2026-05-19T10:45:00Z",
+    "metric": "request_latency_ms",
+    "value": 3867,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 138,
+    "timestamp": "2026-05-19T10:45:00Z",
+    "metric": "error_rate_percent",
+    "value": 11.63,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 139,
+    "timestamp": "2026-05-19T10:46:00Z",
+    "metric": "db_connections",
+    "value": 81,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 140,
+    "timestamp": "2026-05-19T10:46:00Z",
+    "metric": "request_latency_ms",
+    "value": 3586,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 141,
+    "timestamp": "2026-05-19T10:46:00Z",
+    "metric": "error_rate_percent",
+    "value": 10.25,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 142,
+    "timestamp": "2026-05-19T10:47:00Z",
+    "metric": "db_connections",
+    "value": 78,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 143,
+    "timestamp": "2026-05-19T10:47:00Z",
+    "metric": "request_latency_ms",
+    "value": 3288,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 144,
+    "timestamp": "2026-05-19T10:47:00Z",
+    "metric": "error_rate_percent",
+    "value": 9.36,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 145,
+    "timestamp": "2026-05-19T10:48:00Z",
+    "metric": "db_connections",
+    "value": 71,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 146,
+    "timestamp": "2026-05-19T10:48:00Z",
+    "metric": "request_latency_ms",
+    "value": 3016,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 147,
+    "timestamp": "2026-05-19T10:48:00Z",
+    "metric": "error_rate_percent",
+    "value": 8.78,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 148,
+    "timestamp": "2026-05-19T10:49:00Z",
+    "metric": "db_connections",
+    "value": 72,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 149,
+    "timestamp": "2026-05-19T10:49:00Z",
+    "metric": "request_latency_ms",
+    "value": 2782,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 150,
+    "timestamp": "2026-05-19T10:49:00Z",
+    "metric": "error_rate_percent",
+    "value": 7.84,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 151,
+    "timestamp": "2026-05-19T10:50:00Z",
+    "metric": "db_connections",
+    "value": 65,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 152,
+    "timestamp": "2026-05-19T10:50:00Z",
+    "metric": "request_latency_ms",
+    "value": 2511,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 153,
+    "timestamp": "2026-05-19T10:50:00Z",
+    "metric": "error_rate_percent",
+    "value": 7.17,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 154,
+    "timestamp": "2026-05-19T10:51:00Z",
+    "metric": "db_connections",
+    "value": 57,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 155,
+    "timestamp": "2026-05-19T10:51:00Z",
+    "metric": "request_latency_ms",
+    "value": 2323,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 156,
+    "timestamp": "2026-05-19T10:51:00Z",
+    "metric": "error_rate_percent",
+    "value": 6.65,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 157,
+    "timestamp": "2026-05-19T10:52:00Z",
+    "metric": "db_connections",
+    "value": 56,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 158,
+    "timestamp": "2026-05-19T10:52:00Z",
+    "metric": "request_latency_ms",
+    "value": 2098,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 159,
+    "timestamp": "2026-05-19T10:52:00Z",
+    "metric": "error_rate_percent",
+    "value": 6.56,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 160,
+    "timestamp": "2026-05-19T10:53:00Z",
+    "metric": "db_connections",
+    "value": 55,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 161,
+    "timestamp": "2026-05-19T10:53:00Z",
+    "metric": "request_latency_ms",
+    "value": 1898,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 162,
+    "timestamp": "2026-05-19T10:53:00Z",
+    "metric": "error_rate_percent",
+    "value": 5.5,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 163,
+    "timestamp": "2026-05-19T10:54:00Z",
+    "metric": "db_connections",
+    "value": 53,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 164,
+    "timestamp": "2026-05-19T10:54:00Z",
+    "metric": "request_latency_ms",
+    "value": 1548,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 165,
+    "timestamp": "2026-05-19T10:54:00Z",
+    "metric": "error_rate_percent",
+    "value": 4.84,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 166,
+    "timestamp": "2026-05-19T10:55:00Z",
+    "metric": "db_connections",
+    "value": 46,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 167,
+    "timestamp": "2026-05-19T10:55:00Z",
+    "metric": "request_latency_ms",
+    "value": 1357,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 168,
+    "timestamp": "2026-05-19T10:55:00Z",
+    "metric": "error_rate_percent",
+    "value": 3.38,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 169,
+    "timestamp": "2026-05-19T10:56:00Z",
+    "metric": "db_connections",
+    "value": 45,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 170,
+    "timestamp": "2026-05-19T10:56:00Z",
+    "metric": "request_latency_ms",
+    "value": 1133,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 171,
+    "timestamp": "2026-05-19T10:56:00Z",
+    "metric": "error_rate_percent",
+    "value": 3.06,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 172,
+    "timestamp": "2026-05-19T10:57:00Z",
+    "metric": "db_connections",
+    "value": 35,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 173,
+    "timestamp": "2026-05-19T10:57:00Z",
+    "metric": "request_latency_ms",
+    "value": 786,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 174,
+    "timestamp": "2026-05-19T10:57:00Z",
+    "metric": "error_rate_percent",
+    "value": 1.97,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 175,
+    "timestamp": "2026-05-19T10:58:00Z",
+    "metric": "db_connections",
+    "value": 33,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 176,
+    "timestamp": "2026-05-19T10:58:00Z",
+    "metric": "request_latency_ms",
+    "value": 589,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 177,
+    "timestamp": "2026-05-19T10:58:00Z",
+    "metric": "error_rate_percent",
+    "value": 1.95,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-3",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 178,
+    "timestamp": "2026-05-19T10:59:00Z",
+    "metric": "db_connections",
+    "value": 31,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 179,
+    "timestamp": "2026-05-19T10:59:00Z",
+    "metric": "request_latency_ms",
+    "value": 253,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-1",
+      "region": "us-east-1"
+    }
+  },
+  {
+    "metric_id": 180,
+    "timestamp": "2026-05-19T10:59:00Z",
+    "metric": "error_rate_percent",
+    "value": 1.13,
+    "service": "user-service",
+    "tags": {
+      "instance": "pod-2",
+      "region": "us-east-1"
+    }
+  }
+]

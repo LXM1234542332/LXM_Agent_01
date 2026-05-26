@@ -1,0 +1,1894 @@
+[
+  {
+    "log_id": 1,
+    "timestamp": "2026-05-19T10:00:10Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_2367",
+    "duration_ms": 139
+  },
+  {
+    "log_id": 2,
+    "timestamp": "2026-05-19T10:01:08Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_7648",
+    "duration_ms": 138
+  },
+  {
+    "log_id": 3,
+    "timestamp": "2026-05-19T10:01:13Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_4076",
+    "duration_ms": 59
+  },
+  {
+    "log_id": 4,
+    "timestamp": "2026-05-19T10:01:27Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_4986",
+    "duration_ms": 178
+  },
+  {
+    "log_id": 5,
+    "timestamp": "2026-05-19T10:02:44Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8624",
+    "duration_ms": 108
+  },
+  {
+    "log_id": 6,
+    "timestamp": "2026-05-19T10:02:50Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_6147",
+    "duration_ms": 157
+  },
+  {
+    "log_id": 7,
+    "timestamp": "2026-05-19T10:03:10Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_3870",
+    "duration_ms": 64
+  },
+  {
+    "log_id": 8,
+    "timestamp": "2026-05-19T10:03:30Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_1322",
+    "duration_ms": 67
+  },
+  {
+    "log_id": 9,
+    "timestamp": "2026-05-19T10:03:40Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8728",
+    "duration_ms": 163
+  },
+  {
+    "log_id": 10,
+    "timestamp": "2026-05-19T10:04:58Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_2467",
+    "duration_ms": 142
+  },
+  {
+    "log_id": 11,
+    "timestamp": "2026-05-19T10:07:22Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_7988",
+    "duration_ms": 177
+  },
+  {
+    "log_id": 12,
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_5339",
+    "duration_ms": 157
+  },
+  {
+    "log_id": 13,
+    "timestamp": "2026-05-19T10:10:41Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_2672",
+    "duration_ms": 193
+  },
+  {
+    "log_id": 14,
+    "timestamp": "2026-05-19T10:12:07Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_3345",
+    "duration_ms": 197
+  },
+  {
+    "log_id": 15,
+    "timestamp": "2026-05-19T10:12:39Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_6550",
+    "duration_ms": 157
+  },
+  {
+    "log_id": 16,
+    "timestamp": "2026-05-19T10:12:49Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_3811",
+    "duration_ms": 150
+  },
+  {
+    "log_id": 17,
+    "timestamp": "2026-05-19T10:13:36Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8056",
+    "duration_ms": 190
+  },
+  {
+    "log_id": 18,
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_8503",
+    "duration_ms": 68
+  },
+  {
+    "log_id": 19,
+    "timestamp": "2026-05-19T10:15:17Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_2951",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 20,
+    "timestamp": "2026-05-19T10:15:29Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_4579",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 21,
+    "timestamp": "2026-05-19T10:15:35Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_9694",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 22,
+    "timestamp": "2026-05-19T10:15:35Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_5440",
+    "duration_ms": 200
+  },
+  {
+    "log_id": 23,
+    "timestamp": "2026-05-19T10:15:40Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_5026",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 24,
+    "timestamp": "2026-05-19T10:16:09Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_6725",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 25,
+    "timestamp": "2026-05-19T10:16:18Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_7129",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 26,
+    "timestamp": "2026-05-19T10:16:18Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_7753",
+    "duration_ms": 170
+  },
+  {
+    "log_id": 27,
+    "timestamp": "2026-05-19T10:17:39Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_5200",
+    "duration_ms": 174
+  },
+  {
+    "log_id": 28,
+    "timestamp": "2026-05-19T10:17:46Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_2112",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 29,
+    "timestamp": "2026-05-19T10:18:25Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_2031",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 30,
+    "timestamp": "2026-05-19T10:18:52Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_8381",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 31,
+    "timestamp": "2026-05-19T10:18:52Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_1417",
+    "duration_ms": 92
+  },
+  {
+    "log_id": 32,
+    "timestamp": "2026-05-19T10:19:04Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_4679",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 33,
+    "timestamp": "2026-05-19T10:20:35Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_3159",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 34,
+    "timestamp": "2026-05-19T10:22:22Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_4307",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 35,
+    "timestamp": "2026-05-19T10:22:31Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_8545",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 36,
+    "timestamp": "2026-05-19T10:23:37Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_7465",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 37,
+    "timestamp": "2026-05-19T10:23:55Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_2954",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 38,
+    "timestamp": "2026-05-19T10:24:04Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_8730",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 39,
+    "timestamp": "2026-05-19T10:24:26Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_5644",
+    "duration_ms": 88
+  },
+  {
+    "log_id": 40,
+    "timestamp": "2026-05-19T10:24:46Z",
+    "service": "user-service",
+    "level": "WARN",
+    "message": "Database connection pool usage high: 85/100",
+    "trace_id": "trace_9785",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 85,
+      "waiting_requests": 5
+    }
+  },
+  {
+    "log_id": 41,
+    "timestamp": "2026-05-19T10:25:12Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6090",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 42,
+    "timestamp": "2026-05-19T10:25:20Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2999",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 43,
+    "timestamp": "2026-05-19T10:25:43Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_8369",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 44,
+    "timestamp": "2026-05-19T10:25:51Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_1590",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 45,
+    "timestamp": "2026-05-19T10:25:57Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6846",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 46,
+    "timestamp": "2026-05-19T10:26:25Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6909",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 47,
+    "timestamp": "2026-05-19T10:26:39Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2581",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 48,
+    "timestamp": "2026-05-19T10:26:39Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_3730",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 49,
+    "timestamp": "2026-05-19T10:26:55Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_4148",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 50,
+    "timestamp": "2026-05-19T10:27:05Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_8558",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 51,
+    "timestamp": "2026-05-19T10:27:21Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_7015",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 52,
+    "timestamp": "2026-05-19T10:27:21Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_6636",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 53,
+    "timestamp": "2026-05-19T10:27:35Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6528",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 54,
+    "timestamp": "2026-05-19T10:27:35Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_8592",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 55,
+    "timestamp": "2026-05-19T10:28:01Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_3430",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 56,
+    "timestamp": "2026-05-19T10:28:11Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_8853",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 57,
+    "timestamp": "2026-05-19T10:28:17Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2044",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 58,
+    "timestamp": "2026-05-19T10:28:17Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_4620",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 59,
+    "timestamp": "2026-05-19T10:28:33Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6002",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 60,
+    "timestamp": "2026-05-19T10:28:42Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_8603",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 61,
+    "timestamp": "2026-05-19T10:28:51Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_3613",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 62,
+    "timestamp": "2026-05-19T10:28:51Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_2723",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 63,
+    "timestamp": "2026-05-19T10:29:15Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2334",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 64,
+    "timestamp": "2026-05-19T10:29:40Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_3468",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 65,
+    "timestamp": "2026-05-19T10:29:40Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_6188",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 66,
+    "timestamp": "2026-05-19T10:30:05Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2125",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 67,
+    "timestamp": "2026-05-19T10:30:05Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_9672",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 68,
+    "timestamp": "2026-05-19T10:31:08Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_5096",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 69,
+    "timestamp": "2026-05-19T10:31:26Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_1432",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 70,
+    "timestamp": "2026-05-19T10:31:53Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_3611",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 71,
+    "timestamp": "2026-05-19T10:31:53Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_6048",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 72,
+    "timestamp": "2026-05-19T10:32:01Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_4626",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 73,
+    "timestamp": "2026-05-19T10:32:06Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_7465",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 74,
+    "timestamp": "2026-05-19T10:32:34Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6266",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 75,
+    "timestamp": "2026-05-19T10:33:02Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9371",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 76,
+    "timestamp": "2026-05-19T10:33:10Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6197",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 77,
+    "timestamp": "2026-05-19T10:33:10Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_3464",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 78,
+    "timestamp": "2026-05-19T10:33:32Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2721",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 79,
+    "timestamp": "2026-05-19T10:33:40Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_1628",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 80,
+    "timestamp": "2026-05-19T10:33:40Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_7642",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 81,
+    "timestamp": "2026-05-19T10:33:54Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9954",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 82,
+    "timestamp": "2026-05-19T10:34:05Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2199",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 83,
+    "timestamp": "2026-05-19T10:34:25Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2356",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 84,
+    "timestamp": "2026-05-19T10:34:25Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_4496",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 85,
+    "timestamp": "2026-05-19T10:34:43Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_1030",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 86,
+    "timestamp": "2026-05-19T10:34:50Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_7451",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 87,
+    "timestamp": "2026-05-19T10:35:15Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2466",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 88,
+    "timestamp": "2026-05-19T10:35:30Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2019",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 89,
+    "timestamp": "2026-05-19T10:35:42Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2811",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 90,
+    "timestamp": "2026-05-19T10:36:04Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_8206",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 91,
+    "timestamp": "2026-05-19T10:36:33Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9880",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 92,
+    "timestamp": "2026-05-19T10:36:53Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_3685",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 93,
+    "timestamp": "2026-05-19T10:36:53Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_5467",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 94,
+    "timestamp": "2026-05-19T10:37:07Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2368",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 95,
+    "timestamp": "2026-05-19T10:37:13Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2376",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 96,
+    "timestamp": "2026-05-19T10:37:13Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_2731",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 97,
+    "timestamp": "2026-05-19T10:37:37Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6470",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 98,
+    "timestamp": "2026-05-19T10:38:07Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_5818",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 99,
+    "timestamp": "2026-05-19T10:38:13Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9277",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 100,
+    "timestamp": "2026-05-19T10:38:28Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_1704",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 101,
+    "timestamp": "2026-05-19T10:39:02Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_4631",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 102,
+    "timestamp": "2026-05-19T10:39:32Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6878",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 103,
+    "timestamp": "2026-05-19T10:39:59Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2656",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 104,
+    "timestamp": "2026-05-19T10:39:59Z",
+    "service": "api-gateway",
+    "level": "ERROR",
+    "message": "Request timeout calling user-service",
+    "trace_id": "trace_9340",
+    "error": "Timeout after 30000ms",
+    "endpoint": "/api/users/profile",
+    "duration_ms": 30000
+  },
+  {
+    "log_id": 105,
+    "timestamp": "2026-05-19T10:40:26Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_9118",
+    "duration_ms": 57
+  },
+  {
+    "log_id": 106,
+    "timestamp": "2026-05-19T10:40:42Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_5176",
+    "duration_ms": 146
+  },
+  {
+    "log_id": 107,
+    "timestamp": "2026-05-19T10:41:02Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_2612",
+    "duration_ms": 122
+  },
+  {
+    "log_id": 108,
+    "timestamp": "2026-05-19T10:41:30Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_2150",
+    "duration_ms": 93
+  },
+  {
+    "log_id": 109,
+    "timestamp": "2026-05-19T10:41:54Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_1605",
+    "duration_ms": 52
+  },
+  {
+    "log_id": 110,
+    "timestamp": "2026-05-19T10:42:13Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_7075",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 111,
+    "timestamp": "2026-05-19T10:42:13Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_2152",
+    "duration_ms": 180
+  },
+  {
+    "log_id": 112,
+    "timestamp": "2026-05-19T10:42:19Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8195",
+    "duration_ms": 130
+  },
+  {
+    "log_id": 113,
+    "timestamp": "2026-05-19T10:42:37Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6422",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 114,
+    "timestamp": "2026-05-19T10:42:59Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_7552",
+    "duration_ms": 95
+  },
+  {
+    "log_id": 115,
+    "timestamp": "2026-05-19T10:43:22Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_4161",
+    "duration_ms": 102
+  },
+  {
+    "log_id": 116,
+    "timestamp": "2026-05-19T10:43:50Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_3685",
+    "duration_ms": 62
+  },
+  {
+    "log_id": 117,
+    "timestamp": "2026-05-19T10:44:02Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_5916",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 118,
+    "timestamp": "2026-05-19T10:44:12Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_5063",
+    "duration_ms": 56
+  },
+  {
+    "log_id": 119,
+    "timestamp": "2026-05-19T10:44:37Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_1280",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 120,
+    "timestamp": "2026-05-19T10:44:47Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_7448",
+    "duration_ms": 160
+  },
+  {
+    "log_id": 121,
+    "timestamp": "2026-05-19T10:45:05Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_1054",
+    "duration_ms": 167
+  },
+  {
+    "log_id": 122,
+    "timestamp": "2026-05-19T10:45:16Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_4364",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 123,
+    "timestamp": "2026-05-19T10:45:44Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_2612",
+    "duration_ms": 78
+  },
+  {
+    "log_id": 124,
+    "timestamp": "2026-05-19T10:45:56Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_8014",
+    "duration_ms": 197
+  },
+  {
+    "log_id": 125,
+    "timestamp": "2026-05-19T10:46:04Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_9648",
+    "duration_ms": 132
+  },
+  {
+    "log_id": 126,
+    "timestamp": "2026-05-19T10:46:11Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_3412",
+    "duration_ms": 181
+  },
+  {
+    "log_id": 127,
+    "timestamp": "2026-05-19T10:46:31Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_7963",
+    "duration_ms": 106
+  },
+  {
+    "log_id": 128,
+    "timestamp": "2026-05-19T10:46:50Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_1618",
+    "duration_ms": 173
+  },
+  {
+    "log_id": 129,
+    "timestamp": "2026-05-19T10:47:05Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_3111",
+    "duration_ms": 120
+  },
+  {
+    "log_id": 130,
+    "timestamp": "2026-05-19T10:47:27Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8096",
+    "duration_ms": 132
+  },
+  {
+    "log_id": 131,
+    "timestamp": "2026-05-19T10:47:57Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_6698",
+    "duration_ms": 87
+  },
+  {
+    "log_id": 132,
+    "timestamp": "2026-05-19T10:48:11Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_8461",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 133,
+    "timestamp": "2026-05-19T10:48:11Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_8877",
+    "duration_ms": 142
+  },
+  {
+    "log_id": 134,
+    "timestamp": "2026-05-19T10:48:16Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9211",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 135,
+    "timestamp": "2026-05-19T10:48:51Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_2560",
+    "duration_ms": 92
+  },
+  {
+    "log_id": 136,
+    "timestamp": "2026-05-19T10:49:39Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_5868",
+    "duration_ms": 162
+  },
+  {
+    "log_id": 137,
+    "timestamp": "2026-05-19T10:49:45Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_3656",
+    "duration_ms": 169
+  },
+  {
+    "log_id": 138,
+    "timestamp": "2026-05-19T10:50:23Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9369",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 139,
+    "timestamp": "2026-05-19T10:51:08Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8772",
+    "duration_ms": 192
+  },
+  {
+    "log_id": 140,
+    "timestamp": "2026-05-19T10:51:36Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_1306",
+    "duration_ms": 134
+  },
+  {
+    "log_id": 141,
+    "timestamp": "2026-05-19T10:51:43Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_7142",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 142,
+    "timestamp": "2026-05-19T10:51:43Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_9394",
+    "duration_ms": 147
+  },
+  {
+    "log_id": 143,
+    "timestamp": "2026-05-19T10:51:56Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_6793",
+    "duration_ms": 192
+  },
+  {
+    "log_id": 144,
+    "timestamp": "2026-05-19T10:52:17Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_3191",
+    "duration_ms": 67
+  },
+  {
+    "log_id": 145,
+    "timestamp": "2026-05-19T10:52:57Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_4555",
+    "duration_ms": 126
+  },
+  {
+    "log_id": 146,
+    "timestamp": "2026-05-19T10:53:19Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_2280",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 147,
+    "timestamp": "2026-05-19T10:53:19Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_5119",
+    "duration_ms": 192
+  },
+  {
+    "log_id": 148,
+    "timestamp": "2026-05-19T10:53:46Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_6919",
+    "duration_ms": 86
+  },
+  {
+    "log_id": 149,
+    "timestamp": "2026-05-19T10:54:05Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_7353",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 150,
+    "timestamp": "2026-05-19T10:54:05Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_4970",
+    "duration_ms": 85
+  },
+  {
+    "log_id": 151,
+    "timestamp": "2026-05-19T10:54:50Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_6208",
+    "duration_ms": 115
+  },
+  {
+    "log_id": 152,
+    "timestamp": "2026-05-19T10:55:13Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_5096",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 153,
+    "timestamp": "2026-05-19T10:55:13Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_6853",
+    "duration_ms": 200
+  },
+  {
+    "log_id": 154,
+    "timestamp": "2026-05-19T10:55:33Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_7925",
+    "duration_ms": 155
+  },
+  {
+    "log_id": 155,
+    "timestamp": "2026-05-19T10:55:49Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_9909",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 156,
+    "timestamp": "2026-05-19T10:56:05Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_3504",
+    "duration_ms": 135
+  },
+  {
+    "log_id": 157,
+    "timestamp": "2026-05-19T10:56:24Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Order created",
+    "trace_id": "trace_9243",
+    "duration_ms": 91
+  },
+  {
+    "log_id": 158,
+    "timestamp": "2026-05-19T10:56:54Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_6638",
+    "duration_ms": 70
+  },
+  {
+    "log_id": 159,
+    "timestamp": "2026-05-19T10:57:05Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_4764",
+    "duration_ms": 84
+  },
+  {
+    "log_id": 160,
+    "timestamp": "2026-05-19T10:58:00Z",
+    "service": "user-service",
+    "level": "ERROR",
+    "message": "Failed to acquire database connection",
+    "trace_id": "trace_6990",
+    "error": "Connection pool exhausted",
+    "details": {
+      "pool_size": 100,
+      "active_connections": 100,
+      "timeout_ms": 5000
+    }
+  },
+  {
+    "log_id": 161,
+    "timestamp": "2026-05-19T10:58:00Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_8106",
+    "duration_ms": 104
+  },
+  {
+    "log_id": 162,
+    "timestamp": "2026-05-19T10:58:18Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_2746",
+    "duration_ms": 135
+  },
+  {
+    "log_id": 163,
+    "timestamp": "2026-05-19T10:58:42Z",
+    "service": "api-gateway",
+    "level": "INFO",
+    "message": "User profile retrieved",
+    "trace_id": "trace_6326",
+    "duration_ms": 70
+  },
+  {
+    "log_id": 164,
+    "timestamp": "2026-05-19T10:59:06Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Request processed successfully",
+    "trace_id": "trace_1597",
+    "duration_ms": 165
+  },
+  {
+    "log_id": 165,
+    "timestamp": "2026-05-19T10:59:49Z",
+    "service": "user-service",
+    "level": "INFO",
+    "message": "Payment processed",
+    "trace_id": "trace_6060",
+    "duration_ms": 130
+  }
+]

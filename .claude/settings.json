@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cls": {
+      "url": "http://127.0.0.1:8003/mcp",
+      "disabled": false
+    },
+    "monitor": {
+      "url": "http://127.0.0.1:8004/mcp",
+      "disabled": false
+    }
+  }
+}
