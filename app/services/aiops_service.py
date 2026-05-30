@@ -3,9 +3,9 @@
 基于 LangGraph 官方教程实现
 """
 
-from typing import AsyncGenerator, Dict, Any
+from typing import AsyncGenerator, Dict, Any, Optional
+from pathlib import Path
 from langgraph.graph import StateGraph, END
-from langgraph.checkpoint.memory import MemorySaver
 from loguru import logger
 
 from app.agent.aiops import PlanExecuteState, planner, executor, replanner
@@ -22,9 +22,39 @@ class AIOpsService:
 
     def __init__(self):
         """初始化服务"""
-        self.checkpointer = MemorySaver()
         self.graph = self._build_graph()
         logger.info("Plan-Execute-Replan Service 初始化完成")
+
+    def _save_report(self, report: str, scenario_id: Optional[str] = None) -> Optional[str]:
+        """
+        保存诊断报告到文件
+
+        Args:
+            report: 诊断报告内容
+            scenario_id: 场景ID（如 scenario1），用于确定保存路径
+
+        Returns:
+            保存的文件路径，如果保存失败则返回 None
+        """
+        if not scenario_id or not report:
+            return None
+
+        try:
+            # 构建保存路径：/data/{scenario_id}/运维agent报告.md
+            report_dir = Path("data") / scenario_id
+            report_dir.mkdir(parents=True, exist_ok=True)
+
+            report_file = report_dir / "运维agent报告.md"
+
+            # 写入报告
+            report_file.write_text(report, encoding="utf-8")
+
+            logger.info(f"诊断报告已保存到: {report_file.absolute()}")
+            return str(report_file.absolute())
+
+        except Exception as e:
+            logger.error(f"保存诊断报告失败: {e}", exc_info=True)
+            return None
 
     def _build_graph(self):
         """构建 Plan-Execute-Replan 工作流"""
@@ -73,7 +103,7 @@ class AIOpsService:
         )
 
         # 编译工作流
-        compiled_graph = workflow.compile(checkpointer=self.checkpointer)
+        compiled_graph = workflow.compile()
 
         logger.info("工作流图构建完成")
         return compiled_graph
@@ -111,6 +141,8 @@ class AIOpsService:
                 }
             }
 
+            final_response = ""
+
             async for event in self.graph.astream(
                 input=initial_state,
                 config=config_dict,
@@ -128,15 +160,10 @@ class AIOpsService:
                         yield self._format_executor_event(node_output)
 
                     elif node_name == NODE_REPLANNER:
+                        # 从 replanner 节点获取最终响应
+                        if node_output and node_output.get("response"):
+                            final_response = node_output.get("response", "")
                         yield self._format_replanner_event(node_output)
-
-            # 获取最终状态
-            final_state = self.graph.get_state(config_dict)
-            final_response = ""
-
-            # 安全地获取响应（处理 values 可能为 None 的情况）
-            if final_state and final_state.values:
-                final_response = final_state.values.get("response", "")
 
             # 发送完成事件
             yield {
@@ -149,22 +176,27 @@ class AIOpsService:
             logger.info(f"[会话 {session_id}] 任务执行完成")
 
         except Exception as e:
-            logger.error(f"[会话 {session_id}] 任务执行失败: {e}", exc_info=True)
+            import traceback
+            tb = traceback.format_exc()
+            logger.error(f"[会话 {session_id}] 任务执行失败: {e}\n{tb}")
             yield {
                 "type": "error",
                 "stage": "error",
-                "message": f"任务执行出错: {str(e)}"
+                "message": f"任务执行出错: {str(e)}",
+                "traceback": tb
             }
 
     async def diagnose(
         self,
-        session_id: str = "default"
+        session_id: str = "default",
+        scenario_id: Optional[str] = None
     ) -> AsyncGenerator[Dict[str, Any], None]:
         """
         AIOps 诊断接口（兼容旧接口）
 
         Args:
             session_id: 会话ID
+            scenario_id: 场景ID，用于保存报告到对应目录
 
         Yields:
             Dict[str, Any]: 诊断过程的流式事件
@@ -175,6 +207,15 @@ class AIOpsService:
         async for event in self.execute(aiops_task, session_id):
             # 转换事件格式以兼容旧的 API
             if event.get("type") == "complete":
+                report = event.get("response", "")
+
+                # 保存报告到文件
+                saved_path = None
+                if scenario_id:
+                    saved_path = self._save_report(report, scenario_id)
+                    if saved_path:
+                        logger.info(f"[场景 {scenario_id}] 诊断报告已保存到: {saved_path}")
+
                 # 将 response 包装为 diagnosis 格式
                 yield {
                     "type": "complete",
@@ -182,7 +223,8 @@ class AIOpsService:
                     "message": "诊断流程完成",
                     "diagnosis": {
                         "status": "completed",
-                        "report": event.get("response", "")
+                        "report": report,
+                        "saved_path": saved_path
                     }
                 }
             else:
@@ -266,3 +308,6 @@ class AIOpsService:
 
 # 全局单例
 aiops_service = AIOpsService()
+
+# 导出 graph 供 LangGraph Studio 使用
+graph = aiops_service.graph

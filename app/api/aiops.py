@@ -122,11 +122,12 @@ async def diagnose_stream(request: AIOpsRequest):
         SSE 事件流
     """
     session_id = request.session_id or "default"
-    logger.info(f"[会话 {session_id}] 收到 AIOps 诊断请求（流式）")
+    scenario_id = request.scenario_id
+    logger.info(f"[会话 {session_id}] 收到 AIOps 诊断请求（流式）" + (f"，场景: {scenario_id}" if scenario_id else ""))
 
     async def event_generator():
         try:
-            async for event in aiops_service.diagnose(session_id=session_id):
+            async for event in aiops_service.diagnose(session_id=session_id, scenario_id=scenario_id):
                 # 发送事件
                 yield {
                     "event": "message",

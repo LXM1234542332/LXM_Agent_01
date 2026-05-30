@@ -52,7 +52,7 @@ async def planner(state: PlanExecuteState) -> Dict[str, Any]:
         ])
 
         logger.info(f"system: {PLANNER_SYSTEM_PROMPT} ")
-        logger.info(f"placeholder: {"{messages}"}")
+        logger.info("placeholder: {messages}")
 
         llm = ChatQwen(
             model=config.rag_model,
@@ -115,7 +115,9 @@ async def planner(state: PlanExecuteState) -> Dict[str, Any]:
         return {"plan": plan_steps}
 
     except Exception as e:
-        logger.error(f"生成计划失败: {e}", exc_info=True)
+        # loguru uses str.format on message strings; exceptions like KeyError("error")
+        # render as "{'error': ...}" which would be treated as a format placeholder.
+        logger.exception("生成计划失败")
         return {
             "plan": [
                 "调用 get_alerts() - 获取当前系统中的所有告警",

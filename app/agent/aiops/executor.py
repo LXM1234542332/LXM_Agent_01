@@ -69,7 +69,23 @@ async def executor(state: PlanExecuteState) -> Dict[str, Any]:
             tool_messages = await tool_node.ainvoke({"messages": messages})
 
             # 将工具结果返回给 LLM，生成清晰的执行摘要
-            messages.extend(tool_messages["messages"])
+            if "messages" in tool_messages:
+                messages.extend(tool_messages["messages"])
+            elif "error" in tool_messages:
+                logger.error(f"工具执行出错: {tool_messages['error']}")
+                result = f"工具执行失败: {tool_messages['error']}"
+                return {
+                    "plan": plan[1:],
+                    "past_steps": [(task, result)],
+                }
+            else:
+                logger.warning(f"ToolNode 返回未知结构: {tool_messages}")
+                result = f"工具执行返回未知结构: {tool_messages}"
+                return {
+                    "plan": plan[1:],
+                    "past_steps": [(task, result)],
+                }
+
             final_response = await llm_with_tools.ainvoke(messages)
             result = final_response.content if hasattr(final_response, "content") else str(final_response)
         else:
@@ -84,7 +100,7 @@ async def executor(state: PlanExecuteState) -> Dict[str, Any]:
         }
 
     except Exception as e:
-        logger.error(f"执行步骤失败: {e}", exc_info=True)
+        logger.exception("执行步骤失败")
         return {
             "plan": plan[1:],
             "past_steps": [(task, f"执行失败: {str(e)}")],

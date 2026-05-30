@@ -102,11 +102,6 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
             return await _generate_report(state, llm, forced=False)
 
         elif action == "replan":
-            # 防止 replan 无限扩展步骤
-            if len(past_steps) >= 3:
-                logger.warning(f"已执行 {len(past_steps)} 步，禁止 replan，强制生成报告")
-                return await _generate_report(state, llm, forced=False)
-
             if not new_steps:
                 logger.warning("replan 但未提供新步骤，继续执行原计划")
                 return {}
@@ -124,7 +119,7 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
             return {}
 
     except Exception as e:
-        logger.error(f"Replanner 决策失败: {e}，继续执行原计划")
+        logger.exception("Replanner 决策失败，继续执行原计划")
         return {}
 
 
@@ -165,7 +160,7 @@ async def _generate_report(state: PlanExecuteState, llm: ChatQwen, forced: bool)
         return {"response": final_report}
 
     except Exception as e:
-        logger.error(f"生成报告失败: {e}")
+        logger.exception("生成报告失败")
         fallback = f"""# 🔍 系统诊断报告
 
 **诊断时间**：{now}

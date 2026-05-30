@@ -1,0 +1,9 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "aiops": "./app/services/aiops_service.py:graph"
+  },
+  "watch_options": {
+    "ignored_paths": ["volumes", ".venv", ".git"]
+  }
+}

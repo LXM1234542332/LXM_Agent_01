@@ -259,6 +259,61 @@ DIAGNOSTIC_TOOLS = [
                 "required": []
             }
         }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_service_dependencies",
+            "description": "获取服务的依赖关系。用于理解服务间的调用关系。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "service": {
+                        "type": "string",
+                        "description": "服务名称，如 'api-gateway' 或 'user-service'"
+                    }
+                },
+                "required": ["service"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_trace_details",
+            "description": "获取链路的详细信息。用于查看请求在各个服务中的执行情况。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "trace_id": {
+                        "type": "string",
+                        "description": "链路 ID，如 'trace_12345'"
+                    }
+                },
+                "required": ["trace_id"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_slow_traces",
+            "description": "获取超过阈值的慢链路。用于发现性能问题。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "threshold_ms": {
+                        "type": "integer",
+                        "description": "时间阈值（毫秒），如 1000"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "返回的最大链路数，默认 10"
+                    }
+                },
+                "required": ["threshold_ms"]
+            }
+        }
     }
 ]
 
@@ -267,15 +322,21 @@ DIAGNOSTIC_TOOLS = [
 # ============================================================================
 
 class DiagnosticDataTools:
-    def __init__(self):
+    def __init__(self, scenario_id: Optional[str] = None):
+        self.scenario_id = scenario_id or os.getenv('SCENARIO_ID', 'scenario1')
+        self.data_dir = Path(DATA_DIR)
+        self.scenario_dir = self.data_dir / self.scenario_id
         self.logs = self._load_logs()
         self.metrics = self._load_metrics()
         self.events = self._load_events()
+        self.traces = self._load_traces()
+        self.service_dependencies = self._load_service_dependencies()
 
     def _load_logs(self) -> List[Dict]:
         """加载日志数据"""
         try:
-            with open(LOGS_FILE, "r", encoding="utf-8") as f:
+            logs_file = self.scenario_dir / "logs.json"
+            with open(logs_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         except FileNotFoundError:
             return []
@@ -283,7 +344,8 @@ class DiagnosticDataTools:
     def _load_metrics(self) -> List[Dict]:
         """加载指标数据"""
         try:
-            with open(METRICS_FILE, "r", encoding="utf-8") as f:
+            metrics_file = self.scenario_dir / "metrics.json"
+            with open(metrics_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         except FileNotFoundError:
             return []
@@ -291,10 +353,38 @@ class DiagnosticDataTools:
     def _load_events(self) -> List[Dict]:
         """加载事件数据"""
         try:
-            with open(EVENTS_FILE, "r", encoding="utf-8") as f:
+            events_file = self.scenario_dir / "events.json"
+            with open(events_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         except FileNotFoundError:
             return []
+
+    def _load_traces(self) -> List[Dict]:
+        """加载链路追踪数据"""
+        try:
+            traces_file = self.scenario_dir / "traces.json"
+            with open(traces_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return []
+
+    def _load_service_dependencies(self) -> Dict[str, List[str]]:
+        """加载服务依赖关系"""
+        try:
+            deps_file = self.data_dir / "service_dependencies.json"
+            with open(deps_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return {}
+
+    def switch_scenario(self, scenario_id: str):
+        """动态切换场景"""
+        self.scenario_id = scenario_id
+        self.scenario_dir = self.data_dir / scenario_id
+        self.logs = self._load_logs()
+        self.metrics = self._load_metrics()
+        self.events = self._load_events()
+        self.traces = self._load_traces()
 
     def get_alerts(self) -> Dict[str, Any]:
         """获取所有告警事件"""
@@ -488,6 +578,52 @@ class DiagnosticDataTools:
             "data": events
         }
 
+    def get_service_dependencies(self, service: str) -> Dict[str, Any]:
+        """获取服务的依赖关系"""
+        dependencies = self.service_dependencies.get(service, [])
+
+        return {
+            "status": "success",
+            "service": service,
+            "dependencies": dependencies,
+            "count": len(dependencies)
+        }
+
+    def get_trace_details(self, trace_id: str) -> Dict[str, Any]:
+        """获取链路的详细信息"""
+        trace = None
+        for t in self.traces:
+            if t.get("trace_id") == trace_id:
+                trace = t
+                break
+
+        if not trace:
+            return {
+                "status": "error",
+                "message": f"Trace {trace_id} not found"
+            }
+
+        return {
+            "status": "success",
+            "trace_id": trace_id,
+            "total_duration_ms": trace.get("total_duration_ms"),
+            "status_code": trace.get("status"),
+            "spans_count": len(trace.get("spans", [])),
+            "data": trace
+        }
+
+    def get_slow_traces(self, threshold_ms: int, limit: int = 10) -> Dict[str, Any]:
+        """获取超过阈值的慢链路"""
+        slow_traces = [t for t in self.traces if t.get("total_duration_ms", 0) > threshold_ms]
+        slow_traces = sorted(slow_traces, key=lambda x: x.get("total_duration_ms", 0), reverse=True)[:limit]
+
+        return {
+            "status": "success",
+            "threshold_ms": threshold_ms,
+            "count": len(slow_traces),
+            "data": slow_traces
+        }
+
     def call_tool(self, tool_name: str, **kwargs) -> Dict[str, Any]:
         """通用工具调用接口"""
         if tool_name == "get_alerts":
@@ -540,6 +676,15 @@ class DiagnosticDataTools:
             )
         elif tool_name == "get_deployment_events":
             return self.get_deployment_events(limit=kwargs.get("limit", 10))
+        elif tool_name == "get_service_dependencies":
+            return self.get_service_dependencies(service=kwargs.get("service"))
+        elif tool_name == "get_trace_details":
+            return self.get_trace_details(trace_id=kwargs.get("trace_id"))
+        elif tool_name == "get_slow_traces":
+            return self.get_slow_traces(
+                threshold_ms=kwargs.get("threshold_ms"),
+                limit=kwargs.get("limit", 10)
+            )
         else:
             return {
                 "status": "error",

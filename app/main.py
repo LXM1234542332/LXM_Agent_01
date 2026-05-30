@@ -9,6 +9,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from contextlib import asynccontextmanager
 import os
+from dotenv import load_dotenv
+
+# 必须在所有 langchain 导入之前加载，确保 LangSmith 追踪生效
+load_dotenv()
 
 from app.config import config
 from loguru import logger
