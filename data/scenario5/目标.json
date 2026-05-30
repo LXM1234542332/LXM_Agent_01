@@ -1,0 +1,33 @@
+{
+  "scenario_id": "scenario5",
+  "root_cause_service": "cache-service",
+  "root_cause_type": "新版本部署引入内存异常占用，cache-service v2.3.1 部署后内存使用率从 60% 飙升至 98%，导致严重内存压力",
+  "key_evidence": [
+    {
+      "type": "deployment_event",
+      "description": "cache-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
+      "data": "timestamp=2026-05-19T10:15:00Z, service=cache-service, version=v2.3.1"
+    },
+    {
+      "type": "alert",
+      "description": "部署后仅 30 秒，cache-service 触发 critical 级别告警「内存使用率上升」",
+      "data": "timestamp=2026-05-19T10:15:30Z, severity=critical, message=内存使用率上升"
+    },
+    {
+      "type": "metrics",
+      "description": "cache-service 的 memory_usage_percent 在 10:15:00 从 60% 突变为 98%（接近满载），持续未恢复。内存占用率接近 100% 说明新版本代码存在内存异常占用问题",
+      "data": "memory_usage_percent: 60% -> 98%, 起始时间=10:15:00, 持续到10:29:00未恢复"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00 cache-service 报错「Memory pressure: 98%」，确认服务已进入内存压力状态",
+      "data": "trace_401(10:16:00, cache-service, 1000ms, Memory pressure: 98%)"
+    },
+    {
+      "type": "traces",
+      "description": "trace_401 调用链为 api-gateway → cache-service，cache-service 是内存压力的直接发生点",
+      "data": "trace_401: api-gateway -> cache-service (Memory pressure: 98%)"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，cache-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），cache-service 运行正常，内存使用率稳定在 60%。部署完成后仅 30 秒（10:15:30），cache-service 即触发 critical 级别告警「内存使用率上升」。从指标数据看，10:15:00 这个时间点 memory_usage_percent 从 60% 直接跳变为 98%，接近系统满载。内存占用率达到 98% 意味着系统几乎没有可用内存，新的内存分配请求可能失败或触发 OOM。从日志和链路追踪看，10:16:00 出现「Memory pressure: 98%」错误，调用链为 api-gateway → cache-service，确认 cache-service 是问题源头。综合以上证据，根因判断为：cache-service v2.3.1 版本引入了导致内存异常占用的缺陷（可能是缓存策略变更导致缓存数据无限增长、内存泄漏、或加载了过大的数据集），部署后内存立即打满至 98%。因果链为：部署 v2.3.1 → 内存异常占用 → 内存 98% → 内存压力导致服务异常。本场景仅涉及 cache-service 一个服务，未观察到跨服务扩散。"
+}

@@ -1,0 +1,1442 @@
+[
+  {
+    "timestamp": "2026-05-19T10:00:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:00:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:01:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:01:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:02:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:02:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:03:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:03:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:04:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:04:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:05:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:05:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:06:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:06:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:07:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:07:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:08:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:08:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:10:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:10:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:11:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:11:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:12:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:12:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:13:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:13:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:14:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:14:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:17:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:17:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:19:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:19:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:20:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:20:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:21:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:21:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:22:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:22:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:23:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:23:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:24:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:24:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:25:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:25:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:26:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:26:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:27:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:27:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:28:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:28:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:29:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:29:00Z",
+    "service": "user-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:00:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:00:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:01:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:01:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:02:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:02:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:03:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:03:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:04:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:04:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:05:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:05:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:06:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:06:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:07:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:07:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:08:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:08:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:10:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:10:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:11:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:11:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:12:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:12:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:13:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:13:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:14:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:14:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:17:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:17:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:19:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:19:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:20:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:20:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:21:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:21:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:22:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:22:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:23:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:23:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:24:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:24:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:25:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:25:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:26:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:26:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:27:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:27:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:28:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:28:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:29:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:29:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:00:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:00:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:01:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:01:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:02:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:02:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:03:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:03:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:04:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:04:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:05:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:05:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:06:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:06:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:07:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:07:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:08:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:08:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:09:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:10:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:10:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:11:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:11:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:12:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:12:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:13:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:13:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:14:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:14:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:17:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:17:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:19:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:19:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:20:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:20:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:21:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:21:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:22:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:22:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:23:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:23:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:24:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:24:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:25:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:25:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:26:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:26:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:27:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:27:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:28:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:28:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-05-19T10:29:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "db_connections",
+    "value": 150,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-05-19T10:29:00Z",
+    "service": "database-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 12,
+    "unit": "%"
+  }
+]

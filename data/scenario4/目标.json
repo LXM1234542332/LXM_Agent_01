@@ -1,0 +1,33 @@
+{
+  "scenario_id": "scenario4",
+  "root_cause_service": "search-service",
+  "root_cause_type": "新版本部署引入 CPU 密集型缺陷，search-service v2.3.1 部署后 CPU 使用率从 30% 飙升至 95%，导致请求处理能力严重下降",
+  "key_evidence": [
+    {
+      "type": "deployment_event",
+      "description": "search-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
+      "data": "timestamp=2026-05-19T10:15:00Z, service=search-service, version=v2.3.1"
+    },
+    {
+      "type": "alert",
+      "description": "部署后仅 30 秒，search-service 触发 critical 级别告警「CPU 使用率上升」",
+      "data": "timestamp=2026-05-19T10:15:30Z, severity=critical, message=CPU使用率上升"
+    },
+    {
+      "type": "metrics",
+      "description": "search-service 的 cpu_usage 在 10:15:00 从 30% 突变为 95%（3.17 倍增长），request_latency 从 100ms 突变为 3000ms（30 倍增长），持续未恢复",
+      "data": "cpu_usage: 30% -> 95% (3.17x), request_latency: 100ms -> 3000ms (30x), 起始时间=10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00 search-service 报错「High CPU usage: 95%」，请求耗时 3000ms，确认 CPU 过载导致请求处理严重变慢",
+      "data": "trace_301(10:16:00, search-service, 3000ms, High CPU usage: 95%)"
+    },
+    {
+      "type": "traces",
+      "description": "trace_301 调用链为 api-gateway → search-service，search-service 是 CPU 过高的直接发生点",
+      "data": "trace_301: api-gateway -> search-service (High CPU usage: 95%)"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，search-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），search-service 运行完全正常，CPU 使用率稳定在 30%，请求延迟为 100ms。部署完成后仅 30 秒（10:15:30），search-service 即触发 critical 级别告警「CPU 使用率上升」。从指标数据看，10:15:00 这个时间点 cpu_usage 从 30% 直接跳变为 95%，说明新版本代码引入了 CPU 密集型缺陷（可能是死循环、未优化的算法、或高频计算逻辑）。CPU 接近满载（95%）导致请求处理线程无法获得足够的计算资源，request_latency 从 100ms 飙升至 3000ms（30 倍）。从日志和链路追踪看，10:16:00 出现「High CPU usage: 95%」错误，调用链为 api-gateway → search-service，确认 search-service 是问题源头。综合以上证据，根因判断为：search-service v2.3.1 版本引入了导致 CPU 使用率异常飙升的缺陷，部署后 CPU 立即打满，请求延迟大幅增加。因果链为：部署 v2.3.1 → CPU 密集型缺陷激活 → CPU 95% → 请求延迟 3000ms。本场景仅涉及 search-service 一个服务，未观察到跨服务扩散。"
+}

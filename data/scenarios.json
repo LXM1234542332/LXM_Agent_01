@@ -1,0 +1,98 @@
+[
+  {
+    "id": "scenario1",
+    "name": "级联故障",
+    "description": "payment-service 部署 Bug 导致级联故障",
+    "root_cause": "payment-service 新版本存在 Bug，导致支付超时",
+    "affected_services": ["payment-service", "order-service", "api-gateway"],
+    "expected_diagnosis": "payment-service 部署后导致支付超时，级联影响其他服务",
+    "difficulty": "hard",
+    "key_metrics": ["request_latency_ms", "error_rate_percent"],
+    "key_logs": ["payment timeout", "order timeout"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario2",
+    "name": "数据库连接泄漏",
+    "description": "user-service 连接泄漏导致 DB 连接耗尽",
+    "root_cause": "user-service 代码中连接未正确释放",
+    "affected_services": ["user-service", "order-service", "database-service"],
+    "expected_diagnosis": "user-service 的连接泄漏导致 DB 连接耗尽",
+    "difficulty": "medium",
+    "key_metrics": ["db_connections", "error_rate_percent"],
+    "key_logs": ["connection timeout", "connection pool exhausted"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario3",
+    "name": "内存泄漏导致 GC 停顿",
+    "description": "order-service 内存泄漏导致 GC 时间增加",
+    "root_cause": "order-service 代码中内存未正确释放",
+    "affected_services": ["order-service"],
+    "expected_diagnosis": "order-service 的内存泄漏导致 GC 停顿，请求延迟增加",
+    "difficulty": "medium",
+    "key_metrics": ["gc_time_ms", "memory_usage_percent", "request_latency_ms"],
+    "key_logs": ["GC pause detected", "memory spike"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario4",
+    "name": "CPU 使用率过高",
+    "description": "search-service CPU 使用率过高",
+    "root_cause": "搜索算法效率低下",
+    "affected_services": ["search-service"],
+    "expected_diagnosis": "search-service 的 CPU 使用率过高导致请求延迟增加",
+    "difficulty": "easy",
+    "key_metrics": ["cpu_usage_percent", "request_latency_ms"],
+    "key_logs": ["high CPU usage", "slow query"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario5",
+    "name": "内存使用率过高",
+    "description": "cache-service 内存使用率过高",
+    "root_cause": "缓存数据未正确清理",
+    "affected_services": ["cache-service"],
+    "expected_diagnosis": "cache-service 的内存使用率过高导致缓存命中率下降",
+    "difficulty": "easy",
+    "key_metrics": ["memory_usage_percent"],
+    "key_logs": ["memory pressure", "cache eviction"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario6",
+    "name": "磁盘空间不足",
+    "description": "database-service 磁盘空间不足",
+    "root_cause": "日志文件未定期清理",
+    "affected_services": ["database-service"],
+    "expected_diagnosis": "database-service 的磁盘空间不足导致数据库无法写入",
+    "difficulty": "easy",
+    "key_metrics": ["disk_usage_percent"],
+    "key_logs": ["disk full", "write failed"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario7",
+    "name": "队列堆积",
+    "description": "notification-service 队列堆积",
+    "root_cause": "通知处理速度慢",
+    "affected_services": ["notification-service"],
+    "expected_diagnosis": "notification-service 的队列堆积导致通知延迟增加",
+    "difficulty": "medium",
+    "key_metrics": ["queue_depth", "memory_usage_percent"],
+    "key_logs": ["queue backlog", "slow processing"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  },
+  {
+    "id": "scenario8",
+    "name": "外部依赖故障",
+    "description": "database-service 宕机",
+    "root_cause": "数据库进程崩溃",
+    "affected_services": ["database-service", "user-service", "order-service", "payment-service"],
+    "expected_diagnosis": "database-service 宕机导致所有依赖 DB 的服务都无法工作",
+    "difficulty": "hard",
+    "key_metrics": ["error_rate_percent"],
+    "key_logs": ["database connection failed", "connection refused"],
+    "time_range": ["2026-05-19T10:15:00Z", "2026-05-19T10:30:00Z"]
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "scenario_id": "scenario3",
+  "root_cause_service": "order-service",
+  "root_cause_type": "新版本部署引入内存泄漏，order-service v2.3.1 部署后内存使用率从 50% 飙升至 95%，触发频繁且长时间的 GC 停顿，导致请求延迟大幅增加",
+  "key_evidence": [
+    {
+      "type": "deployment_event",
+      "description": "order-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
+      "data": "timestamp=2026-05-19T10:15:00Z, service=order-service, version=v2.3.1"
+    },
+    {
+      "type": "alert",
+      "description": "部署后仅 30 秒，order-service 触发 critical 级别告警「内存泄漏开始」，随后 10:18:00 触发 warning 告警「GC 停顿增加」，告警信息直接点明了问题类型和连锁效应",
+      "data": "10:15:30 critical 内存泄漏开始, 10:18:00 warning GC停顿增加"
+    },
+    {
+      "type": "metrics",
+      "description": "order-service 的 memory_usage 在 10:15:00 从 50% 突变为 95%（接近满载），gc_time 从 50ms 突变为 500ms（10 倍增长），request_latency 从 100ms 突变为 2000ms（20 倍增长），三个指标同时恶化且持续未恢复",
+      "data": "memory_usage: 50% -> 95%, gc_time: 50ms -> 500ms (10x), request_latency: 100ms -> 2000ms (20x), 起始时间=10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00 和 10:17:00 order-service 连续报错「GC pause detected」，停顿时间从 500ms 递增到 600ms，说明内存压力持续加大，GC 越来越难以回收内存",
+      "data": "trace_201(10:16:00, GC pause 500ms, 总耗时1500ms), trace_202(10:17:00, GC pause 600ms, 总耗时2000ms)"
+    },
+    {
+      "type": "traces",
+      "description": "错误链路调用关系为 api-gateway → order-service，order-service 是 GC 停顿的直接发生点，api-gateway 因等待 order-service 响应而超时",
+      "data": "trace_201: api-gateway -> order-service (GC pause 500ms), trace_202: api-gateway -> order-service (GC pause 600ms)"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，order-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），order-service 运行完全正常，内存使用率稳定在 50%，GC 时间为 50ms，请求延迟为 100ms。部署完成后仅 30 秒（10:15:30），order-service 即触发 critical 级别告警「内存泄漏开始」。从指标数据看，10:15:00 这个时间点 memory_usage 从 50% 直接跳变为 95%，说明新版本代码存在严重的内存泄漏问题，大量对象被创建但未被释放。内存接近满载（95%）迫使 JVM 频繁触发 Full GC 试图回收内存，gc_time 从正常的 50ms 飙升至 500ms（10 倍），但由于泄漏的对象仍被引用无法回收，GC 效果有限，停顿时间还在递增（500ms → 600ms）。长时间的 GC 停顿直接阻塞了请求处理线程，导致 request_latency 从 100ms 飙升至 2000ms（20 倍）。从日志和链路追踪看，10:16:00 和 10:17:00 连续出现「GC pause detected」错误，调用链为 api-gateway → order-service，确认 order-service 是问题源头。综合以上证据，根因判断为：order-service v2.3.1 版本引入了内存泄漏缺陷，部署后内存快速耗尽，触发频繁长时间 GC 停顿，最终导致服务响应严重变慢。因果链为：部署 v2.3.1 → 内存泄漏 → 内存 95% → GC 停顿 500-600ms → 请求延迟 2000ms。"
+}

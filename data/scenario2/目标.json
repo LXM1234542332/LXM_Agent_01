@@ -1,0 +1,38 @@
+{
+  "scenario_id": "scenario2",
+  "root_cause_service": "user-service",
+  "root_cause_type": "新版本部署引入数据库连接泄漏，user-service v2.3.1 部署后连接数从 36 暴涨至 150，连接池耗尽导致自身及依赖服务连锁故障",
+  "key_evidence": [
+    {
+      "type": "deployment_event",
+      "description": "user-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
+      "data": "timestamp=2026-05-19T10:15:00Z, service=user-service, version=v2.3.1"
+    },
+    {
+      "type": "alert",
+      "description": "部署后仅 30 秒，user-service 触发 critical 级别告警「连接泄漏开始」，告警信息直接点明了问题类型",
+      "data": "timestamp=2026-05-19T10:15:30Z, severity=critical, message=连接泄漏开始"
+    },
+    {
+      "type": "cascading_alert",
+      "description": "10:18:00 order-service 触发 warning 告警「订单服务变慢」，时间上晚于 user-service 的 critical 告警 2.5 分钟，印证了故障从 user-service 向 order-service 扩散的传播路径",
+      "data": "timestamp=2026-05-19T10:18:00Z, service=order-service, severity=warning, message=订单服务变慢"
+    },
+    {
+      "type": "metrics",
+      "description": "user-service 的 db_connections 在 10:15:00 从 36 突变为 150（4.17 倍增长），error_rate 从 0.1% 突变为 12%（120 倍增长），持续未恢复。连接数暴涨且不释放是连接泄漏的典型特征",
+      "data": "db_connections: 36 -> 150 (4.17x), error_rate: 0.1% -> 12% (120x), 起始时间=10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00 user-service 报错「Connection timeout: Failed to acquire connection from pool」，说明连接池已被耗尽无法获取新连接；10:17:00 order-service 报错「Database connection pool exhausted」，说明连接池耗尽已扩散影响到其他服务",
+      "data": "trace_101(10:16:00, user-service, 3000ms, Connection timeout), trace_102(10:17:00, order-service, 2500ms, pool exhausted)"
+    },
+    {
+      "type": "traces",
+      "description": "trace_101 调用链为 api-gateway → user-service，user-service 是第一个报连接池错误的服务；trace_102 调用链为 api-gateway → order-service，order-service 随后也报连接池耗尽",
+      "data": "trace_101: api-gateway -> user-service (Connection timeout), trace_102: api-gateway -> order-service (pool exhausted)"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，user-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），三个服务（user-service、order-service、database-service）运行完全正常，db_connections 稳定在 36，error_rate 为 0.1%。部署完成后仅 30 秒（10:15:30），user-service 即触发 critical 级别告警「连接泄漏开始」。从指标数据看，10:15:00 这个时间点所有服务的 db_connections 同时从 36 跳变为 150，error_rate 从 0.1% 跳变为 12%。连接数暴涨 4.17 倍且持续不下降，是数据库连接泄漏的典型表现——新版本代码在使用完数据库连接后未正确归还连接池。从日志看，10:16:00 user-service 首先报出「Connection timeout: Failed to acquire connection from pool」，说明连接池已被泄漏的连接占满，新请求无法获取连接；随后 10:17:00 order-service 也报「Database connection pool exhausted」，说明共享数据库的连接池被 user-service 的泄漏耗尽，影响扩散到了 order-service。从链路追踪看，trace_101 中 user-service 是第一个出错的业务服务，trace_102 中 order-service 是被连锁影响的服务。综合以上证据，根因判断为：user-service v2.3.1 版本引入了数据库连接泄漏缺陷，部署后连接池快速耗尽，导致自身无法处理请求，并通过共享数据库连接池扩散影响到 order-service。部署时间与告警时间的强相关性（仅差 30 秒）、告警信息直接标注「连接泄漏」、db_connections 的断崖式暴涨且不回落、以及错误日志中明确的连接池耗尽信息，四者互相印证，形成完整证据链。"
+}

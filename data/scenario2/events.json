@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "event_type": "deployment",
+    "service": "user-service",
+    "version": "v2.3.1",
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:30Z",
+    "event_type": "alert",
+    "service": "user-service",
+    "severity": "critical",
+    "message": "连接泄漏开始"
+  },
+  {
+    "timestamp": "2026-05-19T10:18:00Z",
+    "event_type": "alert",
+    "service": "order-service",
+    "severity": "warning",
+    "message": "订单服务变慢"
+  }
+]

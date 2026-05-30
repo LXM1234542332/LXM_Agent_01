@@ -1,0 +1,33 @@
+{
+  "scenario_id": "scenario8",
+  "root_cause_service": "database-service",
+  "root_cause_type": "数据库进程崩溃，database-service 进程异常终止导致所有连接被拒绝，依赖数据库的全部上游服务（user-service、order-service、payment-service）同时完全不可用",
+  "key_evidence": [
+    {
+      "type": "alert",
+      "description": "10:15:00 database-service 触发 critical 级别告警「数据库进程崩溃」，随后 10:15:30 三个上游服务（user-service、order-service、payment-service）同时触发 warning 告警「连接失败」",
+      "data": "10:15:00 critical 数据库进程崩溃(database-service), 10:15:30 warning 连接失败(user-service, order-service, payment-service 同时)"
+    },
+    {
+      "type": "metrics",
+      "description": "10:15:00 所有 4 个服务的 error_rate 同时从 0.1% 跳变为 100%，request_latency 从 100ms 跳变为 5000ms。全部服务在同一时刻完全不可用，说明存在共同的单点故障",
+      "data": "database-service/user-service/order-service/payment-service: error_rate 0.1% -> 100%, latency 100ms -> 5000ms, 同时发生于10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00-10:17:00 出现 3 条错误 trace，错误信息全部为「Database connection refused」，涉及所有上游服务通过不同路径访问 database-service 均被拒绝",
+      "data": "trace_701(api-gateway->user-service->database-service), trace_702(api-gateway->order-service->database-service), trace_703(api-gateway->payment-service->database-service), 全部 Database connection refused"
+    },
+    {
+      "type": "traces",
+      "description": "3 条错误链路的调用链末端都是 database-service（span_3），说明 database-service 是所有错误的源头。不同上游服务独立尝试连接数据库均失败，确认数据库进程已完全不可用",
+      "data": "trace_701/702/703: 末端均为 database-service, error=Database connection refused, 5000ms"
+    },
+    {
+      "type": "no_deployment",
+      "description": "本场景没有部署事件，排除了新版本代码引入缺陷的可能性。数据库进程崩溃属于基础设施层面的故障，具体崩溃原因（OOM、段错误、硬件故障等）在现有数据中无法确定",
+      "data": "events.json 中无 deployment 类型事件"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，database-service 触发 critical 级别告警「数据库进程崩溃」。本场景没有任何部署事件，属于数据库进程异常终止的基础设施故障。从告警时序看，database-service 崩溃（10:15:00）后仅 30 秒，三个依赖数据库的上游服务（user-service、order-service、payment-service）同时触发「连接失败」告警，说明数据库是这三个服务的共同依赖，构成单点故障。从指标数据看，10:15:00 这个时间点所有 4 个服务的 error_rate 同时从 0.1% 跳变为 100%，request_latency 从 100ms 跳变为 5000ms——这意味着整个系统完全瘫痪，没有任何请求能够成功处理。从日志和链路追踪看，10:16:00-10:17:00 出现 3 条错误 trace，分别经由 user-service、order-service、payment-service 三条不同路径访问 database-service，全部返回「Database connection refused」错误。调用链末端都是 database-service（span_3），确认数据库进程已完全停止服务，拒绝所有连接请求。综合以上证据，根因判断为：database-service 进程在 10:15:00 发生崩溃，导致所有数据库连接被拒绝，进而引起依赖数据库的全部上游服务（user-service、order-service、payment-service）连锁故障，整个系统 error_rate 达到 100%。因果链为：数据库进程崩溃 → 连接被拒绝 → 所有上游服务 100% 失败。需要注意的是，数据库进程崩溃的具体原因（可能是 OOM Kill、段错误、硬件故障、内核 bug 等），仅凭现有数据无法确定。"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "event_type": "alert",
+    "service": "database-service",
+    "severity": "critical",
+    "message": "磁盘空间不足"
+  },
+  {
+    "timestamp": "2026-05-19T10:16:00Z",
+    "event_type": "alert",
+    "service": "user-service",
+    "severity": "warning",
+    "message": "数据库写入失败"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "api-gateway": ["user-service", "order-service", "payment-service"],
+  "user-service": ["database-service", "cache-service"],
+  "order-service": ["payment-service", "database-service"],
+  "payment-service": ["database-service"],
+  "database-service": [],
+  "cache-service": [],
+  "notification-service": ["database-service"],
+  "search-service": ["database-service"]
+}

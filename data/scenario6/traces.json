@@ -1,0 +1,144 @@
+[
+  {
+    "trace_id": "trace_normal_000",
+    "start_time": "2026-05-19T10:00:00Z",
+    "end_time": "2026-05-19T10:00:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "database-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:00:00Z",
+        "end_time": "2026-05-19T10:00:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_001",
+    "start_time": "2026-05-19T10:02:00Z",
+    "end_time": "2026-05-19T10:02:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "database-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:02:00Z",
+        "end_time": "2026-05-19T10:02:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_002",
+    "start_time": "2026-05-19T10:04:00Z",
+    "end_time": "2026-05-19T10:04:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "database-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:04:00Z",
+        "end_time": "2026-05-19T10:04:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_003",
+    "start_time": "2026-05-19T10:06:00Z",
+    "end_time": "2026-05-19T10:06:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "database-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:06:00Z",
+        "end_time": "2026-05-19T10:06:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_004",
+    "start_time": "2026-05-19T10:08:00Z",
+    "end_time": "2026-05-19T10:08:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "database-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:08:00Z",
+        "end_time": "2026-05-19T10:08:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_501",
+    "start_time": "2026-05-19T10:16:00+00:00Z",
+    "end_time": "2026-05-19T10:16:02+00:00Z",
+    "total_duration_ms": 2000,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:16:00+00:00Z",
+        "end_time": "2026-05-19T10:16:00.666000+00:00Z",
+        "duration_ms": 666,
+        "status": "error",
+        "error_message": "Disk full: write failed"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:16:00+00:00Z",
+        "end_time": "2026-05-19T10:16:00.666000+00:00Z",
+        "duration_ms": 666,
+        "status": "error",
+        "error_message": "Disk full: write failed"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "database-service",
+        "operation": "operation_2",
+        "start_time": "2026-05-19T10:16:00+00:00Z",
+        "end_time": "2026-05-19T10:16:00.666000+00:00Z",
+        "duration_ms": 666,
+        "status": "error",
+        "error_message": "Disk full: write failed"
+      }
+    ]
+  }
+]

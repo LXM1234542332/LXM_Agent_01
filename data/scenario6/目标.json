@@ -1,0 +1,33 @@
+{
+  "scenario_id": "scenario6",
+  "root_cause_service": "database-service",
+  "root_cause_type": "磁盘空间耗尽，database-service 磁盘使用率从 70% 突增至 98%，导致所有写操作失败，错误率达到 100%",
+  "key_evidence": [
+    {
+      "type": "alert",
+      "description": "10:15:00 database-service 触发 critical 级别告警「磁盘空间不足」，随后 10:16:00 user-service 触发 warning 告警「数据库写入失败」，说明问题从 database-service 扩散到上游",
+      "data": "10:15:00 critical 磁盘空间不足(database-service), 10:16:00 warning 数据库写入失败(user-service)"
+    },
+    {
+      "type": "metrics",
+      "description": "database-service 的 disk_usage_percent 在 10:15:00 从 70% 突变为 98%（接近满载），error_rate_percent 从 0.1% 突变为 100%（所有请求全部失败），持续未恢复",
+      "data": "disk_usage: 70% -> 98%, error_rate: 0.1% -> 100%, 起始时间=10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00 三个服务（api-gateway、user-service、database-service）同时报错「Disk full: write failed」，错误信息明确指出磁盘已满导致写入失败",
+      "data": "trace_501(10:16:00, Disk full: write failed, 涉及3个服务, 2000ms)"
+    },
+    {
+      "type": "traces",
+      "description": "trace_501 调用链为 api-gateway → user-service → database-service，database-service 是调用链末端，是磁盘写入失败的直接发生点，错误向上游传播",
+      "data": "trace_501: api-gateway(span_1) -> user-service(span_2) -> database-service(span_3), 全部 Disk full: write failed"
+    },
+    {
+      "type": "no_deployment",
+      "description": "本场景没有部署事件，排除了新版本代码引入缺陷的可能性。磁盘空间耗尽属于基础设施层面的资源耗尽问题，可能原因包括：日志积累、数据增长、binlog/WAL 文件膨胀等",
+      "data": "events.json 中无 deployment 类型事件"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，database-service 触发 critical 级别告警「磁盘空间不足」。本场景没有部署事件作为触发因素，属于基础设施层面的资源耗尽问题。从指标数据看，10:15:00 这个时间点 disk_usage_percent 从 70% 突变为 98%，说明磁盘空间被快速消耗殆尽（可能原因包括日志文件积累、数据库 binlog/WAL 文件膨胀、大批量数据写入等，但具体原因在现有数据中无法确定）。磁盘满载直接导致数据库无法执行任何写操作，error_rate 从 0.1% 飙升至 100%——这意味着所有请求全部失败，服务完全不可用。从日志和链路追踪看，10:16:00 出现「Disk full: write failed」错误，调用链为 api-gateway → user-service → database-service，database-service 作为调用链末端是错误的源头，写入失败通过调用链向上传播，依次影响了 user-service（触发「数据库写入失败」告警）和 api-gateway。综合以上证据，根因判断为：database-service 所在节点磁盘空间耗尽（98%），导致所有数据库写操作失败，进而引起依赖数据库的上游服务（user-service、api-gateway）连锁故障。因果链为：磁盘空间耗尽（98%）→ 写操作失败 → error_rate 100% → 上游服务连锁受影响。需要注意的是，磁盘从 70% 跳到 98% 的具体原因（是突发的大量写入还是长期积累达到临界点），仅凭现有数据无法确定。"
+}

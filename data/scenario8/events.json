@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "event_type": "alert",
+    "service": "database-service",
+    "severity": "critical",
+    "message": "数据库进程崩溃"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:30Z",
+    "event_type": "alert",
+    "service": "user-service",
+    "severity": "warning",
+    "message": "连接失败"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:30Z",
+    "event_type": "alert",
+    "service": "order-service",
+    "severity": "warning",
+    "message": "连接失败"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:30Z",
+    "event_type": "alert",
+    "service": "payment-service",
+    "severity": "warning",
+    "message": "连接失败"
+  }
+]

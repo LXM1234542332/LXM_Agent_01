@@ -1,0 +1,283 @@
+[
+  {
+    "trace_id": "trace_normal_000",
+    "start_time": "2026-05-19T10:00:00Z",
+    "end_time": "2026-05-19T10:00:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "payment-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:00:00Z",
+        "end_time": "2026-05-19T10:00:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:00:00Z",
+        "end_time": "2026-05-19T10:00:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_001",
+    "start_time": "2026-05-19T10:02:00Z",
+    "end_time": "2026-05-19T10:02:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "payment-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:02:00Z",
+        "end_time": "2026-05-19T10:02:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:02:00Z",
+        "end_time": "2026-05-19T10:02:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_002",
+    "start_time": "2026-05-19T10:04:00Z",
+    "end_time": "2026-05-19T10:04:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "payment-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:04:00Z",
+        "end_time": "2026-05-19T10:04:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:04:00Z",
+        "end_time": "2026-05-19T10:04:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_003",
+    "start_time": "2026-05-19T10:06:00Z",
+    "end_time": "2026-05-19T10:06:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "payment-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:06:00Z",
+        "end_time": "2026-05-19T10:06:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:06:00Z",
+        "end_time": "2026-05-19T10:06:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_004",
+    "start_time": "2026-05-19T10:08:00Z",
+    "end_time": "2026-05-19T10:08:00.200000Z",
+    "total_duration_ms": 200,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "payment-service",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:08:00Z",
+        "end_time": "2026-05-19T10:08:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:08:00Z",
+        "end_time": "2026-05-19T10:08:00.100000Z",
+        "duration_ms": 100,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_001",
+    "start_time": "2026-05-19T10:16:00+00:00Z",
+    "end_time": "2026-05-19T10:16:05+00:00Z",
+    "total_duration_ms": 5000,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:16:00+00:00Z",
+        "end_time": "2026-05-19T10:16:01.666000+00:00Z",
+        "duration_ms": 1666,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:16:00+00:00Z",
+        "end_time": "2026-05-19T10:16:01.666000+00:00Z",
+        "duration_ms": 1666,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "operation_2",
+        "start_time": "2026-05-19T10:16:00+00:00Z",
+        "end_time": "2026-05-19T10:16:01.666000+00:00Z",
+        "duration_ms": 1666,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_002",
+    "start_time": "2026-05-19T10:17:00+00:00Z",
+    "end_time": "2026-05-19T10:17:05.100000+00:00Z",
+    "total_duration_ms": 5100,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:17:00+00:00Z",
+        "end_time": "2026-05-19T10:17:01.700000+00:00Z",
+        "duration_ms": 1700,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:17:00+00:00Z",
+        "end_time": "2026-05-19T10:17:01.700000+00:00Z",
+        "duration_ms": 1700,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "operation_2",
+        "start_time": "2026-05-19T10:17:00+00:00Z",
+        "end_time": "2026-05-19T10:17:01.700000+00:00Z",
+        "duration_ms": 1700,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_003",
+    "start_time": "2026-05-19T10:18:00+00:00Z",
+    "end_time": "2026-05-19T10:18:05.200000+00:00Z",
+    "total_duration_ms": 5200,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "operation_0",
+        "start_time": "2026-05-19T10:18:00+00:00Z",
+        "end_time": "2026-05-19T10:18:01.733000+00:00Z",
+        "duration_ms": 1733,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "operation_1",
+        "start_time": "2026-05-19T10:18:00+00:00Z",
+        "end_time": "2026-05-19T10:18:01.733000+00:00Z",
+        "duration_ms": 1733,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "operation_2",
+        "start_time": "2026-05-19T10:18:00+00:00Z",
+        "end_time": "2026-05-19T10:18:01.733000+00:00Z",
+        "duration_ms": 1733,
+        "status": "error",
+        "error_message": "Payment service timeout"
+      }
+    ]
+  }
+]

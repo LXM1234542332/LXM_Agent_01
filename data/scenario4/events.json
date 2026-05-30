@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-05-19T10:15:00Z",
+    "event_type": "deployment",
+    "service": "search-service",
+    "version": "v2.3.1",
+    "status": "success"
+  },
+  {
+    "timestamp": "2026-05-19T10:15:30Z",
+    "event_type": "alert",
+    "service": "search-service",
+    "severity": "critical",
+    "message": "CPU 使用率上升"
+  }
+]

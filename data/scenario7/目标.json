@@ -1,0 +1,33 @@
+{
+  "scenario_id": "scenario7",
+  "root_cause_service": "notification-service",
+  "root_cause_type": "新版本部署导致消息队列消费能力丧失，notification-service v2.3.1 部署后队列深度从 100 暴涨至 8000，消息严重堆积",
+  "key_evidence": [
+    {
+      "type": "deployment_event",
+      "description": "notification-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
+      "data": "timestamp=2026-05-19T10:15:00Z, service=notification-service, version=v2.3.1"
+    },
+    {
+      "type": "alert",
+      "description": "部署后仅 30 秒，notification-service 触发 critical 级别告警「队列堆积开始」",
+      "data": "timestamp=2026-05-19T10:15:30Z, severity=critical, message=队列堆积开始"
+    },
+    {
+      "type": "metrics",
+      "description": "notification-service 的 queue_depth 在 10:15:00 从 100 暴涨至 8000（80 倍增长），memory_usage 从 50% 升至 85%。队列深度 80 倍增长说明新版本代码导致消息消费能力严重下降或完全停止，消息持续入队但无法被处理",
+      "data": "queue_depth: 100 -> 8000 (80x), memory_usage: 50% -> 85%, 起始时间=10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "10:16:00 notification-service 报错「Queue backlog: 8000 pending tasks」，请求耗时 5000ms，确认队列已严重堆积且影响了请求处理",
+      "data": "trace_601(10:16:00, notification-service, 5000ms, Queue backlog: 8000 pending tasks)"
+    },
+    {
+      "type": "traces",
+      "description": "trace_601 调用链为 api-gateway → notification-service，notification-service 是队列堆积的直接发生点",
+      "data": "trace_601: api-gateway -> notification-service (Queue backlog: 8000 pending tasks, 5000ms)"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，notification-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），notification-service 运行正常，队列深度稳定在 100（说明消息生产和消费速率平衡），内存使用率为 50%。部署完成后仅 30 秒（10:15:30），notification-service 即触发 critical 级别告警「队列堆积开始」。从指标数据看，10:15:00 这个时间点 queue_depth 从 100 暴涨至 8000（80 倍增长），说明新版本代码导致消息消费能力严重下降或完全丧失——消息持续入队但无法被及时处理。同时 memory_usage 从 50% 升至 85%，这是队列堆积的次生效应：大量未处理的消息积压在内存中。从日志和链路追踪看，10:16:00 出现「Queue backlog: 8000 pending tasks」错误，请求耗时 5000ms（正常为 100ms，50 倍增长），调用链为 api-gateway → notification-service，确认 notification-service 是问题源头。综合以上证据，根因判断为：notification-service v2.3.1 版本引入了导致消息队列消费能力丧失的缺陷（可能是消费者线程被阻塞、消费逻辑异常、或队列连接配置错误），部署后消息快速堆积至 8000 条，同时引起内存压力和请求延迟大幅增加。因果链为：部署 v2.3.1 → 消费能力丧失 → 队列堆积 8000 → 内存升至 85% → 请求延迟 5000ms。"
+}
