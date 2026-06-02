@@ -6,11 +6,13 @@ from datetime import datetime
 from typing import Dict, Any, List
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_qwq import ChatQwen
+from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 from loguru import logger
+import os
 
 from app.config import config
+from app.core.llm_factory import llm_factory
 from app.agent.mcp_client import get_mcp_client_with_retry
 from .state import PlanExecuteState
 from .prompts import REPLANNER_SYSTEM_PROMPT, REPORT_SYSTEM_PROMPT
@@ -47,10 +49,9 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
 
     logger.info(f"已执行步骤数: {len(past_steps)}, 剩余步骤数: {len(plan)}")
 
-    llm = ChatQwen(
-        model=config.rag_model,
-        api_key=config.dashscope_api_key,
-        temperature=0
+    llm = llm_factory.create_chat_model(
+        temperature=0,
+        provider=os.getenv("LLM_PROVIDER", "dashscope")
     )
 
     # 超出最大步骤数，强制生成报告
@@ -81,7 +82,7 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
     replanner_chain = ChatPromptTemplate.from_messages([
         ("system", REPLANNER_SYSTEM_PROMPT),
         ("placeholder", "{messages}"),
-    ]) | llm_with_tools.with_structured_output(Act)
+    ]) | llm_with_tools.with_structured_output(Act, method="json_mode")
 
     try:
         act = await replanner_chain.ainvoke({
@@ -123,7 +124,7 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
         return {}
 
 
-async def _generate_report(state: PlanExecuteState, llm: ChatQwen, forced: bool) -> Dict[str, Any]:
+async def _generate_report(state: PlanExecuteState, llm: ChatOpenAI, forced: bool) -> Dict[str, Any]:
     """生成最终诊断报告"""
     logger.info(f"生成最终诊断报告（强制结束: {forced}）")
 

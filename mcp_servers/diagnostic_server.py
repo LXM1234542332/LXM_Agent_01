@@ -27,6 +27,10 @@ os.chdir(project_root)
 
 from diagnostic_tools import DiagnosticDataTools
 
+# 加载 .env 文件
+from dotenv import load_dotenv
+load_dotenv()
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
@@ -37,8 +41,15 @@ logger = logging.getLogger("Diagnostic_MCP_Server")
 # 创建 FastMCP 实例
 mcp = FastMCP("Diagnostic", host="127.0.0.1", port=8005)
 
-# 初始化诊断工具
-diagnostic_tools = DiagnosticDataTools()
+# 导入全局 diagnostic_tools 实例（而不是创建新的）
+import diagnostic_tools as dt_module
+
+# 从环境变量读取初始场景，默认为 scenario1
+initial_scenario = os.getenv('SCENARIO_ID', 'scenario1')
+diagnostic_tools = dt_module.diagnostic_tools
+diagnostic_tools.switch_scenario(initial_scenario)
+
+logger.info(f"MCP 服务器初始化完成，当前场景: {initial_scenario}")
 
 
 def log_tool_call(func):
@@ -87,6 +98,58 @@ def log_tool_call(func):
             raise
 
     return wrapper
+
+
+# ============================================================================
+# 场景管理工具
+# ============================================================================
+
+@mcp.tool()
+@log_tool_call
+def set_scenario(scenario_id: str) -> Dict[str, Any]:
+    """设置当前诊断场景。
+
+    用于切换诊断的场景，确保后续工具调用使用正确的场景数据。
+
+    Args:
+        scenario_id: 场景ID，如 'scenario1', 'scenario2' 等
+
+    Returns:
+        Dict: 包含设置结果的字典
+            - status: 状态
+            - scenario_id: 设置的场景ID
+            - message: 提示信息
+    """
+    try:
+        diagnostic_tools.switch_scenario(scenario_id)
+        return {
+            "status": "success",
+            "scenario_id": scenario_id,
+            "message": f"已切换到场景: {scenario_id}"
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "scenario_id": scenario_id,
+            "message": f"切换场景失败: {str(e)}"
+        }
+
+
+@mcp.tool()
+@log_tool_call
+def get_current_scenario() -> Dict[str, Any]:
+    """获取当前诊断场景。
+
+    Returns:
+        Dict: 包含当前场景信息的字典
+            - status: 状态
+            - scenario_id: 当前场景ID
+    """
+    return {
+        "status": "success",
+        "scenario_id": diagnostic_tools.scenario_id
+    }
+
 
 
 # ============================================================================

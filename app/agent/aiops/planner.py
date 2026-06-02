@@ -6,11 +6,12 @@ Planner 节点：制定执行计划
 from textwrap import dedent
 from typing import Dict, Any, List
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_qwq import ChatQwen
 from pydantic import BaseModel, Field
 from loguru import logger
+import os
 
 from app.config import config
+from app.core.llm_factory import llm_factory
 from app.agent.mcp_client import get_mcp_client_with_retry
 from .state import PlanExecuteState
 from .utils import format_tools_description
@@ -54,15 +55,14 @@ async def planner(state: PlanExecuteState) -> Dict[str, Any]:
         logger.info(f"system: {PLANNER_SYSTEM_PROMPT} ")
         logger.info("placeholder: {messages}")
 
-        llm = ChatQwen(
-            model=config.rag_model,
-            api_key=config.dashscope_api_key,
-            temperature=0
+        llm = llm_factory.create_chat_model(
+            temperature=0,
+            provider=os.getenv("LLM_PROVIDER", "dashscope")
         )
-        logger.info(f"llm加载完毕，模型: {config.rag_model}")
+        logger.info(f"llm加载完毕，提供商: {os.getenv('LLM_PROVIDER', 'dashscope')}")
 
 
-        planner_chain = prompt | llm.with_structured_output(Plan, include_raw=True)
+        planner_chain = prompt | llm.with_structured_output(Plan, method="json_mode", include_raw=True)
 
         raw_result = await planner_chain.ainvoke({
             "messages": [("user", input_text)],

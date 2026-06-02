@@ -5,11 +5,12 @@ Executor 节点：执行计划中的单个步骤
 
 from typing import Dict, Any
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_qwq import ChatQwen
 from langgraph.prebuilt import ToolNode
 from loguru import logger
+import os
 
 from app.config import config
+from app.core.llm_factory import llm_factory
 from app.agent.mcp_client import get_mcp_client_with_retry
 from .state import PlanExecuteState
 from .prompts import EXECUTOR_SYSTEM_PROMPT
@@ -43,10 +44,9 @@ async def executor(state: PlanExecuteState) -> Dict[str, Any]:
         mcp_tools = await mcp_client.get_tools()
         logger.info(f"获取到 {len(mcp_tools)} 个 MCP 工具")
 
-        llm = ChatQwen(
-            model=config.rag_model,
-            api_key=config.dashscope_api_key,
-            temperature=0
+        llm = llm_factory.create_chat_model(
+            temperature=0,
+            provider=os.getenv("LLM_PROVIDER", "dashscope")
         )
         llm_with_tools = llm.bind_tools(mcp_tools)
         tool_node = ToolNode(mcp_tools)

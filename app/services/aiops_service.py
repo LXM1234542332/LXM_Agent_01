@@ -111,7 +111,8 @@ class AIOpsService:
     async def execute(
         self,
         user_input: str,
-        session_id: str = "default"
+        session_id: str = "default",
+        scenario_id: str = ""
     ) -> AsyncGenerator[Dict[str, Any], None]:
         """
         执行 Plan-Execute-Replan 流程
@@ -119,16 +120,50 @@ class AIOpsService:
         Args:
             user_input: 用户的任务描述
             session_id: 会话ID
+            scenario_id: 场景ID（可选）
 
         Yields:
             Dict[str, Any]: 流式事件
         """
-        logger.info(f"[会话 {session_id}] 开始执行任务: {user_input}")
+        logger.info(f"[会话 {session_id}] 开始执行任务: {user_input}" + (f"，场景: {scenario_id}" if scenario_id else ""))
 
         try:
+            # 如果指定了场景ID，先初始化场景数据
+            if scenario_id:
+                logger.info(f"[会话 {session_id}] 初始化场景: {scenario_id}")
+                try:
+                    # 第一步：修改本地的全局 diagnostic_tools 实例
+                    import sys
+                    from pathlib import Path
+
+                    project_root = Path(__file__).parent.parent.parent
+                    if str(project_root) not in sys.path:
+                        sys.path.insert(0, str(project_root))
+
+                    import diagnostic_tools as dt_module
+                    if hasattr(dt_module, 'diagnostic_tools'):
+                        dt_module.diagnostic_tools.switch_scenario(scenario_id)
+                        logger.info(f"[会话 {session_id}] 本地场景初始化完成: {scenario_id}")
+
+                    # 第二步：通过 MCP 调用 set_scenario 工具修改 MCP 服务器中的实例
+                    from app.agent.mcp_client import get_mcp_client_with_retry
+                    try:
+                        mcp_client = await get_mcp_client_with_retry()
+                        async with mcp_client.session('diagnostic') as session:
+                            result = await session.call_tool('set_scenario', {'scenario_id': scenario_id})
+                        logger.info(f"[会话 {session_id}] MCP 服务器场景初始化完成: {result}")
+                    except Exception as e:
+                        logger.warning(f"[会话 {session_id}] MCP 服务器场景初始化失败: {e}")
+                        # 继续执行，不中断流程
+
+                except Exception as e:
+                    logger.error(f"[会话 {session_id}] 场景初始化失败: {e}")
+                    # 继续执行，不中断流程
+
             # 初始化状态
             initial_state: PlanExecuteState = {
                 "input": user_input,
+                "scenario_id": scenario_id,
                 "plan": [],
                 "past_steps": [],
                 "response": ""
@@ -204,7 +239,11 @@ class AIOpsService:
         # 诊断请求：简洁描述任务，由 Planner 自行制定计划
         aiops_task = "诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告"
 
-        async for event in self.execute(aiops_task, session_id):
+        # 如果没有传 scenario_id，从环境变量读取
+        import os
+        scenario_id = scenario_id or os.getenv('SCENARIO_ID', 'scenario1')
+
+        async for event in self.execute(aiops_task, session_id, scenario_id):
             # 转换事件格式以兼容旧的 API
             if event.get("type") == "complete":
                 report = event.get("response", "")

@@ -9,6 +9,9 @@ import os
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # 使用相对于本文件的路径，兼容 Windows 和 WSL
 DATA_DIR = str(Path(__file__).parent / "data")
@@ -727,3 +730,11 @@ if __name__ == "__main__":
     print("\n" + "=" * 80)
     print("工具测试完成")
     print("=" * 80)
+
+
+# ============================================================================
+# 全局实例（供 MCP 服务器和 execute() 方法使用）
+# ============================================================================
+
+# 创建全局实例，从环境变量读取初始场景
+diagnostic_tools = DiagnosticDataTools(scenario_id=os.getenv('SCENARIO_ID', 'scenario1'))
