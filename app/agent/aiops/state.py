@@ -3,25 +3,44 @@
 基于 LangGraph 官方教程实现
 """
 
-from typing import List, TypedDict, Annotated
+from typing import List, TypedDict, Annotated, Dict, Any
 import operator
+
+
+class WorkingMemory(TypedDict, total=False):
+    """锚点参数：全程稳定，由 Triage 节点初始化"""
+    alert_first_trigger_time: str   # 最早告警触发时间（来自 get_alerts）
+    analysis_start_time: str        # 查询窗口开始 = alert_first_trigger_time - 15min
+    analysis_end_time: str          # 查询窗口结束 = 当前时间
+    scenario_id: str                # 当前诊断场景
+    alert_count: int                # 告警总数
+    highest_severity: str           # 最高告警级别 critical/warning/info
+
+
+class ExactValuePool(TypedDict, total=False):
+    """精确值池：全局累积，解决 LLM 无法精确复现字符串的问题"""
+    known_services: List[str]
+    known_metric_names: List[str]
+    known_trace_ids: List[str]
+    known_event_types: List[str]
+    known_severities: List[str]
+    known_timestamps: List[str]     # 保留最近 10 个
+
+
+class StepRecord(TypedDict):
+    """执行步骤记录：三元组"""
+    step: str           # 步骤描述
+    raw_result: str     # 工具原始返回（完整保留，供最终报告用）
+    summary: str        # LLM 生成的分层去噪摘要（供 Executor 上下文注入用）
 
 
 class PlanExecuteState(TypedDict):
     """Plan-Execute-Replan 状态"""
-
-    # 用户输入（任务描述）
     input: str
-
-    # 场景ID（用于多场景诊断）
     scenario_id: str
-
-    # 执行计划（步骤列表）
     plan: List[str]
-
-    # 已执行的步骤历史
-    # 使用 operator.add 实现追加式更新（而非覆盖）
-    past_steps: Annotated[List[tuple], operator.add]
-
-    # 最终响应/报告
+    past_steps: Annotated[List[StepRecord], operator.add]
+    working_memory: WorkingMemory
+    exact_value_pool: ExactValuePool
+    triage_results: Dict[str, Any]   # Triage 阶段两个工具的原始结果，供 Planner 使用
     response: str

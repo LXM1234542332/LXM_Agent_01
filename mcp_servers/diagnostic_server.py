@@ -461,6 +461,72 @@ def get_deployment_events(limit: int = 10) -> Dict[str, Any]:
 
 
 # ============================================================================
+# 链路追踪工具
+# ============================================================================
+
+@mcp.tool()
+@log_tool_call
+def get_slow_traces(threshold_ms: int, limit: int = 10) -> Dict[str, Any]:
+    """获取超过阈值的慢链路。
+
+    用于发现响应时间过长的请求链路。
+
+    Args:
+        threshold_ms: 慢链路阈值（毫秒），超过此值的链路才会返回
+        limit: 返回的最大链路数，默认 10
+
+    Returns:
+        Dict: 包含慢链路的字典
+            - status: 状态
+            - count: 链路数
+            - threshold_ms: 阈值
+            - data: 链路列表
+    """
+    return diagnostic_tools.get_slow_traces(threshold_ms=threshold_ms, limit=limit)
+
+
+@mcp.tool()
+@log_tool_call
+def get_trace_details(trace_id: str) -> Dict[str, Any]:
+    """获取链路的详细信息。
+
+    用于深入分析特定请求的完整调用链路。
+
+    Args:
+        trace_id: 链路ID
+
+    Returns:
+        Dict: 包含链路详情的字典
+            - status: 状态
+            - trace_id: 链路ID
+            - spans: 链路中各 span 的详细信息
+            - data: 链路原始数据
+    """
+    return diagnostic_tools.get_trace_details(trace_id=trace_id)
+
+
+@mcp.tool()
+@log_tool_call
+def get_service_dependencies(service: str) -> Dict[str, Any]:
+    """获取服务的依赖关系。
+
+    用于了解服务的上下游依赖，辅助影响面分析。
+
+    Args:
+        service: 服务名称，如 'payment-service'
+
+    Returns:
+        Dict: 包含依赖关系的字典
+            - status: 状态
+            - service: 查询的服务名
+            - upstream: 上游依赖服务列表
+            - downstream: 下游依赖服务列表
+            - count: 依赖数量
+    """
+    return diagnostic_tools.get_service_dependencies(service=service)
+
+
+# ============================================================================
 # 时间工具
 # ============================================================================
 
@@ -492,6 +558,7 @@ def get_current_time(timezone: str = "Asia/Shanghai") -> str:
 if __name__ == "__main__":
     logger.info("启动诊断工具 MCP Server...")
     logger.info(f"服务器名称: {mcp.name}")
-    logger.info(f"可用工具数: 12")
+    tool_count = len([r for r in mcp._tool_manager._tools.values()])
+    logger.info(f"可用工具数: {tool_count}")
 
     mcp.run(transport="streamable-http")

@@ -9,9 +9,11 @@ from langgraph.graph import StateGraph, END
 from loguru import logger
 
 from app.agent.aiops import PlanExecuteState, planner, executor, replanner
+from app.agent.aiops.triage import triage
 
 
 # 节点名称常量
+NODE_TRIAGE = "triage"
 NODE_PLANNER = "planner"
 NODE_EXECUTOR = "executor"
 NODE_REPLANNER = "replanner"
@@ -64,14 +66,16 @@ class AIOpsService:
         workflow = StateGraph(PlanExecuteState)
 
         # 添加节点
+        workflow.add_node(NODE_TRIAGE, triage)        # 故障画像建立
         workflow.add_node(NODE_PLANNER, planner)      # 制定计划
-        workflow.add_node(NODE_EXECUTOR, executor)  # 执行步骤
+        workflow.add_node(NODE_EXECUTOR, executor)    # 执行步骤
         workflow.add_node(NODE_REPLANNER, replanner)  # 重新规划
 
         # 设置入口点
-        workflow.set_entry_point(NODE_PLANNER)
+        workflow.set_entry_point(NODE_TRIAGE)
 
         # 定义边
+        workflow.add_edge(NODE_TRIAGE, NODE_PLANNER)       # triage -> planner
         workflow.add_edge(NODE_PLANNER, NODE_EXECUTOR)     # planner -> executor
         workflow.add_edge(NODE_EXECUTOR, NODE_REPLANNER)   # executor -> replanner
 
@@ -166,6 +170,9 @@ class AIOpsService:
                 "scenario_id": scenario_id,
                 "plan": [],
                 "past_steps": [],
+                "working_memory": {},
+                "exact_value_pool": {},
+                "triage_results": {},
                 "response": ""
             }
 
@@ -188,7 +195,10 @@ class AIOpsService:
                     logger.info(f"节点 '{node_name}' 输出事件")
 
                     # 根据节点类型生成不同的事件
-                    if node_name == NODE_PLANNER:
+                    if node_name == NODE_TRIAGE:
+                        yield self._format_triage_event(node_output)
+
+                    elif node_name == NODE_PLANNER:
                         yield self._format_planner_event(node_output)
 
                     elif node_name == NODE_EXECUTOR:
@@ -269,6 +279,29 @@ class AIOpsService:
             else:
                 yield event
 
+    def _format_triage_event(self, state: Dict | None) -> Dict:
+        """格式化 Triage 节点事件"""
+        if not state:
+            return {
+                "type": "status",
+                "stage": "triage",
+                "message": "故障画像建立中"
+            }
+
+        working_memory = state.get("working_memory", {})
+        alert_count = working_memory.get("alert_count", 0)
+        highest_severity = working_memory.get("highest_severity", "unknown")
+
+        return {
+            "type": "triage",
+            "stage": "triage_complete",
+            "message": f"故障画像建立完成，发现 {alert_count} 个告警，最高级别：{highest_severity}",
+            "alert_count": alert_count,
+            "highest_severity": highest_severity,
+            "analysis_start_time": working_memory.get("analysis_start_time", ""),
+            "analysis_end_time": working_memory.get("analysis_end_time", ""),
+        }
+
     def _format_planner_event(self, state: Dict | None) -> Dict:
         """格式化 Planner 节点事件"""
         if not state:
@@ -300,7 +333,8 @@ class AIOpsService:
         past_steps = state.get("past_steps", [])
 
         if past_steps:
-            last_step, _ = past_steps[-1]
+            last_record = past_steps[-1]
+            last_step = last_record.get("step", "") if isinstance(last_record, dict) else ""
             return {
                 "type": "step_complete",
                 "stage": "step_executed",

@@ -515,7 +515,7 @@ class DiagnosticDataTools:
                 # 找出异常值
                 anomaly_points = []
                 for m in sorted(metrics, key=lambda x: x["timestamp"], reverse=True):
-                    if m["value"] > threshold:
+                    if m["value"] >= threshold:
                         anomaly_points.append({
                             "timestamp": m["timestamp"],
                             "value": m["value"]

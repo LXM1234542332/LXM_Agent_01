@@ -26,6 +26,9 @@ class Act(BaseModel):
     action: str = Field(
         description="下一步行动，必须是 'continue'、'replan'、'respond' 之一"
     )
+    reasoning: str = Field(
+        description="决策的推理过程和依据"
+    )
     new_steps: List[str] = Field(
         default_factory=list,
         description="当 action 为 'replan' 时，提供新的步骤列表替换剩余计划"
@@ -66,14 +69,17 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
 
     # 格式化已执行步骤摘要
     steps_summary = "\n".join([
-        f"步骤 {i+1}：{step}\n结果：{result[:400]}{'...' if len(result) > 400 else ''}"
-        for i, (step, result) in enumerate(past_steps)
+        f"步骤 {i+1}：{record.get('step', '')}\n结果：{record.get('summary', '')}"
+        for i, record in enumerate(past_steps)
     ])
 
     # 通过 bind_tools() 绑定工具（让 Replanner 知道有哪些工具可用于重新规划）
     try:
         mcp_client = await get_mcp_client_with_retry()
-        mcp_tools = await mcp_client.get_tools()
+        all_tools = await mcp_client.get_tools()
+        # 排除场景管理工具，与 Executor 保持一致
+        _EXCLUDED = {"set_scenario", "get_current_scenario"}
+        mcp_tools = [t for t in all_tools if t.name not in _EXCLUDED]
         llm_with_tools = llm.bind_tools(mcp_tools)
     except Exception as e:
         logger.warning(f"获取 MCP 工具失败: {e}，使用不绑定工具的 LLM")
@@ -95,9 +101,11 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
         logger.info(f"Replanner LLM 输出: {act}")
 
         action = act.action if isinstance(act, Act) else act.get("action", "continue")  # type: ignore
+        reasoning = act.reasoning if isinstance(act, Act) else act.get("reasoning", "")  # type: ignore
         new_steps = act.new_steps if isinstance(act, Act) else act.get("new_steps", [])  # type: ignore
 
         logger.info(f"Replanner 决策: {action}")
+        logger.info(f"决策推理: {reasoning}")
 
         if action == "respond":
             return await _generate_report(state, llm, forced=False)
@@ -133,8 +141,8 @@ async def _generate_report(state: PlanExecuteState, llm: ChatOpenAI, forced: boo
 
     # 格式化执行历史
     execution_history = "\n\n".join([
-        f"**步骤 {i+1}**：{step}\n**结果**：\n{result}"
-        for i, (step, result) in enumerate(past_steps)
+        f"**步骤 {i+1}**：{record.get('step', '')}\n**结果**：\n{record.get('summary', '')}"
+        for i, record in enumerate(past_steps)
     ])
 
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
