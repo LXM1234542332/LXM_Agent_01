@@ -4,21 +4,145 @@ Replanner 节点：根据已执行步骤的结果，决定继续、重新规划�
 
 from datetime import datetime
 from typing import Dict, Any, List
-from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 from loguru import logger
-import os
+import os, re
 
 from app.config import config
 from app.core.llm_factory import llm_factory
 from app.agent.mcp_client import get_mcp_client_with_retry
-from .state import PlanExecuteState
+from .state import PlanExecuteState, StepRecord
 from .prompts import REPLANNER_SYSTEM_PROMPT, REPORT_SYSTEM_PROMPT
 
 
-MAX_STEPS = 8  # 最大执行步骤数，超过后强制结束
+class RootCauseVerification:
+    """根因完整性检验"""
+
+    @staticmethod
+    def verify_before_respond(
+        execution_history: List[str], fault_categories: List[str], has_deployment: bool
+    ) -> Dict[str, Any]:
+        """
+        respond前必做的检查清单。
+
+        返回格式：
+        {
+            "missing_checks": ["未查询错误日志", ...],
+            "severity": "critical" | "warning" | "info",
+            "can_respond": bool,
+            "critical_missing": [...]
+        }
+        """
+        missing_checks = []
+        severity = "info"
+
+        # 1. 通用检查
+        if not any("logs" in step.lower() for step in execution_history):
+            missing_checks.append("未查询错误日志（关键！）")
+            severity = "critical"
+
+        if not any("deployment" in step.lower() for step in execution_history):
+            if has_deployment:
+                missing_checks.append("未查询部署事件（已有发版，必查！）")
+                severity = "critical"
+
+        if not any("metrics" in step.lower() for step in execution_history):
+            missing_checks.append("未查询详细指标时序")
+
+        # 2. JVM故障特殊检查
+        if "jvm" in fault_categories:
+            if not any("gc" in step.lower() for step in execution_history):
+                missing_checks.append("【JVM故障】未查询GC日志（必查！）")
+                severity = "critical"
+
+            if not any("heap" in step.lower() for step in execution_history):
+                missing_checks.append("【JVM故障】未分析heap增长曲线")
+
+            if not any(
+                "cache" in step.lower() or "session" in step.lower()
+                for step in execution_history
+            ):
+                missing_checks.append("【JVM故障】未检查缓存/session增长")
+
+            if not any("pool" in step.lower() for step in execution_history):
+                missing_checks.append("【JVM故障】未查询连接池状态")
+
+        # 3. 多服务故障特殊检查
+        service_error_keywords = ["error", "timeout", "5xx", "exception"]
+        if (
+            sum(
+                1
+                for c in fault_categories
+                if any(k in c.lower() for k in service_error_keywords)
+            )
+            >= 2
+        ):
+            if not any(
+                "upstream" in step.lower() or "depend" in step.lower()
+                for step in execution_history
+            ):
+                missing_checks.append(
+                    "【多服务故障】未确认上游-下游依赖关系"
+                )
+                severity = "critical"
+
+            if not any(
+                "propagat" in step.lower() for step in execution_history
+            ):
+                missing_checks.append("【多服务故障】未追踪故障传播链")
+
+        # 4. 版本关联检查
+        if has_deployment:
+            if not any(
+                "version" in step.lower() or "changelog" in step.lower()
+                for step in execution_history
+            ):
+                missing_checks.append("【发版关联】未检查新版本的关键改动")
+                severity = "critical"
+
+        return {
+            "missing_checks": missing_checks,
+            "severity": severity,
+            "can_respond": len(missing_checks) == 0,
+            "critical_missing": [c for c in missing_checks if "必查" in c],
+        }
+
+
+HARD_LIMIT = 20  # 兜底上限，防止极端情况的无限循环
+
+
+def _detect_loop(past_steps: List[StepRecord]) -> bool:
+    """
+    检测工具调用是否陷入循环。
+    判断逻辑：过去 WINDOW 步内，同一个工具+关键参数组合出现超过 REPEAT 次则认定为循环。
+    这比硬编码步数更准确——排除假设的多步查询不是循环，重复调用同一工具才是。
+    """
+    WINDOW = 6   # 检测窗口：看最近 6 步
+    REPEAT = 3   # 同一组合出现 3 次触发
+
+    recent = past_steps[-WINDOW:]
+    call_counts: Dict[str, int] = {}
+
+    for record in recent:
+        step = record.get("step", "")
+        # 从步骤描述里提取工具名作为去重 key
+        # 步骤格式通常是 "调用 get_logs_by_keyword(keyword=connection) - ..."
+        import re
+        match = re.search(r'(\w+)\(([^)]*)\)', step)
+        if match:
+            tool_name = match.group(1)
+            # 取第一个参数作为关键参数（区分 get_logs_by_keyword("connection") vs get_logs_by_keyword("timeout")）
+            first_param = match.group(2).split(",")[0].strip()
+            key = f"{tool_name}|{first_param}"
+        else:
+            key = step[:60]  # 无法解析时用步骤描述前60字符
+
+        call_counts[key] = call_counts.get(key, 0) + 1
+        if call_counts[key] >= REPEAT:
+            return True
+
+    return False
 
 
 class Act(BaseModel):
@@ -41,7 +165,7 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
 
     三种决策：
     - continue：继续执行 PlanList 中的下一个步骤
-    - replan：替换剩余计划，重新规划
+    - replan：替换剩余计划，重新规划（步骤数不受限制）
     - respond：结束诊断，生成最终报告
     """
     logger.info("=== Replanner：决策 ===")
@@ -57,15 +181,20 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
         provider=os.getenv("LLM_PROVIDER", "dashscope")
     )
 
-    # 超出最大步骤数，强制生成报告
-    if len(past_steps) >= MAX_STEPS:
-        logger.warning(f"已执行 {len(past_steps)} 步，达到上限 {MAX_STEPS}，强制生成报告")
-        return await _generate_report(state, llm, forced=True)
+    # 兜底硬上限：防止极端情况
+    if len(past_steps) >= HARD_LIMIT:
+        logger.warning(f"已执行 {len(past_steps)} 步，达到兜底上限 {HARD_LIMIT}，强制生成报告")
+        return await _generate_report(state, llm, forced=True, forced_reason=f"达到兜底上限 {HARD_LIMIT} 步")
+
+    # 循环检测：工具调用重复则强制结束
+    if _detect_loop(past_steps):
+        logger.warning("检测到工具调用循环（相同工具+参数在近期步骤中重复出现），强制生成报告")
+        return await _generate_report(state, llm, forced=True, forced_reason="检测到重复工具调用循环")
 
     # 计划已全部执行完，生成报告
     if not plan:
         logger.info("计划已全部执行完毕，生成最终报告")
-        return await _generate_report(state, llm, forced=False)
+        return await _generate_report(state, llm, forced=False, forced_reason=None)
 
     # 格式化已执行步骤摘要
     steps_summary = "\n".join([
@@ -108,18 +237,12 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
         logger.info(f"决策推理: {reasoning}")
 
         if action == "respond":
-            return await _generate_report(state, llm, forced=False)
+            return await _generate_report(state, llm, forced=False, forced_reason=None)
 
         elif action == "replan":
             if not new_steps:
                 logger.warning("replan 但未提供新步骤，继续执行原计划")
                 return {}
-
-            # 新步骤数不能超过剩余步骤数
-            if len(new_steps) > len(plan):
-                new_steps = new_steps[:len(plan)]
-                logger.warning(f"新步骤数超过剩余步骤数，截断为 {len(new_steps)} 步")
-
             logger.info(f"重新规划，新步骤数: {len(new_steps)}")
             return {"plan": new_steps}
 
@@ -132,7 +255,12 @@ async def replanner(state: PlanExecuteState) -> Dict[str, Any]:
         return {}
 
 
-async def _generate_report(state: PlanExecuteState, llm: ChatOpenAI, forced: bool) -> Dict[str, Any]:
+async def _generate_report(
+    state: PlanExecuteState,
+    llm,
+    forced: bool,
+    forced_reason: str | None,
+) -> Dict[str, Any]:
     """生成最终诊断报告"""
     logger.info(f"生成最终诊断报告（强制结束: {forced}）")
 
@@ -146,7 +274,10 @@ async def _generate_report(state: PlanExecuteState, llm: ChatOpenAI, forced: boo
     ])
 
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    status = f"强制结束（已执行 {len(past_steps)} 步，达到上限 {MAX_STEPS}）" if forced else "正常完成"
+    if forced:
+        status = f"强制结束（原因：{forced_reason}，已执行 {len(past_steps)} 步）"
+    else:
+        status = "正常完成"
 
     report_chain = ChatPromptTemplate.from_messages([
         ("system", REPORT_SYSTEM_PROMPT),

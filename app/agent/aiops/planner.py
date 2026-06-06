@@ -89,6 +89,32 @@ def _build_triage_context(triage_results: Dict[str, Any], working_memory: Dict[s
         lines.append("【get_metrics_anomalies() 执行结果】：未发现指标异常")
         lines.append("")
 
+    # 新增：get_deployment_events 结果
+    deployment_events = working_memory.get("deployment_events", [])
+    if deployment_events:
+        lines.append("【get_deployment_events() 执行结果】")
+        for event in deployment_events:
+            if isinstance(event, dict):
+                event_type = event.get("event_type", "unknown")
+                service = event.get("service", "unknown")
+                timestamp = event.get("timestamp", "unknown")
+                related = event.get("related_to_fault", True)
+
+                if event_type == "deployment":
+                    version = event.get("version", "unknown")
+                    status = event.get("status", "unknown")
+                    related_mark = "✓关联" if related else "✗无关"
+                    lines.append(f"- 发版：{service} v{version} 于 {timestamp} ({status}) [{related_mark}]")
+                elif event_type == "config_change":
+                    related_mark = "✓关联" if related else "✗无关"
+                    lines.append(f"- 配置变更：{service} 于 {timestamp} [{related_mark}]")
+                elif event_type in ["alert", "jvm_heap_warning", "gc_storm_start", "thread_pool_saturation"]:
+                    lines.append(f"- {event_type}: {service} 于 {timestamp}")
+        lines.append("")
+    else:
+        lines.append("【get_deployment_events() 执行结果】：未发现部署/配置变更事件")
+        lines.append("")
+
     return "\n".join(lines)
 
 

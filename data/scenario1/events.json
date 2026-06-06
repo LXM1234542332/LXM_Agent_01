@@ -1,30 +1,154 @@
 [
   {
-    "timestamp": "2026-05-19T10:15:00Z",
+    "timestamp": "2026-06-18T11:30:00Z",
     "event_type": "deployment",
-    "service": "payment-service",
-    "version": "v2.3.1",
-    "status": "success"
+    "service": "order-service",
+    "version": "v1.3.2",
+    "status": "success",
+    "operator": "ci-bot",
+    "details": "新增订单历史查询接口 /api/v2/orders/history，灰度发布完成"
   },
   {
-    "timestamp": "2026-05-19T10:15:30Z",
-    "event_type": "alert",
-    "service": "payment-service",
-    "severity": "critical",
-    "message": "支付超时开始"
+    "timestamp": "2026-06-18T11:35:00Z",
+    "event_type": "config_change",
+    "service": "api-gateway",
+    "operator": "ops-jenkins",
+    "details": "调整限流规则：/api/v2/orders 接口 QPS 上限从 500 提升至 1200，为大促预热",
+    "related_to_fault": false
   },
   {
-    "timestamp": "2026-05-19T10:16:00Z",
+    "timestamp": "2026-06-18T11:45:00Z",
+    "event_type": "traffic_spike",
+    "service": "api-gateway",
+    "details": "618大促活动开始，入口流量从 820rps 开始爬升",
+    "rps_before": 820,
+    "rps_after": 2240
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "event_type": "slow_query_detected",
+    "service": "mysql-master",
+    "details": "慢查询日志首次出现：SELECT * FROM orders WHERE user_id=? 执行耗时超过 1000ms，疑似缺少索引",
+    "query": "SELECT id, status, amount, created_at FROM orders WHERE user_id = ? ORDER BY created_at DESC",
+    "duration_ms": 1120,
+    "rows_examined": 980000
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "event_type": "slow_query_detected",
+    "service": "mysql-master",
+    "details": "全表扫描频率上升，orders 表 user_id 字段无索引，高并发下扫描行数超过 100万行",
+    "query": "SELECT id, status, amount, created_at FROM orders WHERE user_id = ? ORDER BY created_at DESC",
+    "duration_ms": 2800,
+    "rows_examined": 1240000
+  },
+  {
+    "timestamp": "2026-06-18T11:58:30Z",
+    "event_type": "connection_pool_warning",
+    "service": "payment-service",
+    "details": "数据库连接池使用率超过 80%，active_connections=41/max=50，等待队列开始积压",
+    "active_connections": 41,
+    "max_connections": 50,
+    "waiting_requests": 8
+  },
+  {
+    "timestamp": "2026-06-18T12:01:10Z",
     "event_type": "alert",
     "service": "order-service",
     "severity": "warning",
-    "message": "订单服务超时"
+    "alert_id": "ALT-20260618-001",
+    "message": "p99 latency > 2000ms for 3 consecutive minutes",
+    "metric": "request_latency_p99_ms",
+    "threshold": 2000,
+    "current_value": 3840
   },
   {
-    "timestamp": "2026-05-19T10:17:00Z",
+    "timestamp": "2026-06-18T12:03:20Z",
+    "event_type": "alert",
+    "service": "payment-service",
+    "severity": "critical",
+    "alert_id": "ALT-20260618-002",
+    "message": "error_rate > 5% sustained for 2 minutes",
+    "metric": "error_rate_percent",
+    "threshold": 5.0,
+    "current_value": 12.7
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
     "event_type": "alert",
     "service": "api-gateway",
     "severity": "warning",
-    "message": "网关请求堆积"
+    "alert_id": "ALT-20260618-003",
+    "message": "cpu_usage > 75% for 2 minutes",
+    "metric": "cpu_usage_percent",
+    "threshold": 75.0,
+    "current_value": 81.3,
+    "note": "因重试流量在网关层堆积，实为故障的结果而非原因"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:40Z",
+    "event_type": "alert",
+    "service": "inventory-service",
+    "severity": "warning",
+    "alert_id": "ALT-20260618-004",
+    "message": "call_success_rate < 80% for 2 minutes",
+    "metric": "call_success_rate_percent",
+    "threshold": 80.0,
+    "current_value": 63.2,
+    "note": "order-service 事务卡住导致库存扣减超时，被动受害者"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:10Z",
+    "event_type": "connection_pool_exhausted",
+    "service": "payment-service",
+    "details": "数据库连接池完全耗尽，新请求无法获取连接，开始抛出 HikariPool-1 - Connection is not available 异常",
+    "active_connections": 50,
+    "max_connections": 50,
+    "waiting_requests": 47
+  },
+  {
+    "timestamp": "2026-06-18T12:06:30Z",
+    "event_type": "alert",
+    "service": "api-gateway",
+    "severity": "critical",
+    "alert_id": "ALT-20260618-005",
+    "message": "5xx error rate > 15% for 1 minute",
+    "metric": "error_rate_5xx_percent",
+    "threshold": 15.0,
+    "current_value": 27.4
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "event_type": "manual_operation",
+    "service": "payment-service",
+    "operator": "sre-oncall-zhangwei",
+    "action": "restart_instance",
+    "details": "SRE 手动重启 payment-service pod-3 实例，误判为服务进程异常",
+    "instance": "payment-service-pod-3",
+    "result": "重启后 pod-3 短暂恢复，30秒后因 mysql 慢查询持续导致连接池再次耗尽"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:45Z",
+    "event_type": "partial_recovery",
+    "service": "payment-service",
+    "details": "pod-3 重启后连接池短暂释放，error_rate 回落至 3.2%，持续约 35 秒后再次上升",
+    "duration_seconds": 35
+  },
+  {
+    "timestamp": "2026-06-18T12:08:20Z",
+    "event_type": "alert",
+    "service": "payment-service",
+    "severity": "critical",
+    "alert_id": "ALT-20260618-006",
+    "message": "error_rate 再次超过 20%，重启未能解决根本问题",
+    "metric": "error_rate_percent",
+    "threshold": 20.0,
+    "current_value": 34.8
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "event_type": "escalation",
+    "details": "故障升级为 P0，通知 DBA 团队介入，开始排查 mysql-master 慢查询",
+    "oncall_notified": ["dba-oncall", "order-service-owner", "payment-service-owner"]
   }
 ]

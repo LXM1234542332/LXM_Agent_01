@@ -37,6 +37,8 @@ class Settings(BaseSettings):
     # RAG 配置
     rag_top_k: int = 3
     rag_model: str = "qwen-max"  # 使用快速响应模型，不带扩展思考
+    runbook_collection_name: str = "aiops_runbook"  # RAG 排查经验知识库 collection
+    runbook_top_k: int = 3  # 检索排查经验时返回的 top-k 数量
 
     # 文档分块配置
     chunk_max_size: int = 800

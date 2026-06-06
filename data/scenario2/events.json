@@ -1,23 +1,190 @@
 [
   {
-    "timestamp": "2026-05-19T10:15:00Z",
-    "event_type": "deployment",
-    "service": "user-service",
-    "version": "v2.3.1",
-    "status": "success"
+    "timestamp": "2026-07-02T09:00:00Z",
+    "event_type": "config_change",
+    "service": "api-gateway",
+    "operator": "ops-jenkins",
+    "details": "调整限流配置：/api/v1/users 接口超时时间从 3000ms 提升至 5000ms，为下午活动预热",
+    "related_to_fault": false,
+    "note": "干扰项：此变更与本次故障无关，容易让人误以为是超时设置导致问题"
   },
   {
-    "timestamp": "2026-05-19T10:15:30Z",
+    "timestamp": "2026-07-02T09:10:00Z",
+    "event_type": "deployment",
+    "service": "auth-service",
+    "version": "v3.2.0",
+    "status": "success",
+    "operator": "ci-bot",
+    "details": "auth-service 升级依赖库，无功能变更",
+    "related_to_fault": false,
+    "note": "干扰项：auth-service 有独立的轻微CPU告警，与本次故障无关"
+  },
+  {
+    "timestamp": "2026-07-02T09:15:00Z",
+    "event_type": "alert",
+    "service": "auth-service",
+    "severity": "warning",
+    "alert_id": "ALT-20260702-000",
+    "message": "cpu_usage > 65% for 3 minutes",
+    "metric": "cpu_usage_percent",
+    "threshold": 65.0,
+    "current_value": 68.4,
+    "note": "干扰项：auth-service 发版后短暂CPU升高，自愈，与本次故障无关"
+  },
+  {
+    "timestamp": "2026-07-02T09:48:00Z",
+    "event_type": "jvm_heap_warning",
+    "service": "user-service",
+    "instance": "pod-2",
+    "details": "JVM heap 使用率持续爬升，当前已达 43.75%（heap_used=0.70GB/heap_max=1.6GB），GC 频率开始上升（4次/min）。内部监控捕获到持续增长趋势，但尚未触发阈值告警",
+    "heap_used_gb": 0.7,
+    "heap_max_gb": 1.6,
+    "gc_count_per_min": 4,
+    "note": "内部监控告警，未触发 PagerDuty，运维未主动介入"
+  },
+  {
+    "timestamp": "2026-07-02T10:06:00Z",
+    "event_type": "alert",
+    "service": "user-service",
+    "severity": "warning",
+    "alert_id": "ALT-20260702-001",
+    "message": "jvm_heap_usage_percent > 85% for 5 minutes",
+    "metric": "jvm_heap_usage_percent",
+    "threshold": 85.0,
+    "current_value": 86.25,
+    "note": "只说堆内存使用率高，未说明原因；JVM 分析需要额外工具"
+  },
+  {
+    "timestamp": "2026-07-02T10:06:00Z",
+    "event_type": "gc_storm_start",
+    "service": "user-service",
+    "instance": "pod-2",
+    "details": "Full GC 风暴开始：heap_used 达到 86.25%（1.38GB），触发连续 Full GC，每次 GC pause 超过 4 秒，pod-2 实际处理能力降至正常的 15%",
+    "heap_used_percent": 86.25,
+    "full_gc_pause_ms": 4200,
+    "gc_count_per_min": 12
+  },
+  {
+    "timestamp": "2026-07-02T10:04:30Z",
     "event_type": "alert",
     "service": "user-service",
     "severity": "critical",
-    "message": "连接泄漏开始"
+    "alert_id": "ALT-20260702-002",
+    "message": "p99 latency > 5000ms for 2 consecutive minutes",
+    "metric": "request_latency_p99_ms",
+    "threshold": 5000,
+    "current_value": 6040,
+    "note": "只说延迟高，不揭示 GC 根因；需要查 JVM 指标才能定位"
   },
   {
-    "timestamp": "2026-05-19T10:18:00Z",
+    "timestamp": "2026-07-02T10:05:10Z",
     "event_type": "alert",
     "service": "order-service",
     "severity": "warning",
-    "message": "订单服务变慢"
+    "alert_id": "ALT-20260702-003",
+    "message": "error_rate > 8% for 2 minutes",
+    "metric": "error_rate_percent",
+    "threshold": 8.0,
+    "current_value": 14.6,
+    "note": "order-service 调用 user-service 做身份校验超时，被动受害；告警只说 error_rate 高"
+  },
+  {
+    "timestamp": "2026-07-02T10:06:00Z",
+    "event_type": "thread_pool_saturation",
+    "service": "user-service",
+    "instance": "pod-2",
+    "details": "工作线程池 100% 满载：GC pause 期间所有请求排队，GC 结束后请求洪峰涌入导致线程池立刻饱和。thread_pool_active=200/200, queue_depth=350",
+    "thread_pool_active": 200,
+    "thread_pool_max": 200,
+    "thread_pool_queue_depth": 350
+  },
+  {
+    "timestamp": "2026-07-02T10:06:30Z",
+    "event_type": "alert",
+    "service": "user-service",
+    "severity": "critical",
+    "alert_id": "ALT-20260702-004",
+    "message": "error_rate > 15% for 1 minute",
+    "metric": "error_rate_percent",
+    "threshold": 15.0,
+    "current_value": 31.2
+  },
+  {
+    "timestamp": "2026-07-02T10:12:00Z",
+    "event_type": "alert",
+    "service": "notification-service",
+    "severity": "warning",
+    "alert_id": "ALT-20260702-005",
+    "message": "queue_depth > 1000 for 2 minutes",
+    "metric": "queue_depth",
+    "threshold": 1000,
+    "current_value": 1160,
+    "note": "notification-service 依赖 user-service 查询用户偏好，超时导致消息积压；告警只说队列深度高，不说上游原因"
+  },
+  {
+    "timestamp": "2026-07-02T10:08:00Z",
+    "event_type": "manual_operation",
+    "service": "user-service",
+    "operator": "sre-oncall-liming",
+    "action": "scale_out",
+    "details": "SRE 误判为流量过大，对 user-service 扩容添加 pod-3，但新 pod 启动时 JVM heap 也在迅速爬升（因为根因是内存泄漏代码，所有实例都会触发）",
+    "instance": "user-service-pod-3",
+    "result": "pod-3 在 20 分钟内 heap 持续爬升至 ~70%，与 pod-1/pod-2 相同增长模式，扩容无效"
+  },
+  {
+    "timestamp": "2026-07-02T10:10:00Z",
+    "event_type": "alert",
+    "service": "api-gateway",
+    "severity": "critical",
+    "alert_id": "ALT-20260702-006",
+    "message": "5xx error rate > 20% for 1 minute",
+    "metric": "error_rate_5xx_percent",
+    "threshold": 20.0,
+    "current_value": 38.5
+  },
+  {
+    "timestamp": "2026-07-02T10:11:00Z",
+    "event_type": "heap_dump_triggered",
+    "service": "user-service",
+    "instance": "pod-2",
+    "details": "自动触发 JVM heap dump（配置了 -XX:+HeapDumpOnOutOfMemoryError），dump 文件 2.8GB，触发短暂 20s IO 阻塞",
+    "dump_size_gb": 2.8,
+    "io_block_seconds": 20
+  },
+  {
+    "timestamp": "2026-07-02T10:12:00Z",
+    "event_type": "escalation",
+    "details": "故障升级为 P1，通知 user-service 团队和 JVM 专家介入",
+    "oncall_notified": ["user-service-owner", "jvm-expert", "sre-oncall-liming"]
+  },
+  {
+    "timestamp": "2026-07-02T10:13:00Z",
+    "event_type": "partial_recovery",
+    "service": "user-service",
+    "instance": "pod-2",
+    "details": "pod-2 因 OOM 被 K8s 自动重启（exit code 137），重启后 heap 清零，user-service pod-2 短暂恢复，error_rate 降至 5%，但 pod-1 heap 仍在上升，3分钟后故障复现",
+    "recovery_duration_seconds": 180
+  },
+  {
+    "timestamp": "2026-07-02T10:16:00Z",
+    "event_type": "alert",
+    "service": "user-service",
+    "severity": "critical",
+    "alert_id": "ALT-20260702-007",
+    "message": "jvm_heap_usage_percent > 85% for 5 minutes (pod-1)",
+    "metric": "jvm_heap_usage_percent",
+    "threshold": 85.0,
+    "current_value": 96.25,
+    "instance": "pod-1",
+    "note": "pod-2 重启后 pod-1 继续触发同类告警，说明问题是代码级别，不是单实例问题"
+  },
+  {
+    "timestamp": "2026-07-02T10:20:00Z",
+    "event_type": "root_cause_identified",
+    "service": "user-service",
+    "details": "JVM 专家分析 heap dump：UserSessionCache 中 HttpSession 对象未正确失效（maxInactiveInterval=-1），缓存无限增长，根因为 user-service v2.4.5（上周四 2026-06-26 发版）引入的 Session 缓存优化代码存在生命周期管理缺陷",
+    "root_cause_code": "UserSessionCache.put() called without corresponding eviction, maxInactiveInterval=-1 bypasses session expiry",
+    "culprit_version": "v2.4.5",
+    "culprit_deployment_date": "2026-06-26T14:30:00Z"
   }
 ]

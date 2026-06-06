@@ -1,19 +1,18 @@
 [
   {
-    "trace_id": "trace_normal_000",
-    "start_time": "2026-05-19T10:00:00Z",
-    "end_time": "2026-05-19T10:00:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_normal_00",
+    "start_time": "2026-06-18T11:40:00Z",
+    "end_time": "2026-06-18T11:40:00Z",
+    "total_duration_ms": 185,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "payment-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:00:00Z",
-        "end_time": "2026-05-19T10:00:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:40:00Z",
+        "duration_ms": 185,
         "status": "success",
         "error_message": null
       },
@@ -21,30 +20,58 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:00:00Z",
-        "end_time": "2026-05-19T10:00:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:40:00Z",
+        "duration_ms": 175,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:40:00Z",
+        "duration_ms": 89,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query",
+        "start_time": "2026-06-18T11:40:00Z",
+        "duration_ms": 12,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:40:00Z",
+        "duration_ms": 37,
         "status": "success",
         "error_message": null
       }
     ]
   },
   {
-    "trace_id": "trace_normal_001",
-    "start_time": "2026-05-19T10:02:00Z",
-    "end_time": "2026-05-19T10:02:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_normal_02",
+    "start_time": "2026-06-18T11:42:00Z",
+    "end_time": "2026-06-18T11:42:00Z",
+    "total_duration_ms": 175,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "payment-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:02:00Z",
-        "end_time": "2026-05-19T10:02:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:42:00Z",
+        "duration_ms": 175,
         "status": "success",
         "error_message": null
       },
@@ -52,30 +79,58 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:02:00Z",
-        "end_time": "2026-05-19T10:02:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:42:00Z",
+        "duration_ms": 176,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:42:00Z",
+        "duration_ms": 72,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query",
+        "start_time": "2026-06-18T11:42:00Z",
+        "duration_ms": 14,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:42:00Z",
+        "duration_ms": 53,
         "status": "success",
         "error_message": null
       }
     ]
   },
   {
-    "trace_id": "trace_normal_002",
-    "start_time": "2026-05-19T10:04:00Z",
-    "end_time": "2026-05-19T10:04:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_normal_04",
+    "start_time": "2026-06-18T11:44:00Z",
+    "end_time": "2026-06-18T11:44:00Z",
+    "total_duration_ms": 184,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "payment-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:04:00Z",
-        "end_time": "2026-05-19T10:04:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:44:00Z",
+        "duration_ms": 184,
         "status": "success",
         "error_message": null
       },
@@ -83,30 +138,58 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:04:00Z",
-        "end_time": "2026-05-19T10:04:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:44:00Z",
+        "duration_ms": 193,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:44:00Z",
+        "duration_ms": 92,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query",
+        "start_time": "2026-06-18T11:44:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:44:00Z",
+        "duration_ms": 32,
         "status": "success",
         "error_message": null
       }
     ]
   },
   {
-    "trace_id": "trace_normal_003",
-    "start_time": "2026-05-19T10:06:00Z",
-    "end_time": "2026-05-19T10:06:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_normal_06",
+    "start_time": "2026-06-18T11:46:00Z",
+    "end_time": "2026-06-18T11:46:00Z",
+    "total_duration_ms": 220,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "payment-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:06:00Z",
-        "end_time": "2026-05-19T10:06:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:46:00Z",
+        "duration_ms": 220,
         "status": "success",
         "error_message": null
       },
@@ -114,30 +197,58 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:06:00Z",
-        "end_time": "2026-05-19T10:06:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:46:00Z",
+        "duration_ms": 171,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:46:00Z",
+        "duration_ms": 76,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query",
+        "start_time": "2026-06-18T11:46:00Z",
+        "duration_ms": 16,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:46:00Z",
+        "duration_ms": 53,
         "status": "success",
         "error_message": null
       }
     ]
   },
   {
-    "trace_id": "trace_normal_004",
-    "start_time": "2026-05-19T10:08:00Z",
-    "end_time": "2026-05-19T10:08:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_normal_08",
+    "start_time": "2026-06-18T11:48:00Z",
+    "end_time": "2026-06-18T11:48:00Z",
+    "total_duration_ms": 199,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "payment-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:08:00Z",
-        "end_time": "2026-05-19T10:08:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:48:00Z",
+        "duration_ms": 199,
         "status": "success",
         "error_message": null
       },
@@ -145,138 +256,1694 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:08:00Z",
-        "end_time": "2026-05-19T10:08:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:48:00Z",
+        "duration_ms": 181,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:48:00Z",
+        "duration_ms": 95,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query",
+        "start_time": "2026-06-18T11:48:00Z",
+        "duration_ms": 15,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:48:00Z",
+        "duration_ms": 56,
         "status": "success",
         "error_message": null
       }
     ]
   },
   {
-    "trace_id": "trace_001",
-    "start_time": "2026-05-19T10:16:00+00:00Z",
-    "end_time": "2026-05-19T10:16:05+00:00Z",
-    "total_duration_ms": 5000,
+    "trace_id": "trace_normal_10",
+    "start_time": "2026-06-18T11:50:00Z",
+    "end_time": "2026-06-18T11:50:00Z",
+    "total_duration_ms": 184,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:50:00Z",
+        "duration_ms": 184,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:50:00Z",
+        "duration_ms": 160,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:50:00Z",
+        "duration_ms": 74,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query",
+        "start_time": "2026-06-18T11:50:00Z",
+        "duration_ms": 17,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:50:00Z",
+        "duration_ms": 51,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_00",
+    "start_time": "2026-06-18T11:52:00Z",
+    "total_duration_ms": 1221,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:52:00Z",
+        "duration_ms": 1221,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:52:00Z",
+        "duration_ms": 1202,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:52:00Z",
+        "duration_ms": 1145,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: SELECT * FROM orders WHERE user_id=?",
+        "start_time": "2026-06-18T11:52:00Z",
+        "duration_ms": 1120,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "rows_examined": 1077632,
+          "index_used": false,
+          "table": "orders"
+        }
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:52:00Z",
+        "duration_ms": 37,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_01",
+    "start_time": "2026-06-18T11:53:30Z",
+    "total_duration_ms": 1570,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:53:30Z",
+        "duration_ms": 1570,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:53:30Z",
+        "duration_ms": 1552,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:53:30Z",
+        "duration_ms": 1500,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: SELECT * FROM orders WHERE user_id=?",
+        "start_time": "2026-06-18T11:53:30Z",
+        "duration_ms": 1450,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "rows_examined": 1255140,
+          "index_used": false,
+          "table": "orders"
+        }
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:53:30Z",
+        "duration_ms": 59,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_02",
+    "start_time": "2026-06-18T11:55:00Z",
+    "total_duration_ms": 1972,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:55:00Z",
+        "duration_ms": 1972,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:55:00Z",
+        "duration_ms": 1957,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:55:00Z",
+        "duration_ms": 1912,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: SELECT * FROM orders WHERE user_id=?",
+        "start_time": "2026-06-18T11:55:00Z",
+        "duration_ms": 1890,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "rows_examined": 1111090,
+          "index_used": false,
+          "table": "orders"
+        }
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:55:00Z",
+        "duration_ms": 36,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_03",
+    "start_time": "2026-06-18T11:57:00Z",
+    "total_duration_ms": 2685,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:57:00Z",
+        "duration_ms": 2685,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:57:00Z",
+        "duration_ms": 2675,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:57:00Z",
+        "duration_ms": 2628,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: SELECT * FROM orders WHERE user_id=?",
+        "start_time": "2026-06-18T11:57:00Z",
+        "duration_ms": 2600,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "rows_examined": 1122930,
+          "index_used": false,
+          "table": "orders"
+        }
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:57:00Z",
+        "duration_ms": 41,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_04",
+    "start_time": "2026-06-18T11:59:00Z",
+    "total_duration_ms": 3308,
     "status": "error",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
         "service": "api-gateway",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:16:00+00:00Z",
-        "end_time": "2026-05-19T10:16:01.666000+00:00Z",
-        "duration_ms": 1666,
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T11:59:00Z",
+        "duration_ms": 3308,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "upstream timeout"
       },
       {
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:16:00+00:00Z",
-        "end_time": "2026-05-19T10:16:01.666000+00:00Z",
-        "duration_ms": 1666,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T11:59:00Z",
+        "duration_ms": 3290,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "payment service timeout"
       },
       {
         "span_id": "span_3",
         "parent_span_id": "span_2",
         "service": "payment-service",
-        "operation": "operation_2",
-        "start_time": "2026-05-19T10:16:00+00:00Z",
-        "end_time": "2026-05-19T10:16:01.666000+00:00Z",
-        "duration_ms": 1666,
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T11:59:00Z",
+        "duration_ms": 3231,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "DB connection timeout after 3000ms"
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: SELECT * FROM orders WHERE user_id=?",
+        "start_time": "2026-06-18T11:59:00Z",
+        "duration_ms": 3200,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "rows_examined": 942371,
+          "index_used": false,
+          "table": "orders"
+        }
+      },
+      {
+        "span_id": "span_5",
+        "parent_span_id": "span_2",
+        "service": "inventory-service",
+        "operation": "InventoryService.reserve",
+        "start_time": "2026-06-18T11:59:00Z",
+        "duration_ms": 49,
+        "status": "success",
+        "error_message": null
       }
     ]
   },
   {
-    "trace_id": "trace_002",
-    "start_time": "2026-05-19T10:17:00+00:00Z",
-    "end_time": "2026-05-19T10:17:05.100000+00:00Z",
-    "total_duration_ms": 5100,
+    "trace_id": "trace_err_001",
+    "start_time": "2026-06-18T12:00:10Z",
+    "total_duration_ms": 5026,
     "status": "error",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
         "service": "api-gateway",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:17:00+00:00Z",
-        "end_time": "2026-05-19T10:17:01.700000+00:00Z",
-        "duration_ms": 1700,
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:00:10Z",
+        "duration_ms": 5026,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
       },
       {
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:17:00+00:00Z",
-        "end_time": "2026-05-19T10:17:01.700000+00:00Z",
-        "duration_ms": 1700,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:00:10Z",
+        "duration_ms": 5008,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
       },
       {
         "span_id": "span_3",
         "parent_span_id": "span_2",
         "service": "payment-service",
-        "operation": "operation_2",
-        "start_time": "2026-05-19T10:17:00+00:00Z",
-        "end_time": "2026-05-19T10:17:01.700000+00:00Z",
-        "duration_ms": 1700,
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:00:10Z",
+        "duration_ms": 5000,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 49
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:00:10Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
       }
     ]
   },
   {
-    "trace_id": "trace_003",
-    "start_time": "2026-05-19T10:18:00+00:00Z",
-    "end_time": "2026-05-19T10:18:05.200000+00:00Z",
-    "total_duration_ms": 5200,
+    "trace_id": "trace_err_002",
+    "start_time": "2026-06-18T12:01:00Z",
+    "total_duration_ms": 5124,
     "status": "error",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
         "service": "api-gateway",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:18:00+00:00Z",
-        "end_time": "2026-05-19T10:18:01.733000+00:00Z",
-        "duration_ms": 1733,
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:01:00Z",
+        "duration_ms": 5124,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
       },
       {
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:18:00+00:00Z",
-        "end_time": "2026-05-19T10:18:01.733000+00:00Z",
-        "duration_ms": 1733,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:01:00Z",
+        "duration_ms": 5105,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
       },
       {
         "span_id": "span_3",
         "parent_span_id": "span_2",
         "service": "payment-service",
-        "operation": "operation_2",
-        "start_time": "2026-05-19T10:18:00+00:00Z",
-        "end_time": "2026-05-19T10:18:01.733000+00:00Z",
-        "duration_ms": 1733,
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:01:00Z",
+        "duration_ms": 5100,
         "status": "error",
-        "error_message": "Payment service timeout"
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 41
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:01:00Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_003",
+    "start_time": "2026-06-18T12:01:30Z",
+    "total_duration_ms": 5064,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:01:30Z",
+        "duration_ms": 5064,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:01:30Z",
+        "duration_ms": 5058,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:01:30Z",
+        "duration_ms": 5050,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 35
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:01:30Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_004",
+    "start_time": "2026-06-18T12:02:00Z",
+    "total_duration_ms": 5224,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:02:00Z",
+        "duration_ms": 5224,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:02:00Z",
+        "duration_ms": 5214,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:02:00Z",
+        "duration_ms": 5200,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 35
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:02:00Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_005",
+    "start_time": "2026-06-18T12:02:30Z",
+    "total_duration_ms": 5106,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:02:30Z",
+        "duration_ms": 5106,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:02:30Z",
+        "duration_ms": 5095,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:02:30Z",
+        "duration_ms": 5080,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 35
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:02:30Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_006",
+    "start_time": "2026-06-18T12:03:00Z",
+    "total_duration_ms": 5161,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:03:00Z",
+        "duration_ms": 5161,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:03:00Z",
+        "duration_ms": 5156,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:03:00Z",
+        "duration_ms": 5150,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 30
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:03:00Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_007",
+    "start_time": "2026-06-18T12:03:30Z",
+    "total_duration_ms": 5015,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:03:30Z",
+        "duration_ms": 5015,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:03:30Z",
+        "duration_ms": 5012,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:03:30Z",
+        "duration_ms": 5000,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 43
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:03:30Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_008",
+    "start_time": "2026-06-18T12:04:00Z",
+    "total_duration_ms": 5312,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:04:00Z",
+        "duration_ms": 5312,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:04:00Z",
+        "duration_ms": 5311,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:04:00Z",
+        "duration_ms": 5300,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 50
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:04:00Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_009",
+    "start_time": "2026-06-18T12:04:30Z",
+    "total_duration_ms": 5112,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:04:30Z",
+        "duration_ms": 5112,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:04:30Z",
+        "duration_ms": 5107,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:04:30Z",
+        "duration_ms": 5100,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 39
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:04:30Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_010",
+    "start_time": "2026-06-18T12:05:00Z",
+    "total_duration_ms": 5029,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:05:00Z",
+        "duration_ms": 5029,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:05:00Z",
+        "duration_ms": 5005,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:05:00Z",
+        "duration_ms": 5000,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 42
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:05:00Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_011",
+    "start_time": "2026-06-18T12:05:30Z",
+    "total_duration_ms": 5220,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:05:30Z",
+        "duration_ms": 5220,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:05:30Z",
+        "duration_ms": 5207,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:05:30Z",
+        "duration_ms": 5200,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 46
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:05:30Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err_012",
+    "start_time": "2026-06-18T12:06:00Z",
+    "total_duration_ms": 5072,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:06:00Z",
+        "duration_ms": 5072,
+        "status": "error",
+        "error_message": "503 Service Unavailable - upstream payment-service timeout"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:06:00Z",
+        "duration_ms": 5058,
+        "status": "error",
+        "error_message": "payment-service did not respond within 5000ms, aborting checkout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:06:00Z",
+        "duration_ms": 5050,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 31
+        }
+      },
+      {
+        "span_id": "span_4_absent",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query - NEVER STARTED (no connection available)",
+        "start_time": "2026-06-18T12:06:00Z",
+        "duration_ms": 0,
+        "status": "skipped",
+        "error_message": "connection not acquired from pool"
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_restart_00",
+    "start_time": "2026-06-18T12:07:20Z",
+    "total_duration_ms": 177,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:07:20Z",
+        "duration_ms": 177,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:07:20Z",
+        "duration_ms": 167,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment (pod-3 fresh restart)",
+        "start_time": "2026-06-18T12:07:20Z",
+        "duration_ms": 148,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "pool_active": 3,
+          "pool_max": 50,
+          "note": "pod-3 just restarted, pool empty"
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: INSERT INTO payments",
+        "start_time": "2026-06-18T12:07:20Z",
+        "duration_ms": 27,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_restart_01",
+    "start_time": "2026-06-18T12:07:30Z",
+    "total_duration_ms": 166,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:07:30Z",
+        "duration_ms": 166,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:07:30Z",
+        "duration_ms": 156,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment (pod-3 fresh restart)",
+        "start_time": "2026-06-18T12:07:30Z",
+        "duration_ms": 142,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "pool_active": 4,
+          "pool_max": 50,
+          "note": "pod-3 just restarted, pool empty"
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: INSERT INTO payments",
+        "start_time": "2026-06-18T12:07:30Z",
+        "duration_ms": 16,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_restart_02",
+    "start_time": "2026-06-18T12:07:40Z",
+    "total_duration_ms": 166,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:07:40Z",
+        "duration_ms": 166,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:07:40Z",
+        "duration_ms": 156,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment (pod-3 fresh restart)",
+        "start_time": "2026-06-18T12:07:40Z",
+        "duration_ms": 167,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "pool_active": 5,
+          "pool_max": 50,
+          "note": "pod-3 just restarted, pool empty"
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_3",
+        "service": "mysql-master",
+        "operation": "DB.query: INSERT INTO payments",
+        "start_time": "2026-06-18T12:07:40Z",
+        "duration_ms": 19,
+        "status": "success",
+        "error_message": null
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_000",
+    "start_time": "2026-06-18T12:08:20Z",
+    "total_duration_ms": 5134,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:08:20Z",
+        "duration_ms": 5131,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:08:20Z",
+        "duration_ms": 5121,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:08:20Z",
+        "duration_ms": 5111,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 38,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_001",
+    "start_time": "2026-06-18T12:08:40Z",
+    "total_duration_ms": 4862,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:08:40Z",
+        "duration_ms": 4869,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:08:40Z",
+        "duration_ms": 4859,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:08:40Z",
+        "duration_ms": 4849,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 39,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_002",
+    "start_time": "2026-06-18T12:09:00Z",
+    "total_duration_ms": 4966,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:09:00Z",
+        "duration_ms": 4971,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:09:00Z",
+        "duration_ms": 4961,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:09:00Z",
+        "duration_ms": 4951,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 40,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_003",
+    "start_time": "2026-06-18T12:09:30Z",
+    "total_duration_ms": 5023,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:09:30Z",
+        "duration_ms": 5029,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:09:30Z",
+        "duration_ms": 5019,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:09:30Z",
+        "duration_ms": 5009,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 41,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_004",
+    "start_time": "2026-06-18T12:10:00Z",
+    "total_duration_ms": 5277,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:10:00Z",
+        "duration_ms": 5270,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:10:00Z",
+        "duration_ms": 5260,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:10:00Z",
+        "duration_ms": 5250,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 45,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_005",
+    "start_time": "2026-06-18T12:10:30Z",
+    "total_duration_ms": 5219,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:10:30Z",
+        "duration_ms": 5214,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:10:30Z",
+        "duration_ms": 5204,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:10:30Z",
+        "duration_ms": 5194,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 42,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_006",
+    "start_time": "2026-06-18T12:11:00Z",
+    "total_duration_ms": 5251,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:11:00Z",
+        "duration_ms": 5253,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:11:00Z",
+        "duration_ms": 5243,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:11:00Z",
+        "duration_ms": 5233,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 38,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_007",
+    "start_time": "2026-06-18T12:12:00Z",
+    "total_duration_ms": 5260,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:12:00Z",
+        "duration_ms": 5259,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:12:00Z",
+        "duration_ms": 5249,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:12:00Z",
+        "duration_ms": 5239,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 40,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_008",
+    "start_time": "2026-06-18T12:13:00Z",
+    "total_duration_ms": 5159,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:13:00Z",
+        "duration_ms": 5167,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:13:00Z",
+        "duration_ms": 5157,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:13:00Z",
+        "duration_ms": 5147,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 51,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_009",
+    "start_time": "2026-06-18T12:14:00Z",
+    "total_duration_ms": 4957,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:14:00Z",
+        "duration_ms": 4967,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:14:00Z",
+        "duration_ms": 4957,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:14:00Z",
+        "duration_ms": 4947,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 53,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_err2_010",
+    "start_time": "2026-06-18T12:15:00Z",
+    "total_duration_ms": 5237,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v2/orders",
+        "start_time": "2026-06-18T12:15:00Z",
+        "duration_ms": 5246,
+        "status": "error",
+        "error_message": "503 upstream payment-service unavailable"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-06-18T12:15:00Z",
+        "duration_ms": 5236,
+        "status": "error",
+        "error_message": "payment-service timeout, root cause: DB pool exhausted (mysql slow queries persist)"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "payment-service",
+        "operation": "PaymentService.processPayment",
+        "start_time": "2026-06-18T12:15:00Z",
+        "duration_ms": 5226,
+        "status": "error",
+        "error_message": "HikariPool-1 - Connection is not available, request timed out after 5000ms",
+        "tags": {
+          "pool_active": 50,
+          "pool_max": 50,
+          "pool_waiting": 45,
+          "note": "pod-3 restart did not fix root cause - mysql slow queries still consuming all connections"
+        }
       }
     ]
   }

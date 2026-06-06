@@ -1,1442 +1,5474 @@
 [
   {
-    "timestamp": "2026-05-19T10:00:00Z",
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 123.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 125.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.34,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 116.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 77.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 76.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 34.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
     "value": 0.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:00:00Z",
-    "service": "payment-service",
+    "timestamp": "2026-06-18T11:40:00Z",
+    "service": "inventory-service",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
+    "metric_name": "call_success_rate_percent",
+    "value": 99.6,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.7,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:01:00Z",
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 114.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 117.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.28,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 124.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 81.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 79.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:41:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.69,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.26,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 120.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.26,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 121.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 121.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 76.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 82.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:42:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.97,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.25,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 115.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 114.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 123.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 82.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 79.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.16,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 34.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
     "value": 0.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:01:00Z",
-    "service": "payment-service",
+    "timestamp": "2026-06-18T11:43:00Z",
+    "service": "inventory-service",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
+    "metric_name": "call_success_rate_percent",
+    "value": 99.69,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 14.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:02:00Z",
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 11,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 120.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 114.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 115.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 82.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 80.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 35.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:44:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.67,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 121.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 116.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 115.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 76.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.16,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 82.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:45:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.63,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 14.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 11,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 122.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 121.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 117.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 78.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 83.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 34.8,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:46:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.75,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 11,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.28,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 121.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 121.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.27,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 120.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 76.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.23,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 77.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 33.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:47:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.96,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 11,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 125.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 118.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 123.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 77.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.23,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 78.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.16,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
     "value": 0.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:02:00Z",
-    "service": "payment-service",
+    "timestamp": "2026-06-18T11:48:00Z",
+    "service": "inventory-service",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
+    "metric_name": "call_success_rate_percent",
+    "value": 99.95,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.2,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:03:00Z",
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 120.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 119.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 118.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 79.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 82.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 33.6,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
     "value": 0.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:03:00Z",
-    "service": "payment-service",
+    "timestamp": "2026-06-18T11:49:00Z",
+    "service": "inventory-service",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
+    "metric_name": "call_success_rate_percent",
+    "value": 99.8,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 15.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:04:00Z",
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 120.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.36,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 120.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.27,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 116.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 80.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 77.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 33.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:50:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.96,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 14.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 119.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.27,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 116.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 119.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 80.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 77.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 34.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:51:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.77,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 14.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 0,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.25,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 116.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 114.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 123.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 76.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.18,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 80.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 35.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:52:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.99,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 362.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 3,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 119.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.26,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 121.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 124.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 80.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 76.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 33.6,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:53:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.69,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 675.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 6,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 117.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.36,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 118.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 122.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 82.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.16,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 78.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 35.4,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:54:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.71,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 1016.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 11,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 9,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 122.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 123.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 117.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 77.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 79.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 35.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
     "value": 0.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:04:00Z",
+    "timestamp": "2026-06-18T11:55:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.82,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 1325.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 14,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
+    "value": 119.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.34,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 125.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.25,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 118.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 78.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 81.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 35.3,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:56:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.81,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 1604.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 11,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 18,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.34,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 123.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 119.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 7,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.25,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 117.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 78.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.16,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 77.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:57:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.96,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 1884.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 12,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 19,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 115.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 126.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 8,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 115.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 84.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 79.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.23,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 33.5,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:58:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.62,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 2182.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 24,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 24,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 14,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.34,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 114.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 13,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.26,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 125.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 14,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 118.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 1357.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 1394.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 35.4,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T11:59:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.91,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 2728.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 36,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 27,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 19,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 121.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 21,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.28,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 119.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 20,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.34,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 125.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 2687.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 2593.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.19,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:00:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.81,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 2747.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 32,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 26,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.32,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 114.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 27,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 122.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 25,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 114.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3650.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.23,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 4030.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.0,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:01:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.98,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 3070.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 63,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 31,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 31,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 1763.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 31,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 1583.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 31,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 1631.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3660.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3909.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.16,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 36.4,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:02:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 99.82,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 3647.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 75,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 40,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 38,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.28,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3227.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 39,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.28,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3011.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 37,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 0.27,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 3330.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3670.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 0.19,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3940.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 0.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 34.5,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:03:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 98.97,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 3717.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 85,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 43,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 44,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 18.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 4995.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 45,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 17.99,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 4939.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 43,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 21.06,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 4832.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3925.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 10.67,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3938.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 10.9,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 79.9,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.09,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:04:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 79.51,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4422.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 98,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 43,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 36.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 6361.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 39.5,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6157.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 39.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6071.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3882.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 21.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3872.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 22.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 79.5,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 0.11,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:05:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 63.99,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4368.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 98,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 45,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 39.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 6298.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 37.98,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6379.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 39.35,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6386.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3960.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 21.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3819.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 21.71,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 82.9,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 27.85,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:06:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 63.01,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4172.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
     "value": 100,
-    "unit": "ms"
+    "unit": "count"
   },
   {
-    "timestamp": "2026-05-19T10:05:00Z",
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 48,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 38.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:05:00Z",
+    "timestamp": "2026-06-18T12:07:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
+    "value": 6224.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 39.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6397.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 4,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 3.21,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 162.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3674.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 21.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 4030.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 23.06,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 81.2,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 28.1,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:07:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 64.02,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4267.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
     "value": 100,
-    "unit": "ms"
+    "unit": "count"
   },
   {
-    "timestamp": "2026-05-19T10:06:00Z",
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 47,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 38.78,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:06:00Z",
+    "timestamp": "2026-06-18T12:08:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6302.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:07:00Z",
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 38.92,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6365.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 5,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 11.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6156.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3863.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 22.33,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3929.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 21.37,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 79.6,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 26.9,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:08:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 62.56,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4142.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 99,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 42,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 37.67,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:07:00Z",
+    "timestamp": "2026-06-18T12:09:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6162.6,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:08:00Z",
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 37.58,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6280.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 34.13,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6385.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3802.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 22.62,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3859.6,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 21.97,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 79.5,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 26.06,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:09:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 62.91,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4332.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 98,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 46,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 39.08,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:08:00Z",
+    "timestamp": "2026-06-18T12:10:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6111.2,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:09:00Z",
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 37.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 5976.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 33.59,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 5969.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3924.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 22.22,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3921.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 22.07,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 78.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 27.96,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:10:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 62.64,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4453.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 98,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 45,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 37.35,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:09:00Z",
+    "timestamp": "2026-06-18T12:11:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6438.7,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:10:00Z",
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 38.46,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6202.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 34.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6159.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3993.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 21.0,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 4026.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 21.08,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 81.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 26.06,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:11:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 62.02,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4306.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 101,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 42,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 37.72,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:10:00Z",
+    "timestamp": "2026-06-18T12:12:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6177.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:11:00Z",
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 37.57,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6119.0,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 34.77,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6016.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3870.9,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 22.51,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3899.8,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 21.29,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 80.6,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 26.41,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:12:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 62.31,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4417.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 99,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 46,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 36.1,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:11:00Z",
+    "timestamp": "2026-06-18T12:13:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6214.9,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:12:00Z",
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 39.25,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6403.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 33.93,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6343.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3753.5,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 21.34,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3985.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 22.96,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 80.9,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 27.26,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:13:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 64.17,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4459.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 99,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 44,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 36.61,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:12:00Z",
+    "timestamp": "2026-06-18T12:14:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6349.5,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:13:00Z",
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 36.26,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6185.4,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "error_rate_percent",
+    "value": 34.64,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "payment-service",
+    "instance": "pod-3",
+    "metric_name": "request_latency_ms",
+    "value": 6015.1,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "request_latency_ms",
+    "value": 3756.7,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "order-service",
+    "instance": "pod-1",
+    "metric_name": "error_rate_percent",
+    "value": 22.77,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 3928.2,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "order-service",
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 22.77,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "cpu_usage_percent",
+    "value": 78.7,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "api-gateway",
+    "instance": "pod-1",
+    "metric_name": "error_rate_5xx_percent",
+    "value": 27.75,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:14:00Z",
+    "service": "inventory-service",
+    "instance": "pod-1",
+    "metric_name": "call_success_rate_percent",
+    "value": 62.24,
+    "unit": "%"
+  },
+  {
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_query_duration_ms",
+    "value": 4242.3,
+    "unit": "ms"
+  },
+  {
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_connections_active",
+    "value": 98,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "mysql-master",
+    "instance": "db-master-1",
+    "metric_name": "db_slow_query_count",
+    "value": 47,
+    "unit": "count/min"
+  },
+  {
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "payment-service",
+    "instance": "pod-1",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
+  },
+  {
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 37.46,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:13:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 6322.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:14:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
+    "instance": "pod-2",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
   },
   {
-    "timestamp": "2026-05-19T10:14:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
+    "instance": "pod-2",
+    "metric_name": "error_rate_percent",
+    "value": 39.61,
+    "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:15:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
+    "instance": "pod-2",
+    "metric_name": "request_latency_ms",
+    "value": 6431.8,
+    "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:15:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
+    "instance": "pod-3",
+    "metric_name": "db_connection_active",
+    "value": 50,
+    "unit": "count"
   },
   {
-    "timestamp": "2026-05-19T10:16:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
-    "instance": "pod-1",
+    "instance": "pod-3",
     "metric_name": "error_rate_percent",
-    "value": 15,
+    "value": 35.05,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:16:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "payment-service",
-    "instance": "pod-1",
+    "instance": "pod-3",
     "metric_name": "request_latency_ms",
-    "value": 5000,
+    "value": 6118.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:17:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:17:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:18:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:18:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:19:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:19:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:20:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:20:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:21:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:21:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:22:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:22:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:23:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:23:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:24:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:24:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:25:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:25:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:26:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:26:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:27:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:27:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:28:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:28:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:29:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:29:00Z",
-    "service": "payment-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:00:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:00:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "order-service",
     "instance": "pod-1",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 3716.4,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:01:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "order-service",
     "instance": "pod-1",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 21.54,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:01:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "order-service",
-    "instance": "pod-1",
+    "instance": "pod-2",
     "metric_name": "request_latency_ms",
-    "value": 100,
+    "value": 3687.8,
     "unit": "ms"
   },
   {
-    "timestamp": "2026-05-19T10:02:00Z",
+    "timestamp": "2026-06-18T12:15:00Z",
     "service": "order-service",
-    "instance": "pod-1",
+    "instance": "pod-2",
     "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "value": 21.46,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:02:00Z",
-    "service": "order-service",
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "api-gateway",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:03:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "metric_name": "cpu_usage_percent",
+    "value": 80.8,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:03:00Z",
-    "service": "order-service",
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "api-gateway",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:04:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "metric_name": "error_rate_5xx_percent",
+    "value": 27.22,
     "unit": "%"
   },
   {
-    "timestamp": "2026-05-19T10:04:00Z",
-    "service": "order-service",
+    "timestamp": "2026-06-18T12:15:00Z",
+    "service": "inventory-service",
     "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:05:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
+    "metric_name": "call_success_rate_percent",
+    "value": 63.9,
     "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:05:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:06:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:06:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:07:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:07:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:08:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:08:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:09:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:09:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:10:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:10:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:11:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:11:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:12:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:12:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:13:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:13:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:14:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:14:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:15:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:15:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:16:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:16:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:17:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:17:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:18:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:18:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:19:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:19:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:20:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:20:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:21:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:21:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:22:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:22:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:23:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:23:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:24:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:24:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:25:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:25:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:26:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:26:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:27:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:27:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:28:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:28:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:29:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:29:00Z",
-    "service": "order-service",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:00:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:00:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:01:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:01:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:02:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:02:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:03:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:03:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:04:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:04:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:05:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:05:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:06:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:06:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:07:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:07:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:08:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:08:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:09:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:09:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:10:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:10:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:11:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:11:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:12:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:12:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:13:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:13:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:14:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 0.1,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:14:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 100,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:15:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:15:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:16:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:16:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:17:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:17:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:18:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:18:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:19:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:19:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:20:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:20:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:21:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:21:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:22:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:22:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:23:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:23:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:24:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:24:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:25:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:25:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:26:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:26:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:27:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:27:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:28:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:28:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
-  },
-  {
-    "timestamp": "2026-05-19T10:29:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "error_rate_percent",
-    "value": 15,
-    "unit": "%"
-  },
-  {
-    "timestamp": "2026-05-19T10:29:00Z",
-    "service": "api-gateway",
-    "instance": "pod-1",
-    "metric_name": "request_latency_ms",
-    "value": 5000,
-    "unit": "ms"
   }
 ]

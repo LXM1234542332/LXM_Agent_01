@@ -51,8 +51,8 @@ EXTRACTORS: Dict[str, Dict[str, Any]] = {
     "get_alerts": {
         "known_services":      lambda r: _extract_data_field(r, "service"),
         "known_severities":    lambda r: _extract_data_field(r, "severity"),
-        "known_metric_names":  lambda r: _extract_data_field(r, "metric_name"),
-        "known_timestamps":    lambda r: _extract_data_field(r, "trigger_time"),
+        "known_metric_names":  lambda r: _extract_data_field(r, "metric"),
+        "known_timestamps":    lambda r: _extract_data_field(r, "timestamp"),
     },
     "get_error_logs": {
         "known_services":   lambda r: _extract_data_field(r, "service"),
@@ -75,6 +75,7 @@ EXTRACTORS: Dict[str, Dict[str, Any]] = {
     "get_metrics_anomalies": {
         "known_metric_names": lambda r: _extract_anomaly_keys(r),
         "known_services":     lambda r: _extract_anomaly_services(r),
+        "known_anomaly_services": lambda r: _extract_anomaly_services(r),
     },
     "get_metrics_by_name": {
         "known_timestamps": lambda r: _extract_data_field(r, "timestamp"),
@@ -85,8 +86,9 @@ EXTRACTORS: Dict[str, Dict[str, Any]] = {
         "known_timestamps":   lambda r: _extract_data_field(r, "timestamp"),
     },
     "get_deployment_events": {
-        "known_services":    lambda r: _extract_data_field(r, "service"),
-        "known_timestamps":  lambda r: _extract_data_field(r, "timestamp"),
+        "known_services":             lambda r: _extract_data_field(r, "service"),
+        "known_timestamps":           lambda r: _extract_data_field(r, "timestamp"),
+        "known_deployment_versions":  lambda r: _extract_data_field(r, "version"),
     },
     "get_events": {
         "known_services":     lambda r: _extract_data_field(r, "service"),
@@ -104,17 +106,39 @@ EXTRACTORS: Dict[str, Dict[str, Any]] = {
     },
     "get_slow_traces": {
         "known_trace_ids": lambda r: _extract_data_field(r, "trace_id"),
-        "known_services":  lambda r: _extract_data_field(r, "service"),
+        "known_services":  lambda r: [
+            str(span["service"])
+            for item in r.get("data", [])
+            if isinstance(item, dict)
+            for span in item.get("spans", [])
+            if isinstance(span, dict) and "service" in span
+        ],
     },
     "get_trace_details": {
-        "known_trace_ids": lambda r: _extract_spans_field(r, "trace_id"),
-        "known_services":  lambda r: _extract_spans_field(r, "service"),
+        "known_trace_ids": lambda r: [r["data"]["trace_id"]] if isinstance(r.get("data"), dict) and "trace_id" in r.get("data", {}) else [],
+        "known_services":  lambda r: [
+            str(span["service"])
+            for span in (r.get("data", {}) or {}).get("spans", [])
+            if isinstance(span, dict) and "service" in span
+        ],
     },
     "get_service_dependencies": {
         "known_services": lambda r: (
             [str(s) for s in r.get("upstream", [])]
             + [str(s) for s in r.get("downstream", [])]
         ),
+    },
+    "get_jvm_metrics": {
+        "known_services":   lambda r: [str(r.get("service"))] if r.get("service") else [],
+        "known_timestamps": lambda r: _extract_data_field(r, "timestamp"),
+    },
+    "get_queue_metrics": {
+        "known_services":   lambda r: [str(r.get("service"))] if r.get("service") else [],
+        "known_timestamps": lambda r: _extract_data_field(r, "timestamp"),
+    },
+    "get_slow_queries": {
+        "known_services":   lambda r: _extract_data_field(r, "service"),
+        "known_timestamps": lambda r: _extract_data_field(r, "timestamp"),
     },
 }
 

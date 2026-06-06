@@ -333,6 +333,8 @@ class DiagnosticDataTools:
         self.metrics = self._load_metrics()
         self.events = self._load_events()
         self.traces = self._load_traces()
+        self.jvm_gc_logs = self._load_jvm_gc_logs()
+        self.slow_queries = self._load_slow_queries()
         self.service_dependencies = self._load_service_dependencies()
 
     def _load_logs(self) -> List[Dict]:
@@ -371,6 +373,24 @@ class DiagnosticDataTools:
         except FileNotFoundError:
             return []
 
+    def _load_jvm_gc_logs(self) -> List[Dict]:
+        """加载 JVM GC 事件日志（场景专属，不存在时返回空列表）"""
+        try:
+            f_path = self.scenario_dir / "jvm_gc_logs.json"
+            with open(f_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return []
+
+    def _load_slow_queries(self) -> List[Dict]:
+        """加载慢查询日志（场景专属，不存在时返回空列表）"""
+        try:
+            f_path = self.scenario_dir / "slow_queries.json"
+            with open(f_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return []
+
     def _load_service_dependencies(self) -> Dict[str, List[str]]:
         """加载服务依赖关系"""
         try:
@@ -388,6 +408,8 @@ class DiagnosticDataTools:
         self.metrics = self._load_metrics()
         self.events = self._load_events()
         self.traces = self._load_traces()
+        self.jvm_gc_logs = self._load_jvm_gc_logs()
+        self.slow_queries = self._load_slow_queries()
 
     def get_alerts(self) -> Dict[str, Any]:
         """获取所有告警事件"""
@@ -512,21 +534,31 @@ class DiagnosticDataTools:
                 threshold_index = int(len(sorted_values) * threshold_percentile)
                 threshold = sorted_values[threshold_index]
 
-                # 找出异常值
+                # 找出异常值（保留 service/instance 供 ExactValuePool 提取）
                 anomaly_points = []
                 for m in sorted(metrics, key=lambda x: x["timestamp"], reverse=True):
                     if m["value"] >= threshold:
-                        anomaly_points.append({
+                        point = {
                             "timestamp": m["timestamp"],
-                            "value": m["value"]
-                        })
+                            "value": m["value"],
+                        }
+                        if "service" in m:
+                            point["service"] = m["service"]
+                        if "instance" in m:
+                            point["instance"] = m["instance"]
+                        anomaly_points.append(point)
                     if len(anomaly_points) >= 5:
                         break
 
                 if anomaly_points:
+                    # 汇总出现在哪些服务
+                    services_with_anomaly = list(dict.fromkeys(
+                        p["service"] for p in anomaly_points if "service" in p
+                    ))
                     anomalies[metric_name] = {
+                        "service": services_with_anomaly[0] if len(services_with_anomaly) == 1 else services_with_anomaly,
                         "threshold": threshold,
-                        "anomaly_points": anomaly_points
+                        "anomaly_points": anomaly_points,
                     }
 
         return {
@@ -627,6 +659,159 @@ class DiagnosticDataTools:
             "data": slow_traces
         }
 
+    def get_jvm_metrics(self, service: str, instance: Optional[str] = None, limit: int = 60) -> Dict[str, Any]:
+        """
+        查询指定服务的 JVM 运行时指标时序，包括 heap 使用量、GC 次数/暂停时长、线程数、session 缓存大小。
+        可按 instance 过滤单个 pod。返回时序数据和各指标的统计摘要（min/max/avg/trend）。
+        适用于排查 JVM 内存泄漏、GC 风暴、线程池饱和等 JVM 层面问题。
+        """
+        jvm_metric_prefixes = ("jvm_", "session_cache_size")
+        records = [
+            m for m in self.metrics
+            if m.get("service") == service
+            and any(m.get("metric_name", "").startswith(p) for p in jvm_metric_prefixes)
+            and (instance is None or m.get("instance") == instance)
+        ]
+        records = sorted(records, key=lambda x: x["timestamp"])[:limit]
+
+        # 按指标名分组统计
+        by_metric: Dict[str, list] = {}
+        for r in records:
+            by_metric.setdefault(r["metric_name"], []).append(r)
+
+        summary = {}
+        for metric_name, pts in by_metric.items():
+            vals = [p["value"] for p in pts]
+            if not vals:
+                continue
+            trend = "rising" if vals[-1] > vals[0] * 1.1 else ("falling" if vals[-1] < vals[0] * 0.9 else "stable")
+            summary[metric_name] = {
+                "min": round(min(vals), 3),
+                "max": round(max(vals), 3),
+                "avg": round(sum(vals) / len(vals), 3),
+                "latest": vals[-1],
+                "trend": trend,
+                "sample_count": len(vals),
+            }
+
+        # GC 事件摘要（来自 jvm_gc_logs）
+        gc_events = [
+            g for g in self.jvm_gc_logs
+            if g.get("service") == service
+            and (instance is None or g.get("instance") == instance)
+        ]
+        gc_summary = {}
+        if gc_events:
+            full_gcs = [g for g in gc_events if g.get("gc_type") == "FullGC"]
+            gc_summary = {
+                "total_gc_events": len(gc_events),
+                "full_gc_count": len(full_gcs),
+                "max_pause_ms": max((g.get("pause_ms", 0) for g in gc_events), default=0),
+                "promotion_failed_count": sum(1 for g in gc_events if g.get("promotion_failed")),
+                "recent_gc_events": sorted(gc_events, key=lambda x: x["timestamp"], reverse=True)[:5],
+            }
+
+        return {
+            "status": "success",
+            "service": service,
+            "instance": instance,
+            "jvm_metric_summary": summary,
+            "gc_event_summary": gc_summary,
+            "data": records,
+        }
+
+    def get_queue_metrics(self, service: str, limit: int = 60) -> Dict[str, Any]:
+        """
+        查询消息队列相关指标，包括队列深度、消费速率、发布速率、消费者延迟。
+        用于判断队列是否积压、消费能力是否下降，以及上游依赖（如 user-service）是否导致消费阻塞。
+        """
+        queue_metric_names = ("queue_depth", "queue_consume_rate", "queue_publish_rate", "consumer_lag_ms")
+        records = [
+            m for m in self.metrics
+            if m.get("service") == service
+            and m.get("metric_name") in queue_metric_names
+        ]
+        records = sorted(records, key=lambda x: x["timestamp"])[:limit]
+
+        by_metric: Dict[str, list] = {}
+        for r in records:
+            by_metric.setdefault(r["metric_name"], []).append(r)
+
+        summary = {}
+        for metric_name, pts in by_metric.items():
+            vals = [p["value"] for p in pts]
+            if not vals:
+                continue
+            trend = "rising" if vals[-1] > vals[0] * 1.1 else ("falling" if vals[-1] < vals[0] * 0.9 else "stable")
+            summary[metric_name] = {
+                "min": round(min(vals), 3),
+                "max": round(max(vals), 3),
+                "avg": round(sum(vals) / len(vals), 3),
+                "latest": vals[-1],
+                "trend": trend,
+            }
+
+        # 计算积压判断
+        depth_pts = by_metric.get("queue_depth", [])
+        consume_pts = by_metric.get("queue_consume_rate", [])
+        publish_pts = by_metric.get("queue_publish_rate", [])
+        backlog_analysis = {}
+        if depth_pts and consume_pts and publish_pts:
+            latest_depth = depth_pts[-1]["value"]
+            latest_consume = consume_pts[-1]["value"]
+            latest_publish = publish_pts[-1]["value"]
+            backlog_analysis = {
+                "latest_queue_depth": latest_depth,
+                "latest_consume_rate": latest_consume,
+                "latest_publish_rate": latest_publish,
+                "net_rate": round(latest_publish - latest_consume, 2),
+                "is_backlogging": latest_publish > latest_consume * 1.1,
+                "estimated_drain_seconds": round(latest_depth / latest_consume, 1) if latest_consume > 0 else None,
+            }
+
+        return {
+            "status": "success",
+            "service": service,
+            "queue_metric_summary": summary,
+            "backlog_analysis": backlog_analysis,
+            "data": records,
+        }
+
+    def get_slow_queries(self, service: Optional[str] = None, threshold_ms: int = 100, limit: int = 20) -> Dict[str, Any]:
+        """
+        查询慢 SQL/数据库查询记录，按执行耗时降序排列。
+        可过滤服务名和最小耗时阈值。返回 query_text、duration_ms、rows_examined、index_used 等字段。
+        适用于排查数据库层面的性能问题，如全表扫描、缺少索引、表膨胀导致查询变慢等。
+        """
+        queries = [
+            q for q in self.slow_queries
+            if q.get("duration_ms", 0) >= threshold_ms
+            and (service is None or q.get("service") == service)
+        ]
+        queries = sorted(queries, key=lambda x: x.get("duration_ms", 0), reverse=True)[:limit]
+
+        no_index = [q for q in queries if not q.get("index_used", True)]
+        stats = {}
+        if queries:
+            durations = [q["duration_ms"] for q in queries]
+            rows = [q.get("rows_examined", 0) for q in queries]
+            stats = {
+                "total_slow_queries": len(queries),
+                "no_index_count": len(no_index),
+                "max_duration_ms": max(durations),
+                "avg_duration_ms": round(sum(durations) / len(durations), 1),
+                "max_rows_examined": max(rows) if rows else 0,
+            }
+
+        return {
+            "status": "success",
+            "service": service,
+            "threshold_ms": threshold_ms,
+            "statistics": stats,
+            "no_index_queries": no_index,
+            "data": queries,
+        }
+
     def call_tool(self, tool_name: str, **kwargs) -> Dict[str, Any]:
         """通用工具调用接口"""
         if tool_name == "get_alerts":
@@ -687,6 +872,23 @@ class DiagnosticDataTools:
             return self.get_slow_traces(
                 threshold_ms=kwargs.get("threshold_ms"),
                 limit=kwargs.get("limit", 10)
+            )
+        elif tool_name == "get_jvm_metrics":
+            return self.get_jvm_metrics(
+                service=kwargs.get("service"),
+                instance=kwargs.get("instance"),
+                limit=kwargs.get("limit", 60)
+            )
+        elif tool_name == "get_queue_metrics":
+            return self.get_queue_metrics(
+                service=kwargs.get("service"),
+                limit=kwargs.get("limit", 60)
+            )
+        elif tool_name == "get_slow_queries":
+            return self.get_slow_queries(
+                service=kwargs.get("service"),
+                threshold_ms=kwargs.get("threshold_ms", 100),
+                limit=kwargs.get("limit", 20)
             )
         else:
             return {

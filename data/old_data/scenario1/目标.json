@@ -1,0 +1,38 @@
+{
+  "scenario_id": "scenario1",
+  "root_cause_service": "payment-service",
+  "root_cause_type": "新版本部署引入缺陷，payment-service v2.3.1 部署后 30 秒开始出现支付处理超时，导致依赖它的上游服务连锁故障",
+  "key_evidence": [
+    {
+      "type": "deployment_event",
+      "description": "payment-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
+      "data": "timestamp=2026-05-19T10:15:00Z, service=payment-service, version=v2.3.1"
+    },
+    {
+      "type": "alert",
+      "description": "部署后仅 30 秒，payment-service 触发 critical 级别告警「支付超时开始」，时间高度吻合",
+      "data": "timestamp=2026-05-19T10:15:30Z, severity=critical, message=支付超时开始"
+    },
+    {
+      "type": "cascading_alerts",
+      "description": "故障从 payment-service 逐级向上游扩散：10:16:00 order-service 触发 warning 告警「订单服务超时」，10:17:00 api-gateway 触发 warning 告警「网关请求堆积」，时间顺序与调用链方向一致，印证了连锁故障的传播路径",
+      "data": "10:16:00 warning 订单服务超时(order-service), 10:17:00 warning 网关请求堆积(api-gateway)"
+    },
+    {
+      "type": "metrics",
+      "description": "payment-service 的 error_rate 在 10:15:00 从 0.1% 突变为 15%（150 倍），request_latency 从 100ms 突变为 5000ms（50 倍），且持续未恢复",
+      "data": "error_rate: 0.1% -> 15%, request_latency: 100ms -> 5000ms, 起始时间=10:15:00"
+    },
+    {
+      "type": "logs",
+      "description": "从 10:16:00 开始出现 9 条 ERROR 日志，错误信息全部为「Payment service timeout」，涉及 3 个服务，耗时呈递增趋势（5000→5100→5200ms）",
+      "data": "trace_001(10:16:00, 5000ms), trace_002(10:17:00, 5100ms), trace_003(10:18:00, 5200ms)"
+    },
+    {
+      "type": "traces",
+      "description": "错误链路的调用关系为 api-gateway → order-service → payment-service，payment-service 是调用链末端，错误从它向上传播",
+      "data": "span_1(api-gateway) -> span_2(order-service) -> span_3(payment-service), 全部 error"
+    }
+  ],
+  "summary": "2026-05-19 10:15:00，payment-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），三个服务（payment-service、order-service、api-gateway）运行完全正常，error_rate 为 0.1%，latency 为 100ms。部署完成后仅 30 秒（10:15:30），payment-service 即触发 critical 级别告警「支付超时开始」。从指标数据看，10:15:00 这个时间点三个服务的 error_rate 同时从 0.1% 跳变为 15%，latency 从 100ms 跳变为 5000ms。从日志和链路追踪数据看，10:16:00 开始出现的 ERROR 日志全部为「Payment service timeout」，调用链为 api-gateway → order-service → payment-service，说明 payment-service 是故障源头，order-service 和 api-gateway 是因为依赖 payment-service 而被连锁影响。综合以上证据，根因判断为：payment-service v2.3.1 版本引入了导致支付处理超时的缺陷，部署行为是直接触发因素。部署时间与告警时间的强相关性（仅差 30 秒）、部署前后指标的断崖式变化、以及调用链中 payment-service 作为错误源头的事实，三者互相印证，形成完整证据链。"
+}

@@ -1,19 +1,567 @@
 [
   {
-    "trace_id": "trace_normal_000",
-    "start_time": "2026-05-19T10:00:00Z",
-    "end_time": "2026-05-19T10:00:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_normal_00",
+    "start_time": "2026-07-02T09:30:00Z",
+    "end_time": "2026-07-02T09:30:00Z",
+    "total_duration_ms": 185,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:30:00Z",
+        "duration_ms": 185,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
         "service": "user-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:00:00Z",
-        "end_time": "2026-05-19T10:00:00.100000Z",
-        "duration_ms": 100,
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:30:00Z",
+        "duration_ms": 173,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 52.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:30:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 169000
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:30:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_02",
+    "start_time": "2026-07-02T09:32:00Z",
+    "end_time": "2026-07-02T09:32:00Z",
+    "total_duration_ms": 189,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:32:00Z",
+        "duration_ms": 189,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:32:00Z",
+        "duration_ms": 177,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 54.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:32:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 175500
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:32:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_04",
+    "start_time": "2026-07-02T09:34:00Z",
+    "end_time": "2026-07-02T09:34:00Z",
+    "total_duration_ms": 193,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:34:00Z",
+        "duration_ms": 193,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:34:00Z",
+        "duration_ms": 181,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 56.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:34:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 182000
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:34:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_06",
+    "start_time": "2026-07-02T09:36:00Z",
+    "end_time": "2026-07-02T09:36:00Z",
+    "total_duration_ms": 197,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:36:00Z",
+        "duration_ms": 197,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:36:00Z",
+        "duration_ms": 185,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 58.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:36:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 188500
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:36:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_08",
+    "start_time": "2026-07-02T09:38:00Z",
+    "end_time": "2026-07-02T09:38:00Z",
+    "total_duration_ms": 201,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:38:00Z",
+        "duration_ms": 201,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:38:00Z",
+        "duration_ms": 189,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 60.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:38:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 195000
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:38:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_10",
+    "start_time": "2026-07-02T09:40:00Z",
+    "end_time": "2026-07-02T09:40:00Z",
+    "total_duration_ms": 205,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:40:00Z",
+        "duration_ms": 205,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:40:00Z",
+        "duration_ms": 193,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 62.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:40:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 201500
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:40:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_12",
+    "start_time": "2026-07-02T09:42:00Z",
+    "end_time": "2026-07-02T09:42:00Z",
+    "total_duration_ms": 209,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:42:00Z",
+        "duration_ms": 209,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:42:00Z",
+        "duration_ms": 197,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 64.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:42:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 208000
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:42:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_14",
+    "start_time": "2026-07-02T09:44:00Z",
+    "end_time": "2026-07-02T09:44:00Z",
+    "total_duration_ms": 213,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:44:00Z",
+        "duration_ms": 213,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:44:00Z",
+        "duration_ms": 201,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 66.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:44:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 214500
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:44:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_normal_16",
+    "start_time": "2026-07-02T09:46:00Z",
+    "end_time": "2026-07-02T09:46:00Z",
+    "total_duration_ms": 217,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:46:00Z",
+        "duration_ms": 217,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:46:00Z",
+        "duration_ms": 205,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 68.0
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:46:00Z",
+        "duration_ms": 8,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "cache_hit": true,
+          "cache_size": 221000
+        }
+      },
+      {
+        "span_id": "span_4",
+        "parent_span_id": "span_2",
+        "service": "mysql-user",
+        "operation": "DB.query",
+        "start_time": "2026-07-02T09:46:00Z",
+        "duration_ms": 18,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "table": "users",
+          "rows_examined": 1
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_norm_02",
+    "start_time": "2026-07-02T09:32:30Z",
+    "end_time": "2026-07-02T09:32:30Z",
+    "total_duration_ms": 236,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:32:30Z",
+        "duration_ms": 236,
         "status": "success",
         "error_message": null
       },
@@ -21,30 +569,42 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:00:00Z",
-        "end_time": "2026-05-19T10:00:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:32:30Z",
+        "duration_ms": 226,
         "status": "success",
         "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:32:30Z",
+        "duration_ms": 114,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 51.6
+        }
       }
     ]
   },
   {
-    "trace_id": "trace_normal_001",
-    "start_time": "2026-05-19T10:02:00Z",
-    "end_time": "2026-05-19T10:02:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_order_norm_06",
+    "start_time": "2026-07-02T09:36:30Z",
+    "end_time": "2026-07-02T09:36:30Z",
+    "total_duration_ms": 248,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "user-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:02:00Z",
-        "end_time": "2026-05-19T10:02:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:36:30Z",
+        "duration_ms": 248,
         "status": "success",
         "error_message": null
       },
@@ -52,30 +612,42 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:02:00Z",
-        "end_time": "2026-05-19T10:02:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:36:30Z",
+        "duration_ms": 238,
         "status": "success",
         "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:36:30Z",
+        "duration_ms": 122,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 54.8
+        }
       }
     ]
   },
   {
-    "trace_id": "trace_normal_002",
-    "start_time": "2026-05-19T10:04:00Z",
-    "end_time": "2026-05-19T10:04:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_order_norm_10",
+    "start_time": "2026-07-02T09:40:30Z",
+    "end_time": "2026-07-02T09:40:30Z",
+    "total_duration_ms": 260,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "user-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:04:00Z",
-        "end_time": "2026-05-19T10:04:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:40:30Z",
+        "duration_ms": 260,
         "status": "success",
         "error_message": null
       },
@@ -83,30 +655,42 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:04:00Z",
-        "end_time": "2026-05-19T10:04:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:40:30Z",
+        "duration_ms": 250,
         "status": "success",
         "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:40:30Z",
+        "duration_ms": 130,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 58.0
+        }
       }
     ]
   },
   {
-    "trace_id": "trace_normal_003",
-    "start_time": "2026-05-19T10:06:00Z",
-    "end_time": "2026-05-19T10:06:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_order_norm_14",
+    "start_time": "2026-07-02T09:44:30Z",
+    "end_time": "2026-07-02T09:44:30Z",
+    "total_duration_ms": 272,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "user-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:06:00Z",
-        "end_time": "2026-05-19T10:06:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:44:30Z",
+        "duration_ms": 272,
         "status": "success",
         "error_message": null
       },
@@ -114,30 +698,42 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:06:00Z",
-        "end_time": "2026-05-19T10:06:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:44:30Z",
+        "duration_ms": 262,
         "status": "success",
         "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:44:30Z",
+        "duration_ms": 138,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 61.2
+        }
       }
     ]
   },
   {
-    "trace_id": "trace_normal_004",
-    "start_time": "2026-05-19T10:08:00Z",
-    "end_time": "2026-05-19T10:08:00.200000Z",
-    "total_duration_ms": 200,
+    "trace_id": "trace_order_norm_18",
+    "start_time": "2026-07-02T09:48:30Z",
+    "end_time": "2026-07-02T09:48:30Z",
+    "total_duration_ms": 284,
     "status": "success",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
-        "service": "user-service",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:08:00Z",
-        "end_time": "2026-05-19T10:08:00.100000Z",
-        "duration_ms": 100,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:48:30Z",
+        "duration_ms": 284,
         "status": "success",
         "error_message": null
       },
@@ -145,74 +741,1150 @@
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:08:00Z",
-        "end_time": "2026-05-19T10:08:00.100000Z",
-        "duration_ms": 100,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:48:30Z",
+        "duration_ms": 274,
         "status": "success",
         "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:48:30Z",
+        "duration_ms": 146,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 64.4
+        }
       }
     ]
   },
   {
-    "trace_id": "trace_101",
-    "start_time": "2026-05-19T10:16:00+00:00Z",
-    "end_time": "2026-05-19T10:16:03+00:00Z",
-    "total_duration_ms": 3000,
+    "trace_id": "trace_order_norm_22",
+    "start_time": "2026-07-02T09:52:30Z",
+    "end_time": "2026-07-02T09:52:30Z",
+    "total_duration_ms": 296,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:52:30Z",
+        "duration_ms": 296,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:52:30Z",
+        "duration_ms": 286,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:52:30Z",
+        "duration_ms": 154,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 67.6
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_norm_26",
+    "start_time": "2026-07-02T09:56:30Z",
+    "end_time": "2026-07-02T09:56:30Z",
+    "total_duration_ms": 308,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T09:56:30Z",
+        "duration_ms": 308,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T09:56:30Z",
+        "duration_ms": 298,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T09:56:30Z",
+        "duration_ms": 162,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 70.8
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_norm_30",
+    "start_time": "2026-07-02T10:00:30Z",
+    "end_time": "2026-07-02T10:00:30Z",
+    "total_duration_ms": 320,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:00:30Z",
+        "duration_ms": 320,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:00:30Z",
+        "duration_ms": 310,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:00:30Z",
+        "duration_ms": 170,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 74.0
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_norm_34",
+    "start_time": "2026-07-02T10:04:30Z",
+    "end_time": "2026-07-02T10:04:30Z",
+    "total_duration_ms": 332,
+    "status": "success",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:04:30Z",
+        "duration_ms": 332,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:04:30Z",
+        "duration_ms": 322,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:04:30Z",
+        "duration_ms": 178,
+        "status": "success",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 77.2
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_19",
+    "start_time": "2026-07-02T09:49:00Z",
+    "end_time": "2026-07-02T09:49:00Z",
+    "total_duration_ms": 380,
+    "status": "slow",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:49:00Z",
+        "duration_ms": 380,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:49:00Z",
+        "duration_ms": 350,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 46.4,
+          "gc_pause_during_request_ms": 30,
+          "gc_type": "MinorGC"
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:49:00Z",
+        "duration_ms": 35,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "stalled_by_gc": true,
+          "gc_pause_ms": 30
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_23",
+    "start_time": "2026-07-02T09:53:00Z",
+    "end_time": "2026-07-02T09:53:00Z",
+    "total_duration_ms": 640,
+    "status": "slow",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:53:00Z",
+        "duration_ms": 640,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:53:00Z",
+        "duration_ms": 600,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 56.9,
+          "gc_pause_during_request_ms": 40,
+          "gc_type": "MinorGC"
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:53:00Z",
+        "duration_ms": 45,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "stalled_by_gc": true,
+          "gc_pause_ms": 40
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_25",
+    "start_time": "2026-07-02T09:55:00Z",
+    "end_time": "2026-07-02T09:55:00Z",
+    "total_duration_ms": 310,
+    "status": "slow",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:55:00Z",
+        "duration_ms": 310,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:55:00Z",
+        "duration_ms": 280,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 43.7,
+          "gc_pause_during_request_ms": 30,
+          "gc_type": "MinorGC"
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:55:00Z",
+        "duration_ms": 35,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "stalled_by_gc": true,
+          "gc_pause_ms": 30
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_29",
+    "start_time": "2026-07-02T09:59:00Z",
+    "end_time": "2026-07-02T09:59:00Z",
+    "total_duration_ms": 1120,
+    "status": "slow",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T09:59:00Z",
+        "duration_ms": 1120,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T09:59:00Z",
+        "duration_ms": 1080,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 72.6,
+          "gc_pause_during_request_ms": 40,
+          "gc_type": "MajorGC"
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T09:59:00Z",
+        "duration_ms": 45,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "stalled_by_gc": true,
+          "gc_pause_ms": 40
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_slow_31",
+    "start_time": "2026-07-02T10:01:00Z",
+    "end_time": "2026-07-02T10:01:00Z",
+    "total_duration_ms": 870,
+    "status": "slow",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:01:00Z",
+        "duration_ms": 870,
+        "status": "success",
+        "error_message": null
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:01:00Z",
+        "duration_ms": 830,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "instance": "pod-1",
+          "jvm_heap_pct": 46.8,
+          "gc_pause_during_request_ms": 40,
+          "gc_type": "MajorGC"
+        }
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserSessionCache.get",
+        "start_time": "2026-07-02T10:01:00Z",
+        "duration_ms": 45,
+        "status": "slow",
+        "error_message": null,
+        "tags": {
+          "stalled_by_gc": true,
+          "gc_pause_ms": 40
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_32",
+    "start_time": "2026-07-02T10:02:00Z",
+    "end_time": "2026-07-02T10:02:00Z",
+    "total_duration_ms": 4200,
     "status": "error",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
         "service": "api-gateway",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:16:00+00:00Z",
-        "end_time": "2026-05-19T10:16:01.500000+00:00Z",
-        "duration_ms": 1500,
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:02:00Z",
+        "duration_ms": 4200,
         "status": "error",
-        "error_message": "Connection timeout: Failed to acquire connection from pool"
+        "error_message": "upstream timeout after 5000ms"
       },
       {
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "user-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:16:00+00:00Z",
-        "end_time": "2026-05-19T10:16:01.500000+00:00Z",
-        "duration_ms": 1500,
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:02:00Z",
+        "duration_ms": 4200,
         "status": "error",
-        "error_message": "Connection timeout: Failed to acquire connection from pool"
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4200ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 81.2,
+          "gc_pause_ms": 4200,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
       }
     ]
   },
   {
-    "trace_id": "trace_102",
-    "start_time": "2026-05-19T10:17:00+00:00Z",
-    "end_time": "2026-05-19T10:17:02.500000+00:00Z",
-    "total_duration_ms": 2500,
+    "trace_id": "trace_gc_timeout_33",
+    "start_time": "2026-07-02T10:03:00Z",
+    "end_time": "2026-07-02T10:03:00Z",
+    "total_duration_ms": 4280,
     "status": "error",
     "spans": [
       {
         "span_id": "span_1",
         "parent_span_id": null,
         "service": "api-gateway",
-        "operation": "operation_0",
-        "start_time": "2026-05-19T10:17:00+00:00Z",
-        "end_time": "2026-05-19T10:17:01.250000+00:00Z",
-        "duration_ms": 1250,
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:03:00Z",
+        "duration_ms": 4280,
         "status": "error",
-        "error_message": "Database connection pool exhausted"
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:03:00Z",
+        "duration_ms": 4280,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4280ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 82.5,
+          "gc_pause_ms": 4280,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_34",
+    "start_time": "2026-07-02T10:04:00Z",
+    "end_time": "2026-07-02T10:04:00Z",
+    "total_duration_ms": 4360,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:04:00Z",
+        "duration_ms": 4360,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:04:00Z",
+        "duration_ms": 4360,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4360ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 83.8,
+          "gc_pause_ms": 4360,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_35",
+    "start_time": "2026-07-02T10:05:00Z",
+    "end_time": "2026-07-02T10:05:00Z",
+    "total_duration_ms": 4440,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:05:00Z",
+        "duration_ms": 4440,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:05:00Z",
+        "duration_ms": 4440,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4440ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 85.0,
+          "gc_pause_ms": 4440,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_36",
+    "start_time": "2026-07-02T10:06:00Z",
+    "end_time": "2026-07-02T10:06:00Z",
+    "total_duration_ms": 4520,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:06:00Z",
+        "duration_ms": 4520,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:06:00Z",
+        "duration_ms": 4520,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4520ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 86.2,
+          "gc_pause_ms": 4520,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_37",
+    "start_time": "2026-07-02T10:07:00Z",
+    "end_time": "2026-07-02T10:07:00Z",
+    "total_duration_ms": 4600,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:07:00Z",
+        "duration_ms": 4600,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:07:00Z",
+        "duration_ms": 4600,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4600ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 87.5,
+          "gc_pause_ms": 4600,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_38",
+    "start_time": "2026-07-02T10:08:00Z",
+    "end_time": "2026-07-02T10:08:00Z",
+    "total_duration_ms": 4680,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:08:00Z",
+        "duration_ms": 4680,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:08:00Z",
+        "duration_ms": 4680,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4680ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 88.8,
+          "gc_pause_ms": 4680,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_39",
+    "start_time": "2026-07-02T10:09:00Z",
+    "end_time": "2026-07-02T10:09:00Z",
+    "total_duration_ms": 4760,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:09:00Z",
+        "duration_ms": 4760,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:09:00Z",
+        "duration_ms": 4760,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4760ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 90.0,
+          "gc_pause_ms": 4760,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_40",
+    "start_time": "2026-07-02T10:10:00Z",
+    "end_time": "2026-07-02T10:10:00Z",
+    "total_duration_ms": 4840,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:10:00Z",
+        "duration_ms": 4840,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:10:00Z",
+        "duration_ms": 4840,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4840ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 91.2,
+          "gc_pause_ms": 4840,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_41",
+    "start_time": "2026-07-02T10:11:00Z",
+    "end_time": "2026-07-02T10:11:00Z",
+    "total_duration_ms": 4920,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:11:00Z",
+        "duration_ms": 4920,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:11:00Z",
+        "duration_ms": 4920,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 4920ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 92.5,
+          "gc_pause_ms": 4920,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_gc_timeout_42",
+    "start_time": "2026-07-02T10:12:00Z",
+    "end_time": "2026-07-02T10:12:00Z",
+    "total_duration_ms": 5000,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "GET /api/v1/users/{id}/profile",
+        "start_time": "2026-07-02T10:12:00Z",
+        "duration_ms": 5000,
+        "status": "error",
+        "error_message": "upstream timeout after 5000ms"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "user-service",
+        "operation": "UserController.getProfile",
+        "start_time": "2026-07-02T10:12:00Z",
+        "duration_ms": 5000,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT: FullGC pause lasted 5000ms",
+        "tags": {
+          "instance": "pod-2",
+          "jvm_heap_pct": 93.8,
+          "gc_pause_ms": 5000,
+          "gc_type": "FullGC",
+          "threads_stopped": 200,
+          "request_queued_during_gc": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_35",
+    "start_time": "2026-07-02T10:05:00Z",
+    "end_time": "2026-07-02T10:05:00Z",
+    "total_duration_ms": 112,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:05:00Z",
+        "duration_ms": 112,
+        "status": "error",
+        "error_message": "5xx from upstream"
       },
       {
         "span_id": "span_2",
         "parent_span_id": "span_1",
         "service": "order-service",
-        "operation": "operation_1",
-        "start_time": "2026-05-19T10:17:00+00:00Z",
-        "end_time": "2026-05-19T10:17:01.250000+00:00Z",
-        "duration_ms": 1250,
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:05:00Z",
+        "duration_ms": 104,
         "status": "error",
-        "error_message": "Database connection pool exhausted"
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:05:00Z",
+        "duration_ms": 102,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_38",
+    "start_time": "2026-07-02T10:08:00Z",
+    "end_time": "2026-07-02T10:08:00Z",
+    "total_duration_ms": 1162,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:08:00Z",
+        "duration_ms": 1162,
+        "status": "error",
+        "error_message": "5xx from upstream"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:08:00Z",
+        "duration_ms": 1154,
+        "status": "error",
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:08:00Z",
+        "duration_ms": 1152,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_41",
+    "start_time": "2026-07-02T10:11:00Z",
+    "end_time": "2026-07-02T10:11:00Z",
+    "total_duration_ms": 2212,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:11:00Z",
+        "duration_ms": 2212,
+        "status": "error",
+        "error_message": "5xx from upstream"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:11:00Z",
+        "duration_ms": 2204,
+        "status": "error",
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:11:00Z",
+        "duration_ms": 2202,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_44",
+    "start_time": "2026-07-02T10:14:00Z",
+    "end_time": "2026-07-02T10:14:00Z",
+    "total_duration_ms": 3262,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:14:00Z",
+        "duration_ms": 3262,
+        "status": "error",
+        "error_message": "5xx from upstream"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:14:00Z",
+        "duration_ms": 3254,
+        "status": "error",
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:14:00Z",
+        "duration_ms": 3252,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_47",
+    "start_time": "2026-07-02T10:17:00Z",
+    "end_time": "2026-07-02T10:17:00Z",
+    "total_duration_ms": 4312,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:17:00Z",
+        "duration_ms": 4312,
+        "status": "error",
+        "error_message": "5xx from upstream"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:17:00Z",
+        "duration_ms": 4304,
+        "status": "error",
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:17:00Z",
+        "duration_ms": 4302,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_50",
+    "start_time": "2026-07-02T10:20:00Z",
+    "end_time": "2026-07-02T10:20:00Z",
+    "total_duration_ms": 5362,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:20:00Z",
+        "duration_ms": 5362,
+        "status": "error",
+        "error_message": "5xx from upstream"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:20:00Z",
+        "duration_ms": 5354,
+        "status": "error",
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:20:00Z",
+        "duration_ms": 5352,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
+      }
+    ]
+  },
+  {
+    "trace_id": "trace_order_fail_53",
+    "start_time": "2026-07-02T10:23:00Z",
+    "end_time": "2026-07-02T10:23:00Z",
+    "total_duration_ms": 6412,
+    "status": "error",
+    "spans": [
+      {
+        "span_id": "span_1",
+        "parent_span_id": null,
+        "service": "api-gateway",
+        "operation": "POST /api/v1/orders/checkout",
+        "start_time": "2026-07-02T10:23:00Z",
+        "duration_ms": 6412,
+        "status": "error",
+        "error_message": "5xx from upstream"
+      },
+      {
+        "span_id": "span_2",
+        "parent_span_id": "span_1",
+        "service": "order-service",
+        "operation": "OrderController.checkout",
+        "start_time": "2026-07-02T10:23:00Z",
+        "duration_ms": 6404,
+        "status": "error",
+        "error_message": "Identity verification failed: user-service timeout"
+      },
+      {
+        "span_id": "span_3",
+        "parent_span_id": "span_2",
+        "service": "user-service",
+        "operation": "UserController.verifyIdentity",
+        "start_time": "2026-07-02T10:23:00Z",
+        "duration_ms": 6402,
+        "status": "error",
+        "error_message": "GC_PAUSE_TIMEOUT or THREAD_POOL_FULL",
+        "tags": {
+          "instance": "pod-2 or pod-1",
+          "gc_storm_active": true
+        }
       }
     ]
   }

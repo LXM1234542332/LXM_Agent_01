@@ -12,7 +12,8 @@ Executor 节点：执行计划中的单个步骤
 """
 
 import json
-from typing import Dict, Any, List
+import re
+from typing import Dict, Any, List, Set
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langgraph.prebuilt import ToolNode
@@ -25,6 +26,93 @@ from app.agent.mcp_client import get_mcp_client_with_retry
 from .state import PlanExecuteState, StepRecord, WorkingMemory, ExactValuePool
 from .prompts import EXECUTOR_SYSTEM_PROMPT
 from .memory import update_exact_value_pool, summarize_step
+
+
+class ExecutorContext:
+    """执行上下文，维护跨步骤的关键发现"""
+
+    def __init__(self):
+        self.key_services: Set[str] = set()
+        self.key_metrics: Set[str] = set()
+        self.error_patterns: Dict[str, int] = {}
+        self.upstream_services: Set[str] = set()
+        self.deployment_versions: Set[str] = set()
+
+    def extract_from_logs(self, logs_result: Dict[str, Any]):
+        """从日志结果中提取关键字段"""
+        if not isinstance(logs_result, dict):
+            return
+
+        for log_entry in logs_result.get("data", []):
+            if not isinstance(log_entry, dict):
+                continue
+
+            # 提取服务名
+            service = log_entry.get("service")
+            if service:
+                self.key_services.add(str(service))
+
+            # 提取错误类型并统计
+            error_type = log_entry.get("error_type") or log_entry.get("type")
+            if error_type:
+                error_type_str = str(error_type)
+                self.error_patterns[error_type_str] = (
+                    self.error_patterns.get(error_type_str, 0) + 1
+                )
+
+            # 提取上游服务（从错误信息中）
+            message = str(log_entry.get("message", "")).lower()
+            if "upstream" in message or "calling" in message:
+                matches = re.findall(r"(\w+-service)", message)
+                self.upstream_services.update(matches)
+
+    def extract_from_metrics(self, metrics_result: Dict[str, Any]):
+        """从指标结果中提取关键字段"""
+        if not isinstance(metrics_result, dict):
+            return
+
+        for metric_name in metrics_result.get("anomalies", {}).keys():
+            self.key_metrics.add(str(metric_name))
+
+    def extract_from_deployment(self, deploy_result: Dict[str, Any]):
+        """从部署事件中提取版本信息"""
+        if not isinstance(deploy_result, dict):
+            return
+
+        for event in deploy_result.get("data", []):
+            if isinstance(event, dict):
+                version = event.get("version")
+                if version:
+                    self.deployment_versions.add(str(version))
+
+    def suggest_next_queries(self) -> List[str]:
+        """基于已有发现，建议下一步查询"""
+        suggestions = []
+
+        # 如果发现了UPSTREAM_TIMEOUT，建议查询上游服务
+        if "UPSTREAM_TIMEOUT" in self.error_patterns:
+            for svc in self.upstream_services:
+                suggestions.append(f"检查上游服务 {svc} 的错误日志和指标状态")
+
+        # 如果发现了GC相关错误，建议查询GC日志和堆增长
+        if any("GC" in ep for ep in self.error_patterns.keys()):
+            suggestions.append("查询GC日志的heap_before/heap_after，确认是否为泄漏")
+            suggestions.append("分析jvm_heap_used_gb的时序增长模式（线性=泄漏，突发=高峰）")
+
+        # 如果发现了连接池相关错误，建议查询缓存和连接池
+        if any("POOL" in ep or "CONNECTION" in ep for ep in self.error_patterns.keys()):
+            suggestions.append(
+                "查询缓存/session增长与heap的关联系数，判断是否为缓存泄漏"
+            )
+
+        # 如果有部署版本，建议查询该版本的改动
+        if self.deployment_versions:
+            for version in self.deployment_versions:
+                suggestions.append(
+                    f"查询版本{version}的changelog，关键词：cache、session、pool、memory"
+                )
+
+        return suggestions
 
 
 def _format_working_memory(wm: WorkingMemory) -> str:
@@ -42,6 +130,20 @@ def _format_working_memory(wm: WorkingMemory) -> str:
         lines.append(f"- 告警总数：{wm['alert_count']}")
     if wm.get("scenario_id"):
         lines.append(f"- 场景ID：{wm['scenario_id']}")
+
+    # 新增：部署事件信息
+    if wm.get("has_deployment_event"):
+        lines.append(f"- 有部署/配置变更事件：是")
+        deployment_events = wm.get("deployment_events", [])
+        if deployment_events:
+            lines.append(f"  相关发版/变更：")
+            for event in deployment_events:
+                if isinstance(event, dict):
+                    if event.get("event_type") == "deployment" and event.get("related_to_fault", True):
+                        version = event.get("version", "unknown")
+                        timestamp = event.get("timestamp", "unknown")
+                        lines.append(f"    - {event.get('service')} v{version} 于 {timestamp}")
+
     return "\n".join(lines) if lines else "（无诊断锚点）"
 
 

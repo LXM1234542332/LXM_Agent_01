@@ -1,38 +1,96 @@
 {
   "scenario_id": "scenario1",
-  "root_cause_service": "payment-service",
-  "root_cause_type": "新版本部署引入缺陷，payment-service v2.3.1 部署后 30 秒开始出现支付处理超时，导致依赖它的上游服务连锁故障",
+  "title": "618大促支付链路雪崩",
+  "root_cause_service": "order-service",
+  "root_cause_type": "order-service v1.3.2 新版本引入无索引查询，大促高并发下全表扫描打满 mysql-master 连接池，级联导致 payment-service 连接池耗尽，整条下单链路雪崩",
+  "root_cause_version": "v1.3.2",
+  "root_cause_detail": "SELECT * FROM orders WHERE user_id=? 缺少 orders(user_id) 索引，正常流量下慢查询不明显，大促 rps 从 820 升至 2240 后全表扫描频率激增，rows_examined 超过 130 万行/次",
+  "deployment_related": true,
+  "deployment_timestamp": "2026-06-18T11:30:00Z",
+  "fault_start_timestamp": "2026-06-18T11:52:00Z",
+  "first_alert_timestamp": "2026-06-18T12:01:10Z",
+  "propagation_chain": [
+    "order-service v1.3.2 部署（11:30）引入 getOrderHistory 接口无索引查询",
+    "大促流量上升（11:45）放大全表扫描频率",
+    "mysql-master 慢查询从 15ms 爬升至 4300ms（11:52 开始）",
+    "payment-service 数据库连接池从 8/50 爬升至 50/50（11:58~12:05）",
+    "payment-service 开始返回 HikariPool-1 Connection not available 错误（12:00）",
+    "order-service checkout 失败，p99 latency 触发告警 ALT-20260618-001（12:01）",
+    "inventory-service 事务卡住，call_success_rate 下降（12:03）",
+    "api-gateway 因重试流量堆积 CPU 上升（12:04，干扰项，非根因）",
+    "api-gateway 5xx 超过 15%，用户完全不可用（12:06）",
+    "SRE 重启 pod-3 仅带来 35s 短暂缓解，根因未消除（12:07）",
+    "故障持续直至 DBA 添加索引（12:10+ escalation）"
+  ],
+  "misleading_signals": [
+    {
+      "signal": "order-service p99 latency 告警最先触发（12:01）",
+      "misleading_reason": "容易误判为 order-service 自身代码问题，实际上 order-service 既是作案者（引入慢查询）也是受害者（延迟升高）",
+      "correct_interpretation": "需结合 deployment events 确认 v1.3.2 引入了无索引查询"
+    },
+    {
+      "signal": "api-gateway cpu_usage 告警（12:04，ALT-20260618-003）",
+      "misleading_reason": "看起来像网关资源不足或流量过大压垮网关",
+      "correct_interpretation": "CPU 升高是 order-service 重试导致 effective rps 翻倍的结果，不是根因"
+    },
+    {
+      "signal": "SRE 重启 pod-3 后 error_rate 短暂降至 3.2%",
+      "misleading_reason": "容易误判为重启解决了问题",
+      "correct_interpretation": "mysql 慢查询未停止，35s 后连接池再次耗尽，重启只是临时释放了 pod-3 的连接池"
+    },
+    {
+      "signal": "发版时间（11:30）与告警时间（12:01）相差 31 分钟",
+      "misleading_reason": "不是典型的发版后立刻出问题，容易忽略发版事件",
+      "correct_interpretation": "问题在低流量下不明显，大促流量冲上来才被放大，需结合 db_slow_query 最早异常时间（11:52）与流量上升时间（11:45）共同判断"
+    }
+  ],
   "key_evidence": [
     {
       "type": "deployment_event",
-      "description": "payment-service 于 10:15:00 部署了 v2.3.1 版本，状态为 success",
-      "data": "timestamp=2026-05-19T10:15:00Z, service=payment-service, version=v2.3.1"
+      "description": "order-service v1.3.2 于 11:30 发版，引入了 /api/v2/orders/history 接口",
+      "data": "timestamp=2026-06-18T11:30:00Z service=order-service version=v1.3.2"
     },
     {
-      "type": "alert",
-      "description": "部署后仅 30 秒，payment-service 触发 critical 级别告警「支付超时开始」，时间高度吻合",
-      "data": "timestamp=2026-05-19T10:15:30Z, severity=critical, message=支付超时开始"
+      "type": "slow_query_log",
+      "description": "mysql-master 在 11:52 首次出现慢查询，比第一条告警早 9 分钟。查询为 SELECT * FROM orders WHERE user_id=?，rows_examined 超过 98 万行，明确标注 NO INDEX on user_id",
+      "data": "timestamp=11:52 duration=1120ms rows_examined=980000 table=orders missing_index=user_id"
     },
     {
-      "type": "cascading_alerts",
-      "description": "故障从 payment-service 逐级向上游扩散：10:16:00 order-service 触发 warning 告警「订单服务超时」，10:17:00 api-gateway 触发 warning 告警「网关请求堆积」，时间顺序与调用链方向一致，印证了连锁故障的传播路径",
-      "data": "10:16:00 warning 订单服务超时(order-service), 10:17:00 warning 网关请求堆积(api-gateway)"
+      "type": "metric_timeseries",
+      "description": "db_query_duration_ms 从 11:52 开始缓慢爬升（15ms→4300ms），时序上早于 payment 连接池告警和所有 alert 事件，确认数据库是最先出问题的层",
+      "data": "11:40=15ms 11:52=1120ms 11:56=2800ms 12:00=3800ms 12:05=4300ms"
     },
     {
-      "type": "metrics",
-      "description": "payment-service 的 error_rate 在 10:15:00 从 0.1% 突变为 15%（150 倍），request_latency 从 100ms 突变为 5000ms（50 倍），且持续未恢复",
-      "data": "error_rate: 0.1% -> 15%, request_latency: 100ms -> 5000ms, 起始时间=10:15:00"
+      "type": "connection_pool_metric",
+      "description": "payment-service db_connection_active 从 11:58 开始爬升，12:05 达到 50/50 完全耗尽，与 mysql 慢查询时序完全吻合（db慢→连接不释放→pool满）",
+      "data": "11:40=8/50 11:58=41/50 12:00=50/50 12:05=50/50 waiting=47"
     },
     {
-      "type": "logs",
-      "description": "从 10:16:00 开始出现 9 条 ERROR 日志，错误信息全部为「Payment service timeout」，涉及 3 个服务，耗时呈递增趋势（5000→5100→5200ms）",
-      "data": "trace_001(10:16:00, 5000ms), trace_002(10:17:00, 5100ms), trace_003(10:18:00, 5200ms)"
+      "type": "slow_trace",
+      "description": "慢链路 trace 分析：payment-service 内 span_4（mysql-master DB.query）占总耗时 90%+，且 tags 显示 index_used=False，rows_examined 超百万。payment-service 本身逻辑耗时正常，是在等数据库响应",
+      "data": "trace_slow_03: total=3200ms db_span=3200ms index_used=False rows_examined=1200000"
     },
     {
-      "type": "traces",
-      "description": "错误链路的调用关系为 api-gateway → order-service → payment-service，payment-service 是调用链末端，错误从它向上传播",
-      "data": "span_1(api-gateway) -> span_2(order-service) -> span_3(payment-service), 全部 error"
+      "type": "error_log",
+      "description": "大量 HikariPool-1 - Connection is not available 错误，pool_active=50/50 waiting=47，确认是连接池耗尽而不是服务 crash",
+      "data": "error=HIKARI_POOL_EXHAUSTED pool_active=50 pool_max=50 pool_waiting=47"
+    },
+    {
+      "type": "restart_non_fix",
+      "description": "SRE 在 12:07 重启 pod-3 后 error_rate 短暂降至 3.2%，但 mysql 慢查询在 12:08 记录显示仍在持续（43 slow/60s），35s 后 payment 连接池再次打满，证明重启不是根因修复",
+      "data": "restart=12:07 brief_recovery_duration=35s mysql_slow_after_restart=43/min at 12:08"
     }
   ],
-  "summary": "2026-05-19 10:15:00，payment-service 完成了 v2.3.1 版本的部署。部署前（10:00-10:14），三个服务（payment-service、order-service、api-gateway）运行完全正常，error_rate 为 0.1%，latency 为 100ms。部署完成后仅 30 秒（10:15:30），payment-service 即触发 critical 级别告警「支付超时开始」。从指标数据看，10:15:00 这个时间点三个服务的 error_rate 同时从 0.1% 跳变为 15%，latency 从 100ms 跳变为 5000ms。从日志和链路追踪数据看，10:16:00 开始出现的 ERROR 日志全部为「Payment service timeout」，调用链为 api-gateway → order-service → payment-service，说明 payment-service 是故障源头，order-service 和 api-gateway 是因为依赖 payment-service 而被连锁影响。综合以上证据，根因判断为：payment-service v2.3.1 版本引入了导致支付处理超时的缺陷，部署行为是直接触发因素。部署时间与告警时间的强相关性（仅差 30 秒）、部署前后指标的断崖式变化、以及调用链中 payment-service 作为错误源头的事实，三者互相印证，形成完整证据链。"
+  "correct_diagnosis_steps": [
+    "Step1: get_alerts() -> 看到5条告警，order-service latency最先触发，初步怀疑order-service或payment-service",
+    "Step2: get_metrics_anomalies() -> 发现 db_query_duration_ms 和 db_connection_active 也异常，扩展假设到数据库层",
+    "Step3: get_metrics_by_time_range(11:48~12:10, db_query_duration_ms) -> 确认慢查询从11:52就开始，比告警早9分钟，数据库是最早出问题的层",
+    "Step4: get_slow_traces(threshold_ms=2000) -> 慢trace里mysql span占90%+耗时，tags显示index_used=False，缩小范围到数据库索引问题",
+    "Step5: get_logs_by_keyword(full table scan) 或 get_logs_by_service(mysql-master, ERROR) -> 发现 MISSING INDEX on orders.user_id 错误日志，确认根因是缺索引",
+    "Step6: get_deployment_events() -> 发现order-service v1.3.2在11:30发版，引入了orders history查询接口，与慢查询出现时间和大促时间结合后确认因果关系",
+    "Step7: get_logs_by_keyword(connection) -> 大量 HikariPool-1 Connection not available，确认payment连接池耗尽机制",
+    "Step8: get_events_by_type(manual_operation) + get_metrics_by_time_range(12:06~12:10) -> 看到SRE重启事件和重启后指标短暂改善再恶化，结合mysql慢查询持续，排除重启为根因修复，确认根因在order-service缺索引"
+  ],
+  "fix": "CREATE INDEX idx_orders_user_id ON orders(user_id); -- 回滚 order-service 到 v1.3.1 或 hotfix 修复查询",
+  "summary": "2026-06-18 618大促期间，order-service v1.3.2（11:30发版）引入了订单历史查询接口，该接口执行 SELECT * FROM orders WHERE user_id=? 时缺少 user_id 索引。低流量下慢查询不明显，11:45大促开始后rps从820升至2240，全表扫描频率激增，mysql-master从11:52开始出现慢查询（最早异常点，比告警早9分钟）。慢查询导致数据库连接长时间占用不释放，payment-service连接池从11:58开始爬升，12:05完全耗尽（50/50 waiting=47），支付请求全部超时，级联导致order-service checkout失败、inventory-service事务卡住、api-gateway 5xx飙升。12:07 SRE重启pod-3仅带来35秒短暂缓解，因mysql慢查询根因未消除，12:08连接池再次打满。故障持续至DBA介入添加索引。排查关键路径：db_query_duration_ms时序早于告警 → 慢trace确认db span占90% → mysql ERROR日志明确MISSING INDEX → deployment event确认v1.3.2引入该查询 → 重启后指标二次崩溃排除重启为根因修复。"
 }

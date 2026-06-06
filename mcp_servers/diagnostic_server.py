@@ -527,6 +527,76 @@ def get_service_dependencies(service: str) -> Dict[str, Any]:
 
 
 # ============================================================================
+# JVM / 队列 / 慢查询工具（scenario2+ 扩充）
+# ============================================================================
+
+@mcp.tool()
+@log_tool_call
+def get_jvm_metrics(service: str, instance: Optional[str] = None, limit: int = 60) -> Dict[str, Any]:
+    """查询指定服务的 JVM 运行时指标时序。
+
+    返回 heap 使用量、GC 次数/暂停时长、线程数、session 缓存大小等指标的时序数据和统计摘要，
+    同时附带 GC 事件摘要（FullGC 次数、最大 pause、是否 promotion_failed）。
+    适用于排查 JVM 内存泄漏、GC 风暴、线程池饱和等问题。
+
+    Args:
+        service: 服务名称，如 'user-service'
+        instance: 可选，指定 pod 实例，如 'pod-1'；不传则返回所有实例的数据
+        limit: 返回的最大记录数，默认 60
+
+    Returns:
+        Dict:
+            - jvm_metric_summary: 各 JVM 指标的 min/max/avg/latest/trend 摘要
+            - gc_event_summary: GC 事件聚合（total/full_gc_count/max_pause_ms/promotion_failed_count）
+            - data: 原始 JVM 指标记录列表
+    """
+    return diagnostic_tools.get_jvm_metrics(service=service, instance=instance, limit=limit)
+
+
+@mcp.tool()
+@log_tool_call
+def get_queue_metrics(service: str, limit: int = 60) -> Dict[str, Any]:
+    """查询消息队列相关指标时序。
+
+    返回队列深度、消费速率、发布速率、消费者延迟的时序数据和积压分析。
+    适用于判断消费者是否因上游依赖（如 user-service 超时）导致消费停滞、队列积压。
+
+    Args:
+        service: 服务名称，如 'notification-service'
+        limit: 返回的最大记录数，默认 60
+
+    Returns:
+        Dict:
+            - queue_metric_summary: 各指标的 min/max/avg/latest/trend 摘要
+            - backlog_analysis: 积压分析（净速率、is_backlogging、预计清空秒数）
+            - data: 原始队列指标记录列表
+    """
+    return diagnostic_tools.get_queue_metrics(service=service, limit=limit)
+
+
+@mcp.tool()
+@log_tool_call
+def get_slow_queries(service: Optional[str] = None, threshold_ms: int = 100, limit: int = 20) -> Dict[str, Any]:
+    """查询慢 SQL/数据库查询记录。
+
+    按执行耗时降序返回超过阈值的慢查询，包含 query_text、duration_ms、rows_examined、
+    index_used、lock_wait_ms 等字段。适用于排查数据库全表扫描、缺少索引、表膨胀问题。
+
+    Args:
+        service: 可选，按服务名过滤，如 'user-service'；不传则返回所有服务
+        threshold_ms: 慢查询阈值（毫秒），默认 100ms
+        limit: 返回的最大记录数，默认 20
+
+    Returns:
+        Dict:
+            - statistics: 统计摘要（total/no_index_count/max_duration/avg_duration/max_rows_examined）
+            - no_index_queries: 未走索引的查询列表（重点关注）
+            - data: 全部慢查询记录列表
+    """
+    return diagnostic_tools.get_slow_queries(service=service, threshold_ms=threshold_ms, limit=limit)
+
+
+# ============================================================================
 # 时间工具
 # ============================================================================
 
